@@ -1,0 +1,1551 @@
+﻿.signup table tr.input-validation-error,
+.signup table tr td input[type=text].input-validation-error,
+.signup table tr td input[type=password].input-validation-error,
+.smallbox table tr td input[type="text"].input-validation-error, .smallbox table tr td input[type="password"].input-validation-error,
+input[type=text].input-validation-error,
+input[type=password].input-validation-error,
+select.input-validation-error {
+    border: 1px solid #FF0000;
+}
+
+#main #contractor-search form input[type=text].input-validation-error {
+    border: 1px solid #FF0000;
+}
+
+.signup table tr td.longLabels {
+    width: 33%;
+    vertical-align: baseline;
+    text-align: right;
+}
+
+table.quick-reference-wide {
+    float: left;
+    margin-right: 25px;
+    width: 80%;
+}
+
+    table.quick-reference-wide tr td {
+        padding: 2px;
+        font-size: 14px;
+    }
+
+.validation-summary-valid
+{
+    display: none;
+}
+.validation-summary-errors {
+    display: block;
+    clear: both;
+    margin: 0px 0 15px;
+    padding: 10px;
+    width: 91%;
+    height: auto;
+    border: 1px solid #812f17;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    background: #e6cec1;
+    color: #812f17;
+}
+
+    .validation-summary-errors UL LI {
+        display: list-item;
+        margin-top: 5px;
+        list-style-type: disc;
+        list-style-image: none;
+    }
+
+
+/* note: the .big-login-error style corresponds with the copius #big-login style (located in the css folder), however, 
+         when running through form validation, the textboxes and buttons lose their style.
+         therefore, we have added the styles below.
+*/
+
+.big-login-error {
+    float: none;
+    padding: 20px 20px 20px 30px;
+    width: 360px;
+    height: 345px;
+    border: 1px solid #E7E0CE;
+    -moz-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    background: none repeat scroll 0 0 #F0ECE0;
+}
+
+    .big-login-error table tr td input[type=text].input-validation-error, table tr td input[type=password].input-validation-error, input[type=text].input-validation-error, input[type=password].input-validation-error {
+        border: 1px solid #FF0000;
+    }
+
+.login-button {
+    display: inline;
+    float: right;
+    margin-bottom: 20px;
+    margin-left: 8px;
+    width: 61px;
+    height: 26px;
+    background: url("/css/img/bg-sign-in-button.jpg") no-repeat scroll left top transparent;
+    cursor: pointer;
+}
+
+.big-login-error table tr td input[type="text"], table tr td input[type="password"] {
+    padding: 4px;
+    border: 1px solid #969A9B;
+}
+
+.no-float {
+    float: none;
+}
+
+.smallbox {
+    position: inherit;
+    display: block;
+    float: left;
+    margin: 10px 0 10px;
+    padding: 15px;
+    width: 90%;
+    height: auto;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    background: #eaf4f5;
+    vertical-align: middle;
+}
+
+
+    .smallbox table {
+        width: 100%;
+    }
+
+        .smallbox table.min {
+            width: auto;
+        }
+
+        .smallbox table tr td {
+            padding: 5px;
+            vertical-align: middle;
+            text-align: left;
+        }
+
+            .smallbox table tr td.labels {
+                text-align: right;
+            }
+
+                .smallbox table tr td.labels label {
+                    font-weight: bold;
+                }
+
+                .smallbox table tr td.labels .required {
+                    margin-right: 2px;
+                    color: #731D03;
+                    font-weight: bold;
+                }
+
+            .smallbox table tr td input[type=text], .smallbox table tr td input[type=password] {
+                padding: 4px;
+                width: 95px;
+                border: 1px solid #969a9b;
+            }
+
+            .smallbox table tr td.min input[type=text], .smallbox table tr td.min input[type=password] {
+                padding: 2px;
+                width: auto;
+            }
+
+            .smallbox table tr td input[type=text].missed, .smallbox table tr td input[type=password].missed, input[type=text].missed, input[type=password].missed {
+                border: 1px solid #812f17;
+            }
+
+            .smallbox table tr td .example {
+                font-style: italic;
+            }
+
+            .smallbox TABLE TR TD INPUT[type=text].dp-applied {
+                float: left;
+                width: 65px;
+            }
+
+.paystation table tr td input[type=text] {
+    width: 180px;
+}
+
+.paystationMapWrapper {
+    padding: 15px;
+    width: 95%;
+    height: auto;
+}
+
+.paystationMap {
+    width: 100%;
+    height: 300px;
+}
+
+.paystationResults {
+    padding: 20px;
+}
+
+.paystationResultsIndent {
+    padding: 25px;
+}
+
+.paystation a {
+    float: none;
+    margin-top: 0px;
+}
+
+.acct-history-filter {
+    width: 95%;
+}
+
+.backToNormal {
+    position: inherit;
+    display: block;
+    float: left;
+    padding: 15px;
+    width: 95%;
+    height: auto;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    background: transparent;
+}
+
+
+    .backToNormal table {
+        margin-bottom: 20px;
+        width: 100%;
+        background: white;
+    }
+
+        .backToNormal table.half {
+            width: 55%;
+        }
+
+            .backToNormal table.half.nospace {
+                margin-bottom: 5px;
+            }
+
+        .backToNormal table tr td {
+            padding: 5px;
+            vertical-align: middle;
+            text-align: left;
+        }
+
+            .backToNormal table tr td.labels {
+                width: 20%;
+                text-align: right;
+            }
+
+        .backToNormal table.half tr td.labels {
+            width: 60%;
+        }
+
+        .backToNormal table tr td.inputs {
+            width: 30%;
+        }
+
+        .backToNormal table.half tr td.checks {
+            width: 6%;
+        }
+
+        .backToNormal table tr td.labels label {
+            font-weight: bold;
+        }
+
+        .backToNormal table tr td.labels .required {
+            margin-right: 2px;
+            color: #731D03;
+            font-weight: bold;
+        }
+
+        .backToNormal table tr td input[type=text], .signup table tr td input[type=password] {
+            padding: 4px;
+            width: 150px;
+            border: 1px solid #969a9b;
+        }
+
+            .backToNormal table tr td input[type=text].missed, .signup table tr td input[type=password].missed, input[type=text].missed, input[type=password].missed {
+                border: 1px solid #812f17;
+            }
+
+        .backToNormal table tr td .example {
+            font-style: italic;
+        }
+
+.statement table {
+    float: none;
+}
+
+.blank_row {
+  height: 15px !important;
+}
+
+table.statement {
+    float: left;
+    width: 100%;
+    height: auto;
+}
+
+    table.statement.nineThree {
+        width: 93% !important;
+    }
+
+.statement table td {
+    float: left;
+    text-align: right;
+}
+
+.statement table th {
+    background: url("/css/img/bg.jpg");
+    text-align: right;
+}
+
+/* th style using copious design  */
+table.statement th.gradient {
+    padding: 5px;
+    padding-top: 15px;
+    background: url(/css/img/bg-th.jpg) bottom left repeat-x #fff;
+    color: #333333;
+    vertical-align: middle;
+    text-align: right;
+    font-weight: bold;
+}
+
+table.statement th td {
+    text-align: right;
+}
+
+table.statement tr th, table.data tr td.header {
+    padding: 3px;
+    background: url("/css/img/bg.jpg");
+    color: #333333;
+    vertical-align: middle;
+    text-align: right;
+    font-weight: bold;
+}
+
+table.statement tr td {
+    padding: 5px;
+    border-right: 1px solid #fff;
+    color: #333333;
+    vertical-align: middle;
+    text-align: right;
+}
+
+table.statement tr.alt {
+    background: #e5f1fe;
+}
+
+table.statement tr:hover {
+    background: #a4c1e3;
+}
+
+.print-only {
+    display: none;
+}
+
+.signup table tr td input[type=text].input-validation-error, .signup table tr td input[type=password].input-validation-error, input[type=text].input-validation-error, input[type=password].input-validation-error {
+    border: 1px solid #FF0000;
+}
+
+.inputs a.dp-choose-date {
+    text-decoration: none;
+    font-weight: lighter;
+    font-size: 1px;
+}
+
+.signup table tr td input[type=text].dp-applied {
+    float: left;
+    width: 120px;
+}
+
+.signup table tr td input[type=text].SSN-1 {
+    width: 25px;
+}
+
+.signup table tr td input[type=text].SSN-2 {
+    width: 20px;
+}
+
+.signup table tr td input[type=text].SSN-3 {
+    width: 33px;
+}
+
+
+.signup table tr td input[type=text].Width20 {
+    width: 20px;
+}
+
+.signup table tr td input[type=text].Width10 {
+    width: 10px;
+}
+
+.signup table tr td input[type=text].Width30 {
+    width: 30px;
+}
+
+.signup table tr td input[type=text].Width40 {
+    width: 40px;
+}
+
+.signup table tr td input[type=text].Width50 {
+    width: 50px;
+}
+
+.signup table tr td input[type=text].Width60 {
+    width: 60px;
+}
+
+.signup table tr td input[type=text].Width200 {
+    width: 200px;
+}
+
+
+.signup table tr td.InputWidth60 input[type=text].text-box {
+    width: 60px;
+}
+
+
+.signup table tr td.right-align {
+    text-align: right;
+}
+
+td.right-align, #content #main .acct-content .bill-right TABLE TR TD.right-align {
+    text-align: right;
+}
+
+
+/* for view your bill*/
+.billtext {
+    display: block;
+    float: left;
+    width: 95%;
+    height: auto;
+    color: #000000;
+    font-size: 13px;
+    font-family: Courier New;
+}
+
+.billtext_small {
+    color: #000000;
+    font-size: 11px;
+    font-family: Courier New;
+}
+
+/* for paybycheck routing and account images -- And more. */
+tr.nowrap td, tr.nowrap th, td.nowrap, th.nowrap, div.nowrap {
+    white-space: nowrap;
+}
+
+/* updates to view bill styles */
+#content #main .acct-content .bill-left TABLE TR TD.right-align {
+    text-align: right;
+}
+
+#content #main .acct-content .bill-left TABLE TR TD {
+    vertical-align: top;
+}
+
+#content #main .acct-content .bill-left {
+    width: 370px;
+}
+
+#content #main .acct-content div.billtext {
+    padding-bottom: 10px;
+    border-bottom: #000000 1px solid;
+    font-size: 13px;
+}
+
+#content #main .acct-content .bill-right {
+    width: 220px;
+}
+
+    #content #main .acct-content .bill-left H4, #content #main .acct-content .bill-right H4 {
+        font-family: Helvetica, Arial, sans-serif;
+    }
+
+/* needed for pay by check images */
+img .noborder {
+    border-style: none;
+}
+
+.signup table.quick-reference-info .firstColumn tr td {
+    float: right;
+}
+
+.signup table tr td textarea.input-validation-error {
+    overflow: auto;
+    padding: 4px;
+    width: 300px;
+    height: 100px;
+    border: 1px solid #FF0000;
+}
+
+.signup table tr td input[type=text].smartenergycontribution {
+    width: 40px;
+    text-align: right;
+}
+
+.justFloatRight {
+    float: right;
+}
+
+.businessCard {
+    display: block;
+    float: left;
+    margin: 8px 0 20px;
+    padding: 15px;
+    width: 95%;
+    height: auto;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    background: #eaf4f5;
+}
+
+    .businessCard table {
+        width: 91%;
+        line-height: 20px;
+    }
+
+        .businessCard table.quick-reference-info {
+            margin-right: 25px;
+            width: 80%;
+        }
+
+            .businessCard table.quick-reference-info tr td {
+                padding: 2px;
+                font-size: 14px;
+            }
+
+            .businessCard table.quick-reference-info td.firstCol {
+                padding: 2px;
+                vertical-align: top;
+                text-align: right;
+                font-size: 14px;
+            }
+
+.contractorSearchItem {
+    display: block;
+    float: left;
+    margin: 8px 0 20px;
+    padding: 15px;
+    width: 95%;
+    height: auto;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    background: #eaf4f5;
+}
+
+    .contractorSearchItem table {
+        width: 91%;
+        line-height: 20px;
+    }
+
+        .contractorSearchItem table.quick-reference-info {
+            margin-right: 25px;
+            width: 80%;
+        }
+
+            .contractorSearchItem table.quick-reference-info tr td {
+                padding: 2px;
+                font-size: 100.01%;
+            }
+
+            .contractorSearchItem table.quick-reference-info td.firstCol {
+                padding: 2px;
+                vertical-align: top;
+                text-align: right;
+                font-size: 100.01%;
+            }
+
+.contractor-search-zip input[type=text] {
+    width: 50px;
+}
+
+/* for changing the default behavior of h3 to keep any other text (after the h3 close tag) on the same line */
+h3.nowrap {
+    display: inline;
+}
+
+/* style fix for IE7 and Safari */
+.bill-date {
+    min-width: 260px;
+}
+
+
+
+/*  TABLE FORMATTING FOR USAGE HISTORY
+===========================================
+*/
+
+table.usageHistory {
+    float: left;
+    width: 90%;
+}
+
+    table.usageHistory tr th, table.usageHistory tr td.header, table.usageHistory tr:hover th, table.usageHistory tr:hover td.header {
+        padding: 3px;
+        background: url(/css/img/bg-th.jpg) bottom left repeat-x #fff;
+        color: #333333;
+        vertical-align: middle;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    table.usageHistory tr td {
+        padding: 3px;
+        border-right: 1px solid #fff;
+        color: #333333;
+        vertical-align: middle;
+        text-align: left;
+    }
+
+    table.usageHistory tr.alt, table.usageHistory tr.alt td {
+        background: #e5f1fe;
+    }
+
+    table.usageHistory tr:hover, table.usageHistory tr:hover td {
+        background: #a4c1e3;
+    }
+
+#RateChangeMessage {
+    float: left;
+    padding: 3px;
+    width: 90%;
+}
+
+.whiteForm {
+    position: relative;
+    display: block;
+    float: left;
+    margin: 8px 0px 0px 0px;
+    padding: 5px;
+    width: 90%;
+    height: auto;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    vertical-align: middle;
+}
+
+    .whiteForm table tr td input[type="text"].input-validation-error, .whiteForm table tr td input[type="password"].input-validation-error,
+    input[type=text].input-validation-error,
+    input[type=password].input-validation-error,
+    select.input-validation-error {
+        border: 1px solid #FF0000;
+    }
+
+    .whiteForm table {
+        clear: both;
+        width: 100%;
+    }
+
+        .whiteForm table tr td {
+            padding: 5px;
+            vertical-align: middle;
+            text-align: left;
+        }
+
+            .whiteForm table tr td.labels {
+                text-align: right;
+            }
+
+                .whiteForm table tr td.labels label {
+                    font-weight: bold;
+                }
+
+                .whiteForm table tr td.labels .required {
+                    margin-right: 2px;
+                    color: #731D03;
+                    font-weight: bold;
+                }
+
+            .whiteForm table tr td input[type=text], .whiteForm table tr td input[type=password] {
+                padding: 4px;
+                width: 95px;
+                border: 1px solid #969a9b;
+            }
+
+                .whiteForm table tr td input[type=text].missed, .whiteForm table tr td input[type=password].missed, input[type=text].missed, input[type=password].missed {
+                    border: 1px solid #812f17;
+                }
+
+            .whiteForm table tr td .example {
+                font-style: italic;
+            }
+
+
+    .whiteForm labels {
+        text-align: right;
+    }
+
+        .whiteForm labels label {
+            font-weight: bold;
+        }
+
+        .whiteForm labels .required {
+            margin-right: 2px;
+            color: #731D03;
+            font-weight: bold;
+        }
+
+    .whiteForm input[type=text], .whiteForm input[type=password] {
+        padding: 4px;
+        width: 95px;
+        border: 1px solid #969a9b;
+    }
+
+        .whiteForm input[type=text].missed, .whiteForm input[type=password].missed, input[type=text].missed, input[type=password].missed {
+            border: 1px solid #812f17;
+        }
+
+
+
+    .whiteForm TABLE TR TD INPUT[type=text].dp-applied {
+        float: left;
+        width: 65px;
+    }
+
+/*  this is a clone of the copius style as more generic and reusable class only */
+.faq-list {
+    display: inline;
+    float: left;
+    margin: 15px 0 15px 0;
+    width: 600px;
+    height: auto;
+}
+
+    .faq-list h2 {
+        color: #6C98AD;
+        font-weight: normal;
+        font-size: 20px;
+    }
+
+    .faq-list .faq-ques {
+        float: left;
+        margin: 5px 0 5px 0;
+        padding: 0 0 5px 0;
+        width: 600px;
+        height: auto;
+        border-bottom: 1px solid #eff3f1;
+        font-size: 14px;
+    }
+
+        .faq-list .faq-ques a {
+            font-weight: normal;
+            font-size: 12px;
+        }
+
+    .faq-list .faq-ans {
+        float: left;
+        margin: 0 0 10px 0;
+        padding: 10px;
+        width: 572px;
+        height: auto;
+        border: 4px solid #b6cae2;
+        background: #e1ebf6;
+        color: #555;
+        font-size: 13px;
+        line-height: 14px;
+    }
+
+/* For Site Navigation, these styles indent each additional level (up to 5 levels deep) */
+#content #leftnav ul#primary li ul.secondary ul.secondary li a span {
+    padding-left: 35px;
+    width: 175px;
+}
+
+#content #leftnav ul#primary li ul.secondary ul.secondary ul.secondary li a span {
+    padding-left: 45px;
+    width: 165px;
+}
+
+#content #leftnav ul#primary li ul.secondary ul.secondary ul.secondary ul.secondary li a span {
+    padding-left: 55px;
+    width: 155px;
+}
+
+/* Updated styles for account dashboard to help with the display of the additional fields */
+#content #main .acct-content .acct-left .acct-inner #bill-summary
+/*{
+    width:240px;
+}*/
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+#content #main .acct-content .acct-left .acct-inner .action {
+    width: 110px;
+}
+
+/* Updated styles for Accounts view */
+.halfpage, .signup.halfpage {
+    width: 47%;
+}
+
+.fullWidth {
+    width: 97%;
+}
+
+.signup.halfpage table tr td.labels {
+    width: 42%;
+    text-align: right;
+}
+
+.signup.halfpage table tr td.inputs {
+    width: 58%;
+}
+
+a.gen-button.remove-account-info-block {
+    margin-top: 0px;
+    margin-bottom: 8px;
+}
+
+div.remove-account-info-block {
+    margin-bottom: 10px;
+}
+
+/* Updated Styles for Emergency Contacts */
+TABLE.statement.emergency-contact-list {
+    width: 100%;
+}
+
+TABLE.nosearchresults {
+    width: 28em;
+    color: #666;
+    vertical-align: middle;
+    font-size: 17px;
+    font-family: arial,sans-serif;
+}
+
+.hr_image {
+    margin-right: 8px;
+    height: 40px;
+    border: none;
+}
+
+.smartenergyimage {
+    margin-right: 8px;
+    height: 40px;
+    border: none;
+}
+
+.smartcircleimage {
+    margin-right: 8px;
+    height: 140px;
+    border: none;
+}
+
+.smartenergyimagepopup {
+    margin-right: 70px;
+    height: 40px;
+    border: none;
+}
+
+.wraptocenter {
+    display: table-cell;
+    width: 180px;
+    height: 110px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+    .wraptocenter * {
+        vertical-align: middle;
+    }
+
+
+h4 span.instructions {
+    font-size: 11px;
+}
+
+.toolTip {
+    position: absolute;
+    padding-right: 20px;
+    -moz-border-radius: 0 0 5px;
+    border-radius: 0 0 5px;
+    background: inherit;
+    color: #3366FF;
+    cursor: help;
+    /* This contains the .toolTipWrapper div that is absolutely positioned  */
+    /* This is need to make sure that the help icon is always visible */
+    /* This is the hook that the jQuery script will use */
+}
+
+.toolTipWrapper {
+    position: absolute;
+    top: 20px;
+    z-index: 99;
+    display: none;
+    width: 225px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 9pt;
+    /* A font size is needed to maintain consistancy */
+    /* Absolute will make the tooltip float above other content in the page */
+    /* It has to be displayed none so that the jQuery fadein and fadeout functions will work */
+    /* The wrapper holds its insides together */
+}
+
+.toolTipTop {
+    width: 175px;
+    height: 30px;
+    background: #22537A;
+    /* Top section of the tooltip */
+}
+
+.toolTipMid {
+    padding: 8px 15px;
+    background: #22537A;
+    /* Middle section of the tooltip */
+}
+
+.toolTipBtm {
+    height: 13px;
+    background: #22537A;
+    /* Bottom Section of the tooltip */
+}
+
+
+
+#HightchartContainer {
+    width: 595px;
+}
+
+#cse-search-results iframe {
+    width: 700px;
+}
+
+#other-pay-options {
+    border-bottom: #e5e5e5 1px solid;
+}
+
+#content #main .acct-content .acct-right .acct-inner:first-child {
+    padding-bottom: inherit;
+    border-bottom: inherit;
+}
+
+.signup table tr td input[type=text].w-fiftyfour, input[type=text].w-fiftyfour {
+    width: 54px;
+}
+
+#nominationpartial {
+    position: static;
+}
+
+.message.error_fixed_height {
+    height: 20px;
+    border: 1px solid #812f17;
+    background: #e6cec1;
+    color: #812f17;
+    /* used for messages that contain only one line - height:auto gives too much space below line otherwise */
+}
+
+/* for Dealer Admin tool */
+input[type=file] {
+    padding: 4px;
+    width: 250px;
+    border: 1px solid #969a9b;
+    background-color: White;
+}
+
+/* for quick view sign in - placing a float on the button causes enter key to not submit form*/
+.center #quick-profile #quick-profile-inner #qp-content #qp-signin form table tr td input#qp-signin-button {
+    float: none;
+}
+
+.eRecruitJobDescription {
+    vertical-align: middle;
+    font-family: Tahoma, serifSansSerifMonospace;
+}
+
+pre {
+    white-space: -moz-pre-wrap !important;
+    white-space: -o-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: pre-wrap;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    font-family: Tahoma, serifSansSerifMonospace;
+    /* css-3 */
+    /* Internet Explorer 5.5+ */
+    /* Mozilla, since 1999 */
+    /* Opera 4-6 */
+    /* Opera 7 */
+    /* width: 99%; */
+}
+
+
+#content .eRecruitMenu {
+    width: 699px;
+}
+
+    #content .eRecruitMenu .title {
+        display: inline;
+        float: left;
+        margin: 8px 0 0 5px;
+        padding-bottom: 5px;
+        width: auto;
+        height: auto;
+        color: #666666;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+
+
+    #content .eRecruitMenu ul {
+        list-style: none;
+        cursor: default;
+    }
+
+        #content .eRecruitMenu ul li {
+            float: left;
+            margin-right: 15px;
+            margin-left: 5px;
+            padding: 8px 1px 8px 1px;
+            list-style: none;
+        }
+
+            #content .eRecruitMenu ul li .messageEr {
+                display: none;
+                float: left;
+                padding-bottom: 5px;
+                color: #666666;
+                font-size: 14px;
+                line-height: 20px;
+            }
+
+
+            #content .eRecruitMenu ul li:hover {
+                background-color: rgb(247, 244, 237);
+            }
+
+
+            #content .eRecruitMenu ul li.currentEr {
+                background-color: rgb(247, 244, 237);
+            }
+
+
+            #content .eRecruitMenu ul li:hover .messageEr {
+                display: block;
+                float: right;
+                margin-left: 5px;
+            }
+
+
+            #content .eRecruitMenu ul li.currentEr .messageEr {
+                display: block;
+                float: right;
+                margin-left: 5px;
+                background-color: rgb(247, 244, 237);
+            }
+
+    #content .eRecruitMenu a {
+        display: inline;
+        padding: 6px 10px 6px 10px;
+        width: auto;
+        background: url(/css/img/steps-sprite.png) top left no-repeat;
+        color: #fff;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    #content .eRecruitMenu .currentEr a {
+        background: url(/css/img/steps-sprite.png) -58px 0px no-repeat;
+    }
+
+    #content .eRecruitMenu a:hover {
+        background: url(/css/img/steps-sprite.png) -29px 0px no-repeat;
+    }
+
+a.link-button span {
+    position: relative;
+    float: left;
+    width: auto;
+    height: auto;
+    background: url(/css/img/bg-button-generic.jpg) top left no-repeat;
+    color: #fff;
+    font-weight: bold;
+}
+
+    a.link-button span.ie7 {
+        padding: 6px 7px 5px 12px;
+    }
+
+a.link-button:hover span {
+    background-position: bottom left;
+}
+
+.JobListTable table, .JobListTable tbody, .JobListTable tfoot, .JobListTable thead {
+    padding: 5px;
+    width: 700px;
+    table-layout: fixed;
+    vertical-align: middle;
+}
+
+.JobListTable tr, .JobListTable th, .JobListTable td {
+    padding: 5px;
+    vertical-align: middle;
+}
+
+td.JobButton {
+    width: 87px;
+}
+
+td.JobLocation {
+    min-width: 150px;
+    width: 150px;
+}
+
+td.JobTitle {
+    overflow: hidden;
+    min-width: 400px;
+    max-width: 400px;
+    width: 400px;
+    height: auto;
+    text-align: left;
+}
+
+td.JobApplicationHistoryStatus /* used in the jobapplicationhistory table */ {
+    min-width: 70px;
+    width: 70px;
+}
+
+tbody.FullWidth {
+    width: auto;
+}
+
+
+/* used by eRecruit sections */
+.jobapplicationhistory table {
+    float: none;
+}
+
+table.jobapplicationhistory {
+    float: left;
+    width: 100%;
+    height: auto;
+}
+
+    table.jobapplicationhistory.nineThree {
+        width: 93% !important;
+    }
+
+.jobapplicationhistory table td {
+    float: left;
+    text-align: left;
+}
+
+.jobapplicationhistory table th {
+    background: url("/css/img/bg.jpg");
+    text-align: center;
+}
+
+/* th style using copious design  */
+table.jobapplicationhistory th.gradient {
+    padding: 5px;
+    background: url(/css/img/bg-th.jpg) bottom left repeat-x #fff;
+    color: #333333;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bold;
+}
+
+table.jobapplicationhistory th.gradient_left_th {
+    padding: 5px;
+    background: url(/css/img/bg-th.jpg) bottom left repeat-x #fff;
+    color: #333333;
+    vertical-align: middle;
+    text-align: left;
+    font-weight: bold;
+}
+
+table.jobapplicationhistory th.gradient_left_th_blue_background {
+    padding: 5px;
+    background: #DCE7EA;
+    color: #333333;
+    vertical-align: middle;
+    text-align: left;
+    font-weight: bold;
+}
+
+table.jobapplicationhistory th td {
+    text-align: left;
+}
+
+
+table.jobapplicationhistory tr th, table.data tr td.header {
+    padding: 3px;
+    background: url("/css/img/bg.jpg");
+    color: #333333;
+    vertical-align: middle;
+    text-align: right;
+    font-weight: bold;
+}
+
+table.jobapplicationhistory tr td {
+    padding: 5px;
+    border-right: 1px solid #fff;
+    color: #333333;
+    vertical-align: middle;
+    text-align: left;
+}
+
+table.jobapplicationhistory tr.alt {
+    background: #e5f1fe;
+}
+
+table.jobapplicationhistory tr:hover {
+    background: #a4c1e3;
+}
+
+.signup td.ERecruitOpenDelButtons {
+    padding: 2px;
+    width: 18px;
+}
+
+.ERecruitOpenDelButtonsxxx a.open span {
+    display: none;
+}
+
+.ERecruitOpenDelButtons a.open {
+    position: relative;
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-image: url('/Content/open.jpg');
+    background-position: 0px 0px;
+    /*this is the key*/
+}
+
+.ERecruitOpenDelButtons a:hover.open {
+    background-position: 0px 18px;
+}
+
+.ERecruitOpenDelButtonsxxx a:hover span {
+    position: absolute;
+    top: 2em;
+    left: 1em;
+    z-index: 2;
+    display: block;
+    padding: 2px;
+    border: 2px solid #F7F4ED;
+    background-color: #F7F4ED;
+    color: #000;
+    text-align: center;
+    /*the span will display just on :hover state*/
+}
+
+.ERecruitOpenDelButtons a.delete {
+    position: relative;
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-image: url('/Content/Delete.jpg');
+    background-position: 0px 0px;
+    /*this is the key*/
+}
+
+
+
+.ERecruitOpenDelButtons a:hover.delete {
+    background-position: 0px 18px;
+}
+
+.OverViewHead {
+    width: 500px;
+}
+
+.signup table.Overview {
+    padding: 10px;
+    width: 80%;
+    table-layout: auto;
+    text-align: left;
+}
+
+    .signup table.Overview td.OverviewLabel {
+        width: 200px;
+    }
+
+    .signup table.Overview td.inputs {
+        width: 400px;
+    }
+
+.OverViewHead td {
+    text-align: left;
+}
+
+    .OverViewHead td.ToggleButton {
+        padding: 2px;
+        width: 18px;
+    }
+
+
+.OverViewHead a.ToggleButton {
+    position: relative;
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-image: url('/Content/add.jpg');
+    background-position: 0px 0px;
+    /*this is the key*/
+}
+
+.OverViewHead a:hover.ToggleButton {
+    background-position: 0px 18px;
+}
+
+.QuestionErrorHighlight {
+    padding: 4px;
+    border: 1px solid red;
+}
+
+.MoreInfoIcons {
+    padding: 0px;
+    width: 15px;
+    height: 15px;
+    border-width: 0px;
+    vertical-align: bottom;
+}
+
+.PrintJSButton {
+    display: none;
+}
+
+div.signin {
+    width: 100%;
+}
+
+div.qv-signin {
+    float: none;
+    text-align: inherit;
+}
+
+    div.qv-signin .iebutton {
+        float: none;
+        margin-left: 0px;
+    }
+
+        div.qv-signin .iebutton input[type=submit] {
+            float: none;
+        }
+
+#top-search .process-actions {
+    width: auto;
+}
+
+#top-search FORM input[type=submit] {
+    background: url(../css/img/button-generic-alt.jpg);
+}
+
+.process-actions .pay-by-check {
+    float: left;
+}
+
+.process-actions .heads-up-content {
+    text-align: left;
+}
+
+
+.heads-up {
+    margin: 10px 0 0 5px;
+}
+
+#main #in-body-search {
+    float: none;
+    margin-bottom: 0px;
+}
+
+.search-result-navigation {
+    clear: both;
+    text-align: center;
+}
+
+    .search-result-navigation div {
+        display: inline;
+    }
+
+
+.required {
+    margin-right: 2px;
+    color: #731D03;
+    font-weight: bold;
+}
+
+
+#footer #home-buttons a.button-twitter, a.button-twitter, a.button-twitter:visited {
+    float: left;
+    clear: both;
+    padding: 5px 0 0 10px;
+    width: 131px;
+    height: 35px;
+    background: url(/Content/img/button-twitter.jpg) 0 -40px no-repeat;
+    color: #537d4d;
+    text-transform: uppercase;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+    #footer #home-buttons a.button-twitter:hover, a.button-twitter:hover {
+        background-position: 0 0;
+        color: #537d4d;
+        text-decoration: underline;
+    }
+
+    #footer #home-buttons a.button-twitter span.sub, a.button-twitter span.sub {
+        font-size: 10px;
+    }
+
+.twitter-icon {
+    padding: 0px;
+    vertical-align: middle;
+}
+
+.divBorderTop1px {
+    border-top: 1px solid #e5e5e5;
+}
+
+#content .NoBullet ul, #content .NoBullet ul li {
+    list-style-type: none;
+}
+
+#content .NoBullet td {
+    vertical-align: top;
+}
+
+.horizontal, ul.confirmation {
+    margin: 0 !important;
+}
+
+    .horizontal li {
+        display: inline;
+        margin-left: 5px;
+    }
+
+/*used by builder form*/
+.signup table tr td.labels_no_width {
+    text-align: right;
+}
+
+.signup table tr td.labels_half_width {
+    width: 50%;
+    text-align: right;
+}
+
+
+/* slides  */
+.slides_container {
+    display: none;
+    width: 570px;
+    height: 360px;
+}
+
+    .slides_container div {
+        display: block;
+        width: 570px;
+        height: 360px;
+    }
+
+.pagination {
+    float: left;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+    .pagination .current a {
+        color: red;
+    }
+
+    .pagination li {
+        float: left;
+        margin: 0 1px;
+        margin-top: 1px;
+    }
+
+#slides ul li {
+    list-style-type: none; /*for ie and mozilla*/
+}
+
+.pagination li a {
+    display: block;
+    overflow: hidden;
+    padding-top: 13px;
+    width: 13px;
+    height: 0;
+    background-image: url(/Content/pagination2.png);
+    background-position: 0 0;
+    /*float: left; */
+}
+
+.pagination li.current a, .pagination li.current a:hover {
+    background-position: 0 -13px;
+}
+
+.pagination li a:hover {
+    background-position: 0 -26px;
+}
+
+.step .number a {
+    color: white;
+    text-decoration: none;
+}
+
+.centerDiv {
+    text-align: center;
+}
+
+.easyPayText {
+    clear: left;
+}
+
+.easyPaySectionLabel {
+    float: left;
+    margin-bottom: 10px;
+    width: 100px;
+    color: #386485;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 23px;
+}
+
+.easyPayChoiceOption {
+    float: left;
+    width: 150px;
+}
+
+.easyPayChoiceFormField {
+    margin-top: 6px;
+}
+
+.easyPayChoiceTextField {
+    margin-top: 8px;
+}
+
+input[type=text].readonly {
+     background-color: rgb(235, 235, 228);
+}
+
+ .process-actions a.autoPayCCcancel {
+    margin-right: 8px;
+    margin-top: 16px;
+}
+.accountNumberTextCC {
+    width: auto; 
+    height: auto; 
+    float: left; 
+    margin-top: 5px;
+}
+.accountNumberTextCheckingAccount {
+    width: auto; 
+    height: auto; 
+    float: left; 
+    margin-top: 12px;
+}

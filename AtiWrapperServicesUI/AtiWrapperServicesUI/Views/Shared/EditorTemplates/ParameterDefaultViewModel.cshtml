@@ -1,0 +1,64 @@
+﻿@model AtiWrapperServicesUI.Models.ParameterDefaultViewModel
+
+@{
+    ViewBag.Title = "ParameterDefaultViewModel";
+}
+
+@Html.HiddenFor(x => x.Name)
+@Html.HiddenFor(x => x.TypeName)
+<tr>
+    <td>
+        <h3>@Html.DisplayFor(x => x.Name)</h3>
+    </td>
+    <td>
+        <h3>@Html.DisplayFor(x => x.TypeName)</h3>
+    </td>
+    <td>
+        @Html.CheckBoxFor(x => x.Required, new { @class="chkbox", itemid=@Model.Id } )
+    </td>
+    <td>
+        
+            @if(Model.TypeName != typeof(string).FullName)
+            {
+                if (Model.Value != null && Model.Value.GetType().BaseType != null && Model.Value.GetType().BaseType.IsGenericType && Model.Value.GetType().BaseType.GetGenericTypeDefinition() == typeof(List<>))
+                {
+                    Type collectionType = Model.Value.GetType().BaseType.GetGenericArguments().Single();
+                    if (collectionType == typeof(string))
+                    {
+                        @Html.TextBoxFor(x => x.Value, new { Value = String.Empty, id="ValueEditor"+@Model.Id })
+                    }
+                    else
+                    {  
+                        @Html.TextBoxFor(x => x.Value, new { id="ValueEditor"+@Model.Id })
+                    }
+                }
+                else if (Model.Value != null && Model.Value.GetType().IsArray)
+                {
+                    Type arrayBase = Model.Value.GetType().GetElementType();
+                    if (arrayBase == typeof(string))
+                    {
+                        @Html.TextBoxFor(x => x.Value, new { Value = String.Empty, id="ValueEditor"+@Model.Id })
+                    }
+                    else
+                    {  
+                        @Html.TextBoxFor(x => x.Value, new { id="ValueEditor"+@Model.Id })
+                    }
+                }
+                else if (Model.EnumList != null)
+                {
+                    @Html.DropDownListFor(x => x.Value, Model.EnumList)
+                }
+                else
+                {  
+                    @Html.TextBoxFor(x => x.Value, new { id="ValueEditor"+@Model.Id })
+                }
+            }
+            else
+            {
+                @Html.TextBoxFor(x => x.Value, new { Value = String.Empty, id="ValueEditor"+@Model.Id })
+            }
+
+
+    </td>
+</tr>
+

@@ -1,0 +1,174 @@
+﻿@model AtiWrapperServicesUI.Models.CustomerServiceXmlViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>CustomerXmlServiceUrlViewModel</legend>
+    
+        <label for="customerName">CustomerName</label>
+        @(Html.Kendo()
+              .ComboBox()
+              .Name("customerName")
+              .HtmlAttributes(new { style = "width:300px" })
+              .Placeholder("Select Customer...")
+              .DataTextField("CustomerName")
+              .DataValueField("CustomerId")
+              .DataSource(source =>
+              {
+                  source.Read(read =>
+                  {
+                      read.Action("GetCustomers", "CustomerXmlServiceUrl");
+                  });
+              })
+              .Events( e => e.Change("customerChanged")
+                            .Select("customerSelected"))
+        )
+        <script>
+            function customerChanged(e) { $("#testUrl").data("kendoComboBox").enable(true); $("#testUrl").data("kendoComboBox").focus();};
+            function customerSelected(e) { alert("text value is : " + $("#customerName").selected); };
+        </script>
+        @*<div class="editor-label">
+        @Html.LabelFor(model => model.CustomerName)
+        $(this).DataTextField + " : " $(this).DataValueField)}
+        </div>*@
+        @*<div class="editor-field">
+        @Html.EditorFor(model => model.CustomerName)
+        @Html.ValidationMessageFor(model => model.CustomerName)
+        </div>*@
+        @*@Html.DropDownListFor(model => model.CustomerName, TempData["CustomerList"] as List<SelectListItem>)*@
+        
+        <div class="editor-label">
+            <label for="testUrl">TestURL</label>
+            @(Html.Kendo()
+                  .ComboBox()
+                  .Name("testUrl")
+                  .HtmlAttributes(new { style = "width:300px" })
+                  .Placeholder("Select Test URL...")
+                  .DataTextField("UrlName")
+                  .DataValueField("UrlName")
+                  .DataSource(source =>
+                  {
+                      source.Read(read =>
+                      {
+                          read.Action("GetTestUrlNames", "CustomerXmlServiceUrl")
+                              .Data("filterCustomers");
+                      })
+                            .ServerFiltering(true);
+                  })
+                  .Enable(false)
+                  .AutoBind(false)
+                  .CascadeFrom("customerName")
+                  .Events(e => e
+                                .Change("testUrlChanged")
+                      )
+            )
+            <script>
+                function filterCustomers() {
+                    @*alert("TestUrlCustId: " + $("#customerName").val())*@
+                    return {
+                        customerId: $("#customerName").val()
+                    };
+                }
+                function testUrlChanged(e) { $("#productionUrl").data("kendoComboBox").enable(true); $("#productionUrl").data("kendoComboBox").focus() };
+            </script>
+        </div>
+        @*<div class="editor-field">
+        @Html.EditorFor(model => model.TestUrl)
+        @Html.ValidationMessageFor(model => model.TestUrl)
+        </div>*@
+        
+        <div class="editor-label">
+            <label for="productionUrl">ProductionURL</label>
+            @(Html.Kendo()
+                  .ComboBox()
+                  .Name("productionUrl")
+                  .HtmlAttributes(new { style = "width:300px" })
+                  .Placeholder("Select Production Url...")
+                  .DataTextField("UrlName")
+                  .DataValueField("UrlName")
+                  .DataSource(source =>
+                  {
+                      source.Read(read =>
+                      {
+                          read.Action("GetProductionUrlNames", "CustomerXmlServiceUrl")
+                              .Data("filterCustomers");
+                      })
+                            .ServerFiltering(true);
+                  })
+                  .Enable(false)
+                  .AutoBind(false)
+                  .CascadeFrom("testUrl")
+                  .Events(e => e.Change("productionUrlChanged"))
+            )
+            <script>
+                function productionUrlChanged(e) { $("#serviceName").data("kendoComboBox").enable(true); $("#serviceName").data("kendoComboBox").focus() };
+            </script>
+        </div>
+        @*<div class="editor-label">
+        @Html.LabelFor(model => model.ProductionUrl)
+        </div>
+        <div class="editor-field">
+        @Html.EditorFor(model => model.ProductionUrl)
+        @Html.ValidationMessageFor(model => model.ProductionUrl)
+        </div>*@
+        <div class="editor-field">
+            <label for="serviceName">ServiceName</label>
+            @(Html.Kendo().ComboBox()
+                .Name("serviceName")
+                .HtmlAttributes(new { style = "width:300px" })
+                .Placeholder("Select Service Name...")
+                .DataTextField("ServiceName")
+                .DataValueField("ServiceName")
+                .DataSource(source => {
+                    source.Read(read =>
+                        {
+                            read.Action("GetCustomerServiceNames", "CustomerXmlServiceUrl")
+                            .Data("filterCustomers");
+                        })
+                        .ServerFiltering(true);
+                })
+                .Enable(false)
+                .AutoBind(false)
+                .CascadeFrom("productionUrl")
+            )
+        </div>
+        @*<div class="editor-label">
+        @Html.LabelFor(model => model.ServiceName)
+        </div>
+        <div class="editor-field">
+        @Html.EditorFor(model => model.ServiceName)
+        @Html.ValidationMessageFor(model => model.ServiceName)
+        </div>*@
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ServiceMethod)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ServiceMethod)
+            @Html.ValidationMessageFor(model => model.ServiceMethod)
+        </div>
+            
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ServiceMethodXmlTemplateLocation)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ServiceMethodXmlTemplateLocation)
+            @Html.ValidationMessageFor(model => model.ServiceMethodXmlTemplateLocation)
+        </div>
+            
+        <p>
+            <input type="submit" value="Create" />
+        
+        </p>
+    </fieldset>
+}
+    

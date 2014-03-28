@@ -1,0 +1,48 @@
+﻿@model AtiWrapperServicesUI.Models.XmlServiceMethodTypeViewModel
+
+@{
+    ViewBag.Title = "XmlServiceMethodTypeViewModel";
+}
+
+@Html.HiddenFor(x => x.Name)
+@Html.HiddenFor(x => x.IsSystemType)
+<tr>
+    <td>
+        <h3>@Html.DisplayFor(x => x.Name)</h3>
+    </td>
+    <td>
+        <h3>@Html.DisplayFor(x => x.TypeName)</h3>
+    </td>
+    <td>
+        @if (Model.IsSystemType)
+        {
+            <h3>@Html.CheckBoxFor(x => x.Include)</h3>
+        }
+        else
+        {
+            @Html.HiddenFor(x => x.Include);
+        }
+    </td>
+    <td>
+        @if (! Model.IsSystemType || Model.SupportedTypes == null)
+        {
+            <h3>@Html.DisplayFor(x => x.TypeName)</h3>
+            @Html.HiddenFor( x => x.TypeName)
+        }
+        else
+        {
+            <h3>@Html.DropDownList("TypeName", Model.SupportedTypes, new { @class = "drop" })</h3>
+            @*<h3>@Html.TextBoxFor(x => x.TypeName, new { @class = "drop" })</h3>*@
+        }
+    </td>
+</tr>
+
+
+@*@section Scripts {
+    <script type="text/javascript">
+        
+        $(function () {
+            $('.drop').live('change', function () { alert("DropDown Value: "); });
+        });
+    </script>
+    }*@

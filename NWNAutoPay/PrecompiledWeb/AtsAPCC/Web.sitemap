@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="" title="Customer Service"  description="">
+    <siteMapNode url="/" title="Customer Service"  description="">
+      <siteMapNode url="/AccountDashboard" title="Dashboard" />
+      <siteMapNode url="/CustomerService/PayYourBill" title="Pay Your Bill" />
+      <siteMapNode url="/CustomerService/BillingOptions" title="Billing Options" /> 
+      <siteMapNode url="/Service" title="Start/Stop/Move" />
+      <siteMapNode url="/Profile" title="Manage Profile" />
+      <siteMapNode url="/CustomerService/EquipmentServices" title="Equipment Services" />
+      <siteMapNode url="/ContactUs" title="Contact Us" />
+    </siteMapNode>
+    <siteMapNode url="/Residential" title="Residential"  description="">
+      <siteMapNode url="/Residential/Services" title="Services" description="" />
+      <siteMapNode url="/Residential/SaveEnergyAndMoney" title="Save Energy &amp; Money" />
+      <siteMapNode url="/Residential/BenefitsOfGas" title="Benefits of Gas" />        
+      <siteMapNode url="/Residential/SpecialOffers" title="Special Offers" />
+      <siteMapNode url="/Residential/Safety" title="Safety" />
+	  <siteMapNode url="/Residential/SmartEnergy" title="Smart Energy" />
+    </siteMapNode>
+    <siteMapNode url="/Business" title="Business"  description="">
+      <siteMapNode url="/Business/Services" title="Services" description="" />
+      <siteMapNode url="/Business/SaveEnergyAndMoney" title="Save Energy &amp; Money" />
+      <siteMapNode url="/Business/BenefitsOfGas" title="Benefits of Gas" description="" />
+      <siteMapNode url="/Business/TransportationAndStorage" title="Transportation &amp; Storage" description="" />
+      <siteMapNode url="/Business/Partners" title="Partners" description="" />
+      <siteMapNode url="/Business/Safety" title="Safety" />
+	    <siteMapNode url="/Business/SmartEnergy" title="Smart Energy" />
+    </siteMapNode>
+    <siteMapNode url="/ConnectToGas" title="Connect to Gas" description="">
+      <siteMapNode url="/ConnectToGas/StepsToGetGas" title="Steps to Get Gas" />
+      <siteMapNode url="/ConnectToGas/CanIGetGas" title="Can I Get Service" />
+      <siteMapNode url="/ConnectToGas/FindAContractor" title="Find a Contractor" />
+      <siteMapNode url="/ConnectToGas/SpecialOffers" title="Special Offers" />
+      <siteMapNode url="/ConnectToGas/BenefitsOfGas" title="Benefits of Gas" />
+      <siteMapNode url="/ConnectToGas/SaveEnergyAndMoney" title="Save Energy &amp; Money" />
+    </siteMapNode>
+    <siteMapNode url="/AboutNWNatural" title="About NW Natural"  description="">
+      <siteMapNode url="/AboutNWNatural/TheCompany" title="The Company"  description="" />
+      <siteMapNode url="/AboutNWNatural/Community" title="Community"  description="" />
+      <siteMapNode url="/AboutNWNatural/EnvironmentalStewardship" title="Environmental Stewardship"  description="" />
+      <siteMapNode url="/AboutNWNatural/RatesAndRegulations" title="Rates &amp; Regulations"  description="" />
+      <siteMapNode url="/AboutNWNatural/PressRoom" title="Press Room"  description="" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

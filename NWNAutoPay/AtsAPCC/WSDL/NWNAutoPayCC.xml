@@ -1,0 +1,197 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AutoPayCreditCardService" targetNamespace="http://tempuri.org/">
+<wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+<xs:import namespace="http://schemas.datacontract.org/2004/07/NWNatural.External.Models.Responses"/>
+<xs:import namespace="http://schemas.datacontract.org/2004/07/NWNatural.External.Models"/>
+<xs:element name="IsEligibleForAutoPayCC">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="IsEligibleForAutoPayCCResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/NWNatural.External.Models.Responses" minOccurs="0" name="IsEligibleForAutoPayCCResult" nillable="true" type="q1:AutoPayEligibilityResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="EnrollAutoPayCC">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="phoneNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="emailAddress" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="creditCardLast4" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="enrollDate" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="signature" nillable="true" type="xs:string"/>
+<xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/NWNatural.External.Models" minOccurs="0" name="creditCardType" type="q2:CreditCardTypes"/>
+<xs:element minOccurs="0" name="creditCardExpDate" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="referenceId" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="nameOnCard" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="EnrollAutoPayCCResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/NWNatural.External.Models.Responses" minOccurs="0" name="EnrollAutoPayCCResult" nillable="true" type="q3:AutoPayEnrollCreditCardResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/">
+<xs:element name="anyType" nillable="true" type="xs:anyType"/>
+<xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+<xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+<xs:element name="boolean" nillable="true" type="xs:boolean"/>
+<xs:element name="byte" nillable="true" type="xs:byte"/>
+<xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+<xs:element name="decimal" nillable="true" type="xs:decimal"/>
+<xs:element name="double" nillable="true" type="xs:double"/>
+<xs:element name="float" nillable="true" type="xs:float"/>
+<xs:element name="int" nillable="true" type="xs:int"/>
+<xs:element name="long" nillable="true" type="xs:long"/>
+<xs:element name="QName" nillable="true" type="xs:QName"/>
+<xs:element name="short" nillable="true" type="xs:short"/>
+<xs:element name="string" nillable="true" type="xs:string"/>
+<xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+<xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+<xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+<xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+<xs:element name="char" nillable="true" type="tns:char"/>
+<xs:simpleType name="char">
+<xs:restriction base="xs:int"/>
+</xs:simpleType>
+<xs:element name="duration" nillable="true" type="tns:duration"/>
+<xs:simpleType name="duration">
+<xs:restriction base="xs:duration">
+<xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+<xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+<xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:element name="guid" nillable="true" type="tns:guid"/>
+<xs:simpleType name="guid">
+<xs:restriction base="xs:string">
+<xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:attribute name="FactoryType" type="xs:QName"/>
+<xs:attribute name="Id" type="xs:ID"/>
+<xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/NWNatural.External.Models.Responses" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/NWNatural.External.Models.Responses">
+<xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+<xs:complexType name="AutoPayEligibilityResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="IsEligible" type="xs:boolean"/>
+<xs:element minOccurs="0" name="Response" type="tns:AutoPayServiceResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="AutoPayEligibilityResponse" nillable="true" type="tns:AutoPayEligibilityResponse"/>
+<xs:simpleType name="AutoPayServiceResponse">
+<xs:restriction base="xs:string">
+<xs:enumeration value="OK"/>
+<xs:enumeration value="Error">
+<xs:annotation>
+<xs:appinfo>
+<EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+</xs:appinfo>
+</xs:annotation>
+</xs:enumeration>
+</xs:restriction>
+</xs:simpleType>
+<xs:element name="AutoPayServiceResponse" nillable="true" type="tns:AutoPayServiceResponse"/>
+<xs:complexType name="AutoPayEnrollCreditCardResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Confirmation" type="xs:long"/>
+<xs:element minOccurs="0" name="Response" type="tns:AutoPayServiceResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="AutoPayEnrollCreditCardResponse" nillable="true" type="tns:AutoPayEnrollCreditCardResponse"/>
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/NWNatural.External.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/NWNatural.External.Models">
+<xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+<xs:simpleType name="CreditCardTypes">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Visa">
+<xs:annotation>
+<xs:appinfo>
+<EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+</xs:appinfo>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="MasterCard">
+<xs:annotation>
+<xs:appinfo>
+<EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+</xs:appinfo>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="Discover">
+<xs:annotation>
+<xs:appinfo>
+<EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+</xs:appinfo>
+</xs:annotation>
+</xs:enumeration>
+</xs:restriction>
+</xs:simpleType>
+<xs:element name="CreditCardTypes" nillable="true" type="tns:CreditCardTypes"/>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="IAutoPayCreditCardService_IsEligibleForAutoPayCC_InputMessage">
+<wsdl:part name="parameters" element="tns:IsEligibleForAutoPayCC"/>
+</wsdl:message>
+<wsdl:message name="IAutoPayCreditCardService_IsEligibleForAutoPayCC_OutputMessage">
+<wsdl:part name="parameters" element="tns:IsEligibleForAutoPayCCResponse"/>
+</wsdl:message>
+<wsdl:message name="IAutoPayCreditCardService_EnrollAutoPayCC_InputMessage">
+<wsdl:part name="parameters" element="tns:EnrollAutoPayCC"/>
+</wsdl:message>
+<wsdl:message name="IAutoPayCreditCardService_EnrollAutoPayCC_OutputMessage">
+<wsdl:part name="parameters" element="tns:EnrollAutoPayCCResponse"/>
+</wsdl:message>
+<wsdl:portType name="IAutoPayCreditCardService">
+<wsdl:operation name="IsEligibleForAutoPayCC">
+<wsdl:input wsaw:Action="http://tempuri.org/IAutoPayCreditCardService/IsEligibleForAutoPayCC" message="tns:IAutoPayCreditCardService_IsEligibleForAutoPayCC_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IAutoPayCreditCardService/IsEligibleForAutoPayCCResponse" message="tns:IAutoPayCreditCardService_IsEligibleForAutoPayCC_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="EnrollAutoPayCC">
+<wsdl:input wsaw:Action="http://tempuri.org/IAutoPayCreditCardService/EnrollAutoPayCC" message="tns:IAutoPayCreditCardService_EnrollAutoPayCC_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IAutoPayCreditCardService/EnrollAutoPayCCResponse" message="tns:IAutoPayCreditCardService_EnrollAutoPayCC_OutputMessage"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="BasicHttpBinding_IAutoPayCreditCardService" type="tns:IAutoPayCreditCardService">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="IsEligibleForAutoPayCC">
+<soap:operation soapAction="http://tempuri.org/IAutoPayCreditCardService/IsEligibleForAutoPayCC" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="EnrollAutoPayCC">
+<soap:operation soapAction="http://tempuri.org/IAutoPayCreditCardService/EnrollAutoPayCC" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="AutoPayCreditCardService">
+<wsdl:port name="BasicHttpBinding_IAutoPayCreditCardService" binding="tns:BasicHttpBinding_IAutoPayCreditCardService">
+<soap:address location="http://maxedout/NwnDevWsRouter/IVRRoutingServices.svc/AutoPayEndPoint"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,28 @@
+.process-actions input[type=submit] {
+	border: none;
+	padding: 5px 8px;
+	border-right: 1px solid #537d4d;
+	border-left: 1px solid #537d4d;
+}
+
+ul#mainnav li ul.subnav li a { padding: 7px; }
+
+div.dp-popup {
+	border: 1px solid #666666;
+}
+
+table.jCalendar {
+	margin: 0;
+}
+
+#content #main #acct-header .name-addy span { line-height: 24px; }
+#content #main #acct-header .name-addy span.address { float: left; }
+
+#content #main .acct-content { padding-bottom: 0; }
+
+#content #main .acct-content .acct-left .acct-inner.last { border-bottom: 0 !important; }
+
+input.large-button.threeHund, input[type=submit].large-button.threeHund { width: 300px; height: 52px; padding: 0; background-position: -2px 0px; background-repeat: no-repeat; }
+input.large-button.threeHund:hover, input[type=submit].large-button.threeHund:hover { background-position: -2px -52px; }
+
+a.gen-button span.ie7 { padding: 6px 7px 5px 12px; }

@@ -1,0 +1,88 @@
+﻿@using AtsAPCC.Extensions
+@model AtsAPCC.Models.AutoPayEditModel
+@{
+    ViewBag.Title = "NWN | Auto Pay by Debit/Credit Card";
+}
+ <h1 class="big">Auto Pay by Debit/Credit Card</h1>
+
+        <div id="progress-indicator"><!--BEGIN PROGRESS INDICATOR-->
+          <div class="step current">
+            <div class="number">1</div>
+            <div class="title">Billing Information</div>
+          </div>
+          <div class="step">
+            <div class="number">2</div>
+            <div class="title">Confirm</div>
+          </div>
+          <div class="step">
+            <div class="number">3</div>
+            <div class="title">Receipt</div>
+          </div>
+        </div><!--END PROGRESS INDICATOR-->
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(false, "Please correct the errors and try again.")
+    @Html.HiddenFor(x => x.AccountNumber)
+    @Html.HiddenFor(x => x.FirstName)
+    @Html.HiddenFor(x => x.LastName)
+    @Html.HiddenFor(x => x.EmailAddress)
+    @Html.HiddenFor(x => x.BillingZipCode)
+    <div class="signup">
+        <table>
+            <tr>
+                <td class="labels">
+                    @Html.LabelFor(x => x.AccountNumber)
+                </td>
+                <td class="inputs">  
+                    @Html.DisplayFor(x => x.AccountNumber)
+                </td>
+            </tr>            
+            <tr>
+                <td class="labels"><span class="required">*</span>
+                    @Html.LabelFor(x => x.NameOnCard)
+                </td>
+                <td class="InputWidth60">  
+                    @Html.TextBoxFor(x => x.NameOnCard, new {@maxlength = "250"})
+                </td>
+            </tr>
+            <tr>
+                <td class="labels"><span class="required">*</span>
+                    @Html.LabelFor(x => x.PaymentCardNumber)
+                </td>
+                <td class="inputs">  
+                    @Html.TextBoxFor(x => x.PaymentCardNumber, new {@maxlength = "16"})&nbsp;&nbsp;<span class="example">(do not add dashes or spaces)</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="labels"><span class="required">*</span>
+                    @Html.LabelFor(x => x.PaymentCardSecurityCode)
+                </td>
+                <td class="inputs">  
+                    @Html.TextBoxFor(x => x.PaymentCardSecurityCode, new {@class = "Width30", @maxlength = "3"}) &nbsp;&nbsp;<span class="example"><a href="https://ipsquickpay.net/SysPgs/SecCode.aspx" target="_blank">(3 digit number)</a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="labels"><span class="required">*</span>
+                    @Html.LabelFor(x => x.ExpirationMonth)
+                </td>
+                <td class="inputs">  
+                    @Html.DropDownListFor(x => x.ExpirationMonth, (IEnumerable<SelectListItem>)ViewBag.ExpirationMonthList)
+                    @Html.DropDownListFor(x => x.ExpirationYear, (IEnumerable<SelectListItem>)ViewBag.ExpirationYearList)
+                </td>
+            </tr>
+            <tr>
+                <td class="labels"><span class="required">*</span>
+                    @Html.LabelFor(x => x.PhoneNumber)
+                </td>
+                <td class="inputs">  
+                    @Html.TextBoxFor(x => x.PhoneNumber, new {@maxlength = "10"})&nbsp;&nbsp;<span class="example">Example: 5035551212</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="process-actions">
+        @Html.SubmitButton("Next Step", "iebutton right")
+        <a href="https://www.nwnatural.com/AutoPay">Cancel</a>
+    </div>
+}

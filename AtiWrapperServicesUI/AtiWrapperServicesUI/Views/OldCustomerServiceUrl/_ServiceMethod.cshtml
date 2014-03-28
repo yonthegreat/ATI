@@ -1,0 +1,16 @@
+﻿@model AtiWrapperServicesUI.Models.CustomerServiceUrlViewModel
+
+<div class="editor-field">
+    @if (ViewBag.ServiceMethods != null)
+    {
+        @Html.DropDownListFor(model => model.ServiceMethod, (IEnumerable<SelectListItem>)ViewBag.ServiceMethods, "[ --- Select One --- ]")
+    }
+    else if (!String.IsNullOrEmpty(Model.ServiceMethod))
+    { 
+        @Html.DropDownListFor(model => model.ServiceMethod, new List<SelectListItem> { new SelectListItem { Text = Model.ServiceMethod, Value = Model.ServiceMethod}})
+    }
+    else
+    {
+        @Html.DropDownListFor(model => model.ServiceMethod, new List<SelectListItem> {} , "[ --- Selection Not Availaible ---]")
+    }
+</div>

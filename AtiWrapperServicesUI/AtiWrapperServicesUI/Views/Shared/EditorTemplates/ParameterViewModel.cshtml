@@ -1,0 +1,72 @@
+﻿@model AtiWrapperServicesUI.Models.ParameterViewModel
+
+@{
+    ViewBag.Title = "ParameterViewModel";
+}
+
+@Html.HiddenFor(x => x.Name)
+@Html.HiddenFor(x => x.TypeName)
+<tr>
+    <td>
+        <h3>@Html.DisplayFor(x => x.Name)</h3>
+    </td>
+    <td>
+        <h3>@Html.DisplayFor(x => x.TypeName)</h3>
+    </td>
+    <td>
+        @if(Model.TypeName != typeof(string).FullName)
+        {
+            if (Model.TypeName != typeof(double).FullName)
+            {
+                if (Model.Value.GetType().BaseType != null && Model.Value.GetType().BaseType.IsGenericType && Model.Value.GetType().BaseType.GetGenericTypeDefinition() == typeof(List<>))
+                {
+                    Type collectionType = Model.Value.GetType().BaseType.GetGenericArguments().Single();
+                    if (collectionType == typeof(string))
+                    {
+                        @Html.TextBoxFor(x => x.Value, new { Value = "" })
+                    }
+                    else if (collectionType == typeof(double))
+                    {
+                        @Html.TextBoxFor(x => x.Value)
+                    }
+                    else
+                    {
+                        @Html.EditorFor(x => x.Value)
+                    }
+                }
+                else if (Model.Value.GetType().IsArray)
+                {
+                    Type arrayBase = Model.Value.GetType().GetElementType();
+                    if (arrayBase == typeof(string))
+                    {
+                        @Html.TextBoxFor(x => x.Value, new { Value = "" })
+                    }
+                    else if (arrayBase == typeof(double))
+                    {
+                        @Html.TextBoxFor(x => x.Value)
+                    }
+                    else
+                    {
+                        @Html.EditorFor(x => x.Value)
+                    }
+                }
+                else
+                {
+                    @Html.EditorFor(x => x.Value)
+                }
+            }
+            else
+            {
+                @Html.TextBoxFor(x => x.Value)
+            }
+        }
+        else
+        {
+            @Html.TextBoxFor(x => x.Value, new { Value = "" })
+        }
+    </td>
+</tr>
+    
+    
+    
+

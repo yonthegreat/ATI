@@ -1,0 +1,33 @@
+﻿@model AtiWrapperServicesUI.Models.XmlServiceMethodTestViewModel
+
+@{
+    ViewBag.Title = "XmlServiceMethodTestView";
+}
+
+<h2>XmlServiceMethodTestView</h2>
+@using (Html.BeginForm())
+{
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        <h2>Name</h2>
+                    </td>
+                    <td>
+                        <h2>Type</h2>
+                    </td>
+                    <td>
+                        <h2>Value</h2>
+                    </td>
+                </tr>
+            </thead>
+
+        @for (int i = 0; i < Model.MethodParameters.Count; i++)
+        {
+                @Html.EditorFor(x => x.MethodParameters[i])
+        }
+        </table>
+    </div>
+    <input type ="submit" value="OK" />
+}

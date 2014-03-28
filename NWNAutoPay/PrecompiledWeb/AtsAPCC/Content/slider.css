@@ -1,0 +1,202 @@
+@charset "utf-8";
+/* CSS Document for top slider 
+*/
+
+ul#slide_control li,
+ul#slide_nav li{
+    list-style:none;
+}
+
+#slide_nav{
+	background:	transparent url(../images/news_bg.png) no-repeat scroll 0 50%;
+    left: 210px !important;
+    top: 233px !important;
+    width: 500px;
+}
+#portfolio img{
+    width: 510px;
+    height: 220px;
+}
+
+#slide_control li{
+    list-style: none;
+    display: block;
+    float:left;
+}
+#prev_button, #next_button, #pause_button, #last_button{
+    margin-left: 0px;
+}
+
+#slide_control {
+    left:540px;
+    position:absolute;
+    top:238px;
+    z-index:5000;
+}
+
+ul#portfolio li img{
+	border: 1px solid #ccc;
+	padding: 4px;
+}
+
+
+.fade{
+	margin-bottom: 2em;
+}
+
+.fade p{
+	margin-bottom: 2em;
+	text-align: center;
+	width: 100%;
+	background: #fff;
+}
+
+
+#slide_nav li:hover, #pause_button, .prev_button, .next_button, #first_button, #last_button {
+cursor: pointer;
+cursor: hand;
+z-index: 5000;
+}
+
+#slide_nav li span, #pause_button span, .prev_button span, .next_button span, #first_button span, #last_button span, #hover_next_button span, #hover_prev_button span, #water_mark span {
+margin-left: -10000px;
+}
+#slide_nav li, #pause_button, .prev_button, .next_button, #first_button, #last_button, #water_mark {
+background-repeat: no-repeat;
+overflow: hidden;
+top: 0px;
+}
+ul#slide_nav {
+padding: 15px 7px 15px 15px;
+position: absolute;
+left: 250px;
+z-index: 5000;
+}
+ul#slide_nav li {
+background-image: url(../images/button.png);
+display: block;
+float: left;
+height: 9px;
+list-style: none;
+margin: 0 0 0 3px;
+padding: 2px;
+width: 10px;
+}
+ul#slide_nav li:hover {
+}
+ul#slide_nav li#button_selected {
+background-image: url(../images/button_selected.png);
+}
+ul#slide_nav li#button_selected:hover {
+}
+/*-- first & last buttons --*/
+
+#first_button {
+background-image: url(../images/first.png);
+height: 29px;
+left: 354px;
+width: 34px;
+}
+#first_button:hover {
+background-image: url(../images/first_hover.png);
+}
+#last_button {
+background-image: url(../images/last.png);
+height: 29px;
+left: 474px;
+width: 34px;
+}
+#last_button:hover {
+background-image: url(../images/last_hover.png);
+}
+
+/*-- end first & last buttons --*/
+
+/*-- next & prev buttons --*/
+#nex_prev_buttons {
+position: absolute;
+left: 0;
+z-index: 5000;
+}
+#next_button {
+background-image: url(../images/next.png);
+height: 29px;
+left: 443px;
+width: 31px;
+}
+#next_button:hover {
+background-image: url(../images/next_hover.png);
+}
+#prev_button {
+background-image: url(../images/prev.png);
+height: 29px;
+left: 388px;
+width: 31px;
+}
+#prev_button:hover {
+background-image: url(../images/prev_hover.png);
+}
+/*-- end next & prev buttons --*/
+
+
+/*-- looks like pause button --*/
+.pause_button {
+background-image: url(../images/pause.png);
+height: 29px;
+left: 419px;
+width: 24px;
+}
+.pause_button:hover {
+background-image: url(../images/pause_hover.png);
+}
+/*-- looks like play button --*/
+.paused_button {
+background-image: url(../images/play.png);
+height: 29px;
+left: 419px;
+width: 24px;
+}
+.paused_button:hover {
+background-image: url(../images/play_hover.png);
+}
+
+/*-- hover next & hoverprev buttons --*/
+
+#hover_next_button, #hover_prev_button {
+height: 125px;
+background-repeat: no-repeat;
+overflow: hidden;
+width: 77px;
+top: 35px;
+z-index: 6000;
+}
+#hover_next_button span {
+}
+#hover_next_button {
+background-image: url(../images/hover_next.png);
+background-position: 21px 35px;
+padding: 30px 0 30px 30px;
+right: 0;
+}
+#hover_prev_button {
+background-image: url(../images/hover_prev.png);
+background-position: 8px 35px;
+padding: 30px 30px 30px 0;
+left: 0;
+}
+
+/* for slider text */
+
+ul#portfolio-desc{
+ 	color: #000;
+    text-align: left;
+    padding: 3px;
+    border: 0px solid;
+    list-style: none;
+}
+ul#portfolio-desc h2{
+	font-size:30px;
+	margin-bottom:8px;
+}
+
+/*-- end next & prev buttons --*/

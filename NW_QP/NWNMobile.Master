@@ -1,0 +1,134 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="NWNMobile.master.vb" Inherits="NW_QP.NWNMobile" %>
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>   
+        <meta name="viewport" content="width=device-width" />
+        <!--stylesheet and script load order matters   -->
+        <link href="/Content/jquery.mobile-1.0rc2.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="/Content/jquery.mobile.datebox.min.css" /> 
+    
+        <link href="/Content/NwnJQTheme.css" rel="stylesheet" type="text/css" />
+        <script src="/Scripts/jquery-1.6.4.min.js" type="text/javascript"> </script>    
+        <script src="/Scripts/jquery.mobile-1.0rc2.min.js" type="text/javascript"> </script>
+        <script type="text/javascript" src="/Scripts/jquery.mobile.datebox.min.js"> </script>
+        <link rel="stylesheet" href="/Content/Mobile.css" />
+
+        <script type="text/javascript">
+            $(document).bind("mobileinit", function () {
+                $.mobile.ajaxLinksEnabled = false;
+                $.mobile.ajaxFormsEnabled = false;
+                $.mobile.ajaxEnabled = false;
+
+            });
+
+            $('div:jqmData(role="page")').live('pagebeforeshow', function () {
+                $.mobile.ajaxLinksEnabled = false;
+                $.mobile.ajaxFormsEnabled = false;
+                $.mobile.ajaxEnabled = false;
+            });
+
+        </script>
+
+        <style type="text/css">
+            H1 {
+                color: #4b7c94;
+                font-size: 19px;
+                font-weight: bold;
+                margin: 2px 2px 2px 2px;
+            }
+
+            .label { padding-top: 10px; }
+
+            .example {
+                font-size: smaller;
+                padding-bottom: 10px;
+            }
+
+            .center { text-align: center; }
+
+
+            .formField {
+                float: left;
+                width: 94%;
+            }
+
+
+            .Error {
+                float: left;
+                padding-left: 0;
+                padding-top: 15px;
+                width: 16px;
+            }
+
+            .example { clear: left; }
+
+            .validation-summary-errors {
+                -moz-border-radius: 6px;
+                -webkit-border-radius: 6px;
+                background: #e6cec1;
+                border: 1px solid #812f17;
+                border-radius: 6px;
+                clear: both;
+                color: #812f17;
+                display: block;
+                font-size: smaller;
+                height: auto;
+                margin: 0 0 15px;
+                padding: 10px;
+                text-align: left;
+                width: 96%;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <form id="Form1" runat="server">
+            <div data-role="page" data-theme="a">        
+                <div data-role="header"  data-theme="o"> 
+                    <img id="NwLogo" src="/Images/NWNhz_small.jpg" alt="NW Natural" />         
+
+                    <div data-role="navbar" data-iconpos="left"  data-theme="o">
+                        <ul>
+                            <li><asp:LinkButton ID="LinkButton1" OnClick="LinkButtonClick" runat="server" CommandArgument="https://www.nwnatural.com" data-icon="home">Home</asp:LinkButton> </li>               
+                            <li><asp:LinkButton ID="LinkButton2" OnClick="LinkButtonClick" runat="server" CommandArgument="https://www.nwnatural.com/CustomerService/ContactUs" rel="external" data-icon="phone">Contact Us</asp:LinkButton> </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div data-role="content" >
+                    <asp:ContentPlaceHolder ID="MainBodyContent" runat="server">        
+                    </asp:ContentPlaceHolder>
+                    <div class="center">
+                        <asp:Label ID="Label1" runat="server" 
+                                Text="NOTE: Please do not use the 'Forward' or 'Back' function on your browser.  Doing so may cause your session to expire." 
+                                Font-Size="XX-Small"></asp:Label>
+                        
+                    </div>
+                    <div class="center">
+                        <img src="Images/visamcdisc.gif"  />
+                    </div>
+                    <div class="center">
+                        <img  src="Images/QualysGuard2.jpg"  />
+                    </div>
+                    <div class="center">
+                        <img style="vertical-align: text-bottom"  src="Images/InterActive_logo.png" />
+                    </div>
+                    <div class="center">
+                        <a class="PrivacyStatement" href="https://ipsquickpay.net/SysPgs/Privacy.aspx" target="_blank"  > Privacy Statement</a> 
+            
+                    </div>
+                    <asp:ContentPlaceHolder runat="server" ID="Footer">
+            
+                    </asp:ContentPlaceHolder>
+
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

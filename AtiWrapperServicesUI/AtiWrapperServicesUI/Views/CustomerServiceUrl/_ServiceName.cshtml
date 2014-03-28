@@ -1,0 +1,37 @@
+﻿@model AtiWrapperServicesUI.Models.CustomerServiceUrlViewModel
+
+
+<div class="editor-field">
+    @if (ViewBag.ServiceNames != null)
+    {
+        @Html.DropDownListFor(model => model.ServiceName, (IEnumerable<SelectListItem>)ViewBag.ServiceNames, "[ --- Select One --- ]")
+    }
+    else if (!String.IsNullOrEmpty(Model.ServiceName))
+    { 
+        @Html.DropDownListFor(model => model.ServiceName, new List<SelectListItem> { new SelectListItem { Text = Model.ServiceName, Value = Model.ServiceName}})
+    }
+    else
+    {
+        @Html.DropDownListFor(model => model.ServiceName, new List<SelectListItem> {} , "[ --- Selection Not Availaible ---]")
+    }
+</div>
+
+@if (ViewBag.WsdlAddress != null && ViewBag.ServiceAddress != null)
+{
+    string serviceAddress = (string)@ViewBag.ServiceAddress;
+    <span>
+        @Html.Label("Wsdl Address")
+        @Html.TextBox("WsdlAddress", (string)@ViewBag.WsdlAddress, new {@readonly = true})
+    </span>
+    <span>
+        @Html.Label("Service Address")
+        @Html.TextBox("ServiceAddress", serviceAddress, new {@readonly = true})
+    </span>
+    <span>
+       @* @Html.Label("Make Addresses the Same")
+        @Html.CheckBox("MakeSame", (bool?)@ViewBag.MakeSame)*@
+        @*@Html.ActionLink("Use Service Address", "ChangeEndpointAddress", "CustomerServiceUrl", new { endpointAddress = serviceAddress }, null)*@
+        <button type="submit" value="ChangeAddress" name="Command">Use Service Address</button>
+
+    </span>        
+}

@@ -1,0 +1,46 @@
+﻿@model AtiWrapperServicesUI.Models.CustomerServiceUrlViewModel
+
+<label>Return Type</label>
+<table>
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Type
+            </th>
+        </tr>
+    </thead>
+    @if (ViewBag.ReturnType != null)
+    {
+    <tr>
+         <td>@ViewBag.ReturnType.Name</td>
+         <td>@ViewBag.ReturnType.Type</td>
+    </tr>
+    }
+</table>
+
+<label>Parameters</label>
+<table>
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Type
+            </th>
+        </tr>
+    </thead>
+    @if (ViewBag.Parameters != null)
+    {
+        foreach (var param in ViewBag.Parameters)
+        {
+            <tr>
+                <td>@param.Name</td>
+                <td>@param.Type</td>
+            </tr>
+        }
+    }
+</table>

@@ -1,0 +1,57 @@
+﻿@model AtiWrapperServicesUI.Models.XmlServiceMethodParameterViewModel
+
+@{
+    ViewBag.Title = "XmlServiceMethodParameterView";
+}
+
+<h2>XmlServiceMethodParameterView</h2>
+
+@using (Html.BeginForm()) {
+    
+
+    <fieldset>
+        <legend>XmlServiceMethodParameterViewModel</legend>
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        <h2>Parameter Name</h2>
+                    </td>
+                    <td>
+                        <h2>Type</h2>
+                    </td>
+                    <td>
+                        <h2>Include</h2>
+                    </td>
+                </tr>
+            </thead>
+            @for (int i = 0; i < Model.XmlServiceMethodTypes.Count; i++)
+            {
+                @Html.EditorFor( m => Model.XmlServiceMethodTypes[i])
+            }
+
+            
+        </table>
+        <p>
+            <button type="submit" value="Ok" name="Command">Ok</button>
+            <button type="submit" value="Test" name="Command">Test</button>
+            <button type="submit" value="RollBack" name="Command">RollBack</button>
+        </p>
+    </fieldset>
+}
+@*@section Scripts {
+    <script type="text/javascript">
+        
+        $(function () {
+            $('.drop').live('change', function () {
+                var v = $('.drop').val();
+                alert("DropDown Value: ", $(this).val() ," : " ,v);
+            });
+        });
+    </script>
+    }*@
+
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+var s = $('drop option:selected').text();
+}*@

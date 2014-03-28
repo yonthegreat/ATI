@@ -1,0 +1,439 @@
+﻿@model AtiWrapperServicesUI.Models.CustomerServiceUrlViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+<fieldset>
+    <legend>Customer</legend>
+    <div>
+        <label for="customerNameLabel">Customer Name</label>
+        @(Html.Kendo()
+              .ComboBox()
+              .Name("customerName")
+              .HtmlAttributes(new { style = "width:300px" })
+              .Placeholder("Enter or Select Customer")
+              .DataTextField("Text")
+              .DataValueField("Value")
+              .Filter(FilterType.Contains)
+              .DataSource(source =>
+              {
+                  source.Read(read =>
+                  {
+                      read.Action("GetCustomers", "CustomerServiceUrl");
+                  })
+                  .ServerFiltering(true);
+              })
+              .Events(e => e.Change("customerChanged")
+            @*.Select("customerSelected")*@
+                )
+        )
+        <script>
+            function customerChanged(e) { alert("customerName change" + $("#customerName").data("kendoComboBox").text()); $("#testUrl").data("kendoComboBox").enable(true); $("#testUrl").data("kendoComboBox").focus(); };
+            @*function customerSelected(e) { alert("text value is : " + $("#customerName").data("kendoComboBox").text()); };*@
+        </script>
+    </div>
+    <div>
+        <label for="testUrl">Test URL</label>
+        @(Html.Kendo()
+                .ComboBox()
+                .Name("testUrl")
+                .CascadeFrom("customerName")
+                .HtmlAttributes(new { style = "width:300px" })
+                .Placeholder("Enter or Select Test Url")
+                .DataTextField("Text")
+                .DataValueField("Value")
+                .Filter(FilterType.Contains)
+                .DataSource(source =>
+                {
+                    source.Read(read =>
+                    {
+                        read.Action("getTestUrl", "CustomerServiceUrl").Data("getTestUrl");
+                    })
+                    .ServerFiltering(true);
+                })
+                .Enable(false)
+                .AutoBind(false)
+                .Events(e => e.Change("testUrlChanged")
+            @*.Select("testUrlSelected")*@
+                )
+        )
+        <script>
+            function getTestUrl() {
+                return {
+                    customerId: $("#customerName").val()
+                };
+            }
+            function testUrlChanged(e) { $("#testUseSource").data("kendoComboBox").enable(true); $("#testUseSource").data("kendoComboBox").focus(); };
+            @*function testUrlSelected(e) { alert("text value is : "); };*@
+        </script>
+
+        <label for="testUseSource">Test Use Source</label>
+        @(Html.Kendo()
+                .ComboBox()
+                .Name("testUseSource")
+                .CascadeFrom("testUrl")
+                .HtmlAttributes(new { style = "width:300px" })
+                .Placeholder("Enter or Select Test Use Source")
+                .DataTextField("Text")
+                .DataValueField("Value")
+                .Filter(FilterType.Contains)
+                .DataSource(source =>
+                {
+                    source.Read(read =>
+                    {
+                        read.Action("GetUseSourceEnums", "CustomerServiceUrl");
+                    })
+                    .ServerFiltering(true);
+                })
+                .Enable(false)
+                .Events(e => e.Change("testUseSourceChanged")
+            @*.Select("testUseSourceChanged")*@
+                )
+        )
+        <script>
+            function testUseSourceChanged(e) { $("#productionUrl").data("kendoComboBox").enable(true); $("#productionUrl").data("kendoComboBox").focus(); };
+            @*function testUseSourceSelected(e) { alert("text value is : "); };*@
+        </script>
+    </div>
+    <div>
+        <label for="productionUrl">Production URL</label>
+        @(Html.Kendo()
+                .ComboBox()
+                .Name("productionUrl")
+                .CascadeFrom("testUseSource")
+                .HtmlAttributes(new { style = "width:300px" })
+                .Placeholder("Enter or Select Production Url")
+                .DataTextField("Text")
+                .DataValueField("Value")
+                .Filter(FilterType.Contains)
+                .DataSource(source =>
+                {
+                    source.Read(read =>
+                    {
+                        read.Action("getProductionUrl", "CustomerServiceUrl").Data("getProductionUrl");
+                    })
+                    .ServerFiltering(true);
+                })
+                .Enable(false)
+                .AutoBind(false)
+                .Events(e => e.Change("productionUrlChanged")
+            @*.Select("productionUrlSelected")*@
+                )
+        )
+        <script>
+            function getProductionUrl() {
+                return {
+                    customerId: $("#customerName").val()
+                };
+            }
+            function productionUrlChanged(e) { $("#productionUseSource").data("kendoComboBox").enable(true); $("#productionUseSource").data("kendoComboBox").focus(); };
+            @*function productionUrlSelected(e) { alert("text value is : "); };*@
+        </script>
+        <label for="productionUseSource">Production Use Source</label>
+        @(Html.Kendo()
+                .ComboBox()
+                .Name("productionUseSource")
+                .CascadeFrom("productionUrl")
+                .HtmlAttributes(new { style = "width:300px" })
+                .Placeholder("Enter or Select Production Use Source")
+                .DataTextField("Text")
+                .DataValueField("Value")
+                .Filter(FilterType.Contains)
+                .DataSource(source =>
+                {
+                    source.Read(read =>
+                    {
+                        read.Action("GetUseSourceEnums", "CustomerServiceUrl");
+                    })
+                    .ServerFiltering(true);
+                })
+                .Enable(false)
+                .Events(e => e.Change("productionUseSourceChanged")
+            @*.Select("productionUseSourceSelected")*@
+                )
+        )
+        <script>
+            function productionUseSourceChanged(e) { $("#serviceName").data("kendoComboBox").enable(true); $("#serviceName").data("kendoComboBox").focus(); };
+            @*function productionUseSourceSelected(e) { alert("text value is : "); };*@
+        </script>
+    </div>
+    <div>
+        <label for="serviceName">Service Name</label>
+        @(Html.Kendo()
+              .ComboBox()
+              .Name("serviceName")
+              .CascadeFrom("productionUseSource")
+              .HtmlAttributes(new { style = "width:300px" })
+              .Placeholder("Enter or Select Service")
+              .DataTextField("Text")
+              .DataValueField("Value")
+              .Filter(FilterType.Contains)
+              .DataSource(source =>
+                {
+                    source.Read(read =>
+                    {
+                        read.Action("GetServiceNames", "CustomerServiceUrl").Data("getServiceNameUrl");
+                    })
+                    .ServerFiltering(true);
+                })
+              .Enable(false)
+              .AutoBind(false)
+              .Events(e => e.Change("serviceNameChanged")
+            @*.Select("serviceNameSelected")*@
+                    )
+
+        )
+        <script>
+            function getServiceNameUrl() {
+                return {
+                    customerName: $("#customerName").val(),
+                    serviceUrl: $("#testUrl").data("kendoComboBox").text()
+                };
+            }
+            function serviceNameChanged(e) { $("#serviceMethod").data("kendoComboBox").enable(true); $("#serviceMethod").data("kendoComboBox").focus(); };
+            @*function serviceNameSelected(e) { alert("text value is : " + $("#serviceName").selected); };*@
+        </script>
+    </div>
+    <div>
+        <label for="serviceMethod">Service Method</label>
+        @(Html.Kendo()
+              .ComboBox()
+              .Name("serviceMethod")
+              .CascadeFrom("serviceName")
+              .HtmlAttributes(new { style = "width:300px" })
+              .Placeholder("Enter or Select Method")
+              .DataTextField("Text")
+              .DataValueField("Value")
+              .Filter(FilterType.Contains)
+              .DataSource(source =>
+                {
+                    source.Read(read =>
+                    {
+                        read.Action("GetServiceMethods", "CustomerServiceUrl").Data("getServiceName");
+                    })
+                    .ServerFiltering(true);
+                })
+              .Enable(false)
+              .AutoBind(false)
+              .Events(e => e.Change("serviceMethodChanged")
+                            @*.Select("serviceMethodSelected")*@
+                )
+)
+        <script>
+            function getServiceName() {
+                return {
+                    serviceName: $("#serviceName").data("kendoComboBox").text()
+                };
+            }
+            function serviceMethodChanged(e) { $("#customSoapHeader").data("kendoComboBox").enable(true); $("#customSoapHeader").data("kendoComboBox").focus(); };
+            @*function serviceMethodSelected(e) { alert("text value is : " + $("#serviceMethod").selected); };*@
+        </script>
+    </div>
+    <div>
+        <label for="customSoapHeader">Custom Soap Header</label>
+        @(Html.Kendo()
+              .ComboBox()
+              .Name("customSoapHeader")
+              .CascadeFrom("serviceMethod")
+              .HtmlAttributes(new { style = "width:300px" })
+              .Placeholder("[ --- None --- ]")
+              .DataTextField("Text")
+              .DataValueField("Value")
+              .Filter(FilterType.Contains)
+              .DataSource(source =>
+                {
+                    source.Read(read =>
+                    {
+                        read.Action("GetSoapHeaders", "CustomerServiceUrl");
+                    })
+                    .ServerFiltering(true);
+                })
+              .Enable(false)
+              .AutoBind(false)
+              .Events(e => e.Select("soapHeaderSelected"))
+        )
+        <script>
+            function soapHeaderSelected(e) { alert("text value is : " + $("#customSoapHeader").selected); };
+        </script>
+    </div>
+
+
+
+
+    @*<span>
+            <button type="submit" value="FlattenReturn" id="FlattenReturnTypes" name="Command">Flatten Return Types</button>
+            <button type="submit" value="FlattenParameters" id="FlattenParameterTypes" name="Command">Flatten Parameter Types</button>
+        </span>*@
+    <p>
+        <span>
+            @*<button type="submit" value="Test" name="Command">Test Method</button>*@
+            <button type="submit" value="Save" name="Command">Save</button>
+
+        </span>
+
+    </p>
+</fieldset>
+}
+
+@section Scripts {
+    @*<script type="text/javascript">
+        (function () {
+            $(function () {
+                $("#FlattenReturnTypes").live('click', function (e) {
+                    var mName = $("#ServiceMethod").attr("value");
+                    alert("Service Method is: " + mName);
+                    var retUrl = '@Url.Content("~/CustomerServiceUrl/ReturnTypeTable?ServiceMethod=")';
+                    var withMethod = retUrl + mName;
+                    alert("Service Method Url: " + withMethod);
+                    location.href = withMethod;
+                });
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        (function () {
+            $(function () {
+                function serviceTypes(e, element) {
+                    var serviceMethod = element.attr("value");
+                    var d = "serviceMethod=" + serviceMethod;
+                    var actionURL = '@Url.Action("ServiceTypeTables", "CustomerServiceUrl")';
+                    //alert("the name is: " + serviceMethod);
+                     $.ajax({
+                         type: "POST",
+                         url: actionURL,
+                         data: d,
+                         success: function (r) {
+                             //alert("success: " + r.data);
+                             $("#service-type-tables-container").html(r.data);
+                         },
+                         complete: function () {
+                             //alert("complete:");
+                             $("#ServiceMethod").on('change', function (event) {
+                             serviceTypes(event, $(this));
+                             });
+                         },
+                         error: function (req, status, error) {
+                             alert("error:");
+                         }
+                     });
+                     e.preventDefault();
+                 }
+                 $("#ServiceMethod").on('change', function (e) {
+                     //alert("attaching js");
+                     serviceTypes(e, $(this));
+                 });
+             });
+         })();
+    </script>
+     <script type="text/javascript">
+         (function () {
+             $(function () {
+                 function serviceMethods(e, element) {
+                     var serviceName = element.attr("value");
+                     var d = "serviceName=" + serviceName;
+                     var actionURL = '@Url.Action("ServiceMethodList", "CustomerServiceUrl")';
+                    //alert("the name is: " + serviceName);
+                    $.ajax({
+                        type: "POST",
+                        url: actionURL,
+                        data: d,
+                        success: function (r) {
+                            //alert("success: " + r.data);
+                            $("#service-method-dropdown-container").html(r.data);
+                        },
+                        complete: function () {
+                            //alert("complete:");
+                            $("#ServiceName").on('change', function (event) {
+                                serviceMethods(event, $(this));
+                            });
+                        },
+                        error: function (req, status, error) {
+                            alert("error:");
+                        }
+                    });
+                    e.preventDefault();
+                }
+                $("#ServiceName").on('change', function (e) {
+                    //alert("attaching js");
+                    serviceMethods(e, $(this));
+                });
+            });
+        })();
+    </script>
+   <script type="text/javascript">
+       (function () {
+        $(function () {
+            function serviceNames(e, element) {
+                var url = element.attr("value");
+                var d = "serviceUrl=" + url;
+                var actionURL = '@Url.Action("ServiceNameList", "CustomerServiceUrl")';
+                alert("the url is: " + url);
+                $.ajax({
+                    type: "POST",
+                    url: actionURL,
+                    data: d,
+                    success: function (r) {
+                        //alert("success: " + r.data);
+                        $("#service-name-dropdown-container").html(r.data);
+                    },
+                    complete: function () {
+                        //alert("complete:");
+                        $("#TestUrl").on('change', function (event) {
+                            serviceNames(event, $(this));
+                        });
+                    },
+                    error: function (req, status, error) {
+                        alert("error:");
+                }
+                });
+                e.preventDefault();
+            }
+            $("#TestUrl").on('change', function (e) {
+                serviceNames(e, $(this));
+            });
+        });
+    })();
+    </script>
+    <script type="text/javascript">
+        (function () {
+            $(function () {
+                function serviceNames(e, element) {
+                    var url = element.attr("value");
+                    var d = "serviceUrl=" + url;
+                    var actionURL = '@Url.Action("Simple", "CustomerServiceUrl")';
+                alert("the url is: " + url);
+                $.ajax({
+                    type: "POST",
+                    url: actionURL,
+                    data: d,
+                    success: function (r) {
+                        alert("success: " + r.data);
+                        $("#service-name-dropdown-container").html(r.data);
+                    },
+                    complete: function () {
+                        alert("complete:");
+                        $("#TestUrl").on('change', function (event) {
+                            serviceNames(event, $(this));
+                        });
+                    },
+                    error: function (req, status, error) {
+                        alert("error:");
+                    }
+                });
+                e.preventDefault();
+            }
+            $("#TestUrl").on('change', function (e) {
+                serviceNames(e, $(this));
+            });
+        });
+       })();
+    </script>*@
+   
+}

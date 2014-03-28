@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="BATCH_DB_CONN" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Server=MTDog;Database=IPS_AutoPay;User ID=RptLogin;Password=xray13;Trusted_Connection=False</Value>
+    </Setting>
+    <Setting Name="SERVICES_DB_CONN" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Server=MtDog;Database=ServiceBrokerDB;User ID=RptLogin;Password=xray13;Trusted_Connection=False</Value>
+    </Setting>
+    <Setting Name="CARDTRANS_TABLE" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ATITest_CardTrans</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

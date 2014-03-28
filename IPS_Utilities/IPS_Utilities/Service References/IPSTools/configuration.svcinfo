@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;ToolsSoap&quot; /&gt;" bindingType="basicHttpBinding" name="ToolsSoap" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://mtashland/IPSToolsWS4/Tools.asmx&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;ToolsSoap&quot; contract=&quot;IPSTools.ToolsSoap&quot; name=&quot;ToolsSoap&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://mtashland/IPSToolsWS4/Tools.asmx&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;ToolsSoap&quot; contract=&quot;IPSTools.ToolsSoap&quot; name=&quot;ToolsSoap&quot; /&gt;" contractName="IPSTools.ToolsSoap" name="ToolsSoap" />
+  </endpoints>
+</configurationSnapshot>

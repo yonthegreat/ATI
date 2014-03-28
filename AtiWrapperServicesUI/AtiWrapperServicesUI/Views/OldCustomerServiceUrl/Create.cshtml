@@ -1,0 +1,231 @@
+﻿@model AtiWrapperServicesUI.Models.CustomerServiceUrlViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+
+    
+
+<h2>Create</h2>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Customer</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CustomerName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CustomerName)
+            @Html.ValidationMessageFor(model => model.CustomerName)
+        </div>
+        <div class="editor-label" >
+            @Html.LabelFor(model => model.TestUrl)
+        </div>
+        <div class="editor-field" >
+            @Html.EditorFor(model => model.TestUrl)
+            @Html.ValidationMessageFor(model => model.TestUrl)
+        </div>
+        <div class="editor-label" >
+            @Html.LabelFor(model => model.ProductionUrl)
+        </div>
+        <div class="editor-field" >
+            @Html.EditorFor(model => model.ProductionUrl)
+            @Html.ValidationMessageFor(model => model.ProductionUrl)
+        </div>
+        <div class="editor-label" >
+            @Html.LabelFor(model => model.ServiceName)
+        </div>
+        <div id="service-name-dropdown-container">
+            @Html.Partial("_ServiceName")
+        </div>
+        <div class="editor-label" >
+            @Html.LabelFor(model => model.ServiceMethod)
+        </div>
+        <div id="service-method-dropdown-container">
+            @Html.Partial("_ServiceMethod")
+        </div>
+        @*<div id="service-type-tables-container">
+            @Html.Partial("_TypeTables")
+        </div>*@
+        <div class="editor-label" >
+            @Html.LabelFor(model => model.CustomSoapHeaderName)
+        </div>
+        <div class="editor-field" >
+            @Html.DropDownListFor(model => model.CustomSoapHeaderName, Model.CustomSoapHeaderList, "[ --- None --- ]")
+        </div>
+
+        <span>
+            <button type="submit" value="FlattenReturn" id="FlattenReturnTypes" name="Command">Flatten Return Types</button>
+            <button type="submit" value="FlattenParameters" id="FlattenParameterTypes" name="Command">Flatten Parameter Types</button>
+        </span>
+        <p>
+            <span>
+                <button type="submit" value="Test" name="Command">Test Method</button>
+                <button type="submit" value="Save" name="Command">Save</button>
+
+            </span>
+            
+        </p>
+    </fieldset>
+}
+
+@section Scripts {
+    @*<script type="text/javascript">
+        (function () {
+            $(function () {
+                $("#FlattenReturnTypes").live('click', function (e) {
+                    var mName = $("#ServiceMethod").attr("value");
+                    alert("Service Method is: " + mName);
+                    var retUrl = '@Url.Content("~/CustomerServiceUrl/ReturnTypeTable?ServiceMethod=")';
+                    var withMethod = retUrl + mName;
+                    alert("Service Method Url: " + withMethod);
+                    location.href = withMethod;
+                });
+            });
+        })();
+    </script>*@
+    <script type="text/javascript">
+        (function () {
+            $(function () {
+                function serviceTypes(e, element) {
+                    var serviceMethod = element.attr("value");
+                    var d = "serviceMethod=" + serviceMethod;
+                    var actionURL = '@Url.Action("ServiceTypeTables", "CustomerServiceUrl")';
+                    //alert("the name is: " + serviceMethod);
+                     $.ajax({
+                         type: "POST",
+                         url: actionURL,
+                         data: d,
+                         success: function (r) {
+                             //alert("success: " + r.data);
+                             $("#service-type-tables-container").html(r.data);
+                         },
+                         complete: function () {
+                             //alert("complete:");
+                             $("#ServiceMethod").on('change', function (event) {
+                             serviceTypes(event, $(this));
+                             });
+                         },
+                         error: function (req, status, error) {
+                             alert("error:");
+                         }
+                     });
+                     e.preventDefault();
+                 }
+                 $("#ServiceMethod").on('change', function (e) {
+                     //alert("attaching js");
+                     serviceTypes(e, $(this));
+                 });
+             });
+         })();
+    </script>
+     <script type="text/javascript">
+         (function () {
+             $(function () {
+                 function serviceMethods(e, element) {
+                     var serviceName = element.attr("value");
+                     var d = "serviceName=" + serviceName;
+                     var actionURL = '@Url.Action("ServiceMethodList", "CustomerServiceUrl")';
+                    //alert("the name is: " + serviceName);
+                    $.ajax({
+                        type: "POST",
+                        url: actionURL,
+                        data: d,
+                        success: function (r) {
+                            //alert("success: " + r.data);
+                            $("#service-method-dropdown-container").html(r.data);
+                        },
+                        complete: function () {
+                            //alert("complete:");
+                            $("#ServiceName").on('change', function (event) {
+                                serviceMethods(event, $(this));
+                            });
+                        },
+                        error: function (req, status, error) {
+                            alert("error:");
+                        }
+                    });
+                    e.preventDefault();
+                }
+                $("#ServiceName").on('change', function (e) {
+                    //alert("attaching js");
+                    serviceMethods(e, $(this));
+                });
+            });
+        })();
+    </script>
+   <script type="text/javascript">
+       (function () {
+        $(function () {
+            function serviceNames(e, element) {
+                var url = element.attr("value");
+                var d = "serviceUrl=" + url;
+                var actionURL = '@Url.Action("ServiceNameList", "CustomerServiceUrl")';
+                alert("the url is: " + url);
+                $.ajax({
+                    type: "POST",
+                    url: actionURL,
+                    data: d,
+                    success: function (r) {
+                        //alert("success: " + r.data);
+                        $("#service-name-dropdown-container").html(r.data);
+                    },
+                    complete: function () {
+                        //alert("complete:");
+                        $("#TestUrl").on('change', function (event) {
+                            serviceNames(event, $(this));
+                        });
+                    },
+                    error: function (req, status, error) {
+                        alert("error:");
+                }
+                });
+                e.preventDefault();
+            }
+            $("#TestUrl").on('change', function (e) {
+                serviceNames(e, $(this));
+            });
+        });
+    })();
+    </script>
+    @*<script type="text/javascript">
+        (function () {
+            $(function () {
+                function serviceNames(e, element) {
+                    var url = element.attr("value");
+                    var d = "serviceUrl=" + url;
+                    var actionURL = '@Url.Action("Simple", "CustomerServiceUrl")';
+                alert("the url is: " + url);
+                $.ajax({
+                    type: "POST",
+                    url: actionURL,
+                    data: d,
+                    success: function (r) {
+                        alert("success: " + r.data);
+                        $("#service-name-dropdown-container").html(r.data);
+                    },
+                    complete: function () {
+                        alert("complete:");
+                        $("#TestUrl").on('change', function (event) {
+                            serviceNames(event, $(this));
+                        });
+                    },
+                    error: function (req, status, error) {
+                        alert("error:");
+                    }
+                });
+                e.preventDefault();
+            }
+            $("#TestUrl").on('change', function (e) {
+                serviceNames(e, $(this));
+            });
+        });
+       })();
+    </script>*@
+   
+}

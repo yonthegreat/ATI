@@ -1,0 +1,1150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="AtiWrapperServicesModel" namespace="AtiWrapperServicesORM.OpenAccess" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="AtiWrapperServicesModel" backend="mssql" default-schema="dbo" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="AtiWrapperServicesORM.OpenAccess" default="true">
+      <orm:class name="WrapperValue" uniqueId="45fe8179-b1f8-4840-9617-a46543e9131d">
+        <orm:table name="WrapperValues" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="cde24232-c5c2-4385-8e9a-e2260ba86aaa" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_value" property="Value" behavior="readwrite" uniqueId="6763da51-2b5d-4d96-a46f-118125019912" type="System.String">
+          <orm:column name="Value" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_defaultWrapperValueProperty_Id" property="DefaultWrapperValueProperty_Id" behavior="readwrite" uniqueId="a9c8c1e4-36b6-4203-8f03-903ac100a9fe" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="DefaultWrapperValueProperty_Id" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_testWrapperValueProperty_Id" property="TestWrapperValueProperty_Id" behavior="readwrite" uniqueId="d9b3c3e3-7d38-45bd-8427-5845cbd0681a" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="TestWrapperValueProperty_Id" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_wrapperValueProperty" property="WrapperValueProperty" behavior="readwrite" uniqueId="822f3487-e325-425d-bcff-b37455166fa1" type="AtiWrapperServicesORM.OpenAccess.WrapperValueProperty">
+          <orm:reference uniqueId="07f54b2a-6fea-421e-a782-3e98be323e91" association-name="WrapperValueHasWrapperValueProperty">
+            <orm:sharedfield name="_defaultWrapperValueProperty_Id" target-class="AtiWrapperServicesORM.OpenAccess.WrapperValueProperty" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_wrapperValueProperty1" property="WrapperValueProperty1" behavior="readwrite" uniqueId="b4845ee1-db1b-495f-a520-144ed2338b81" type="AtiWrapperServicesORM.OpenAccess.WrapperValueProperty">
+          <orm:reference uniqueId="e8c8d876-1d0d-471f-8bb2-5fe499597864" association-name="WrapperValueHasWrapperValueProperty1">
+            <orm:sharedfield name="_testWrapperValueProperty_Id" target-class="AtiWrapperServicesORM.OpenAccess.WrapperValueProperty" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+      </orm:class>
+      <orm:class name="WrapperValueProperty" uniqueId="a0e9b7e8-fe70-435b-9ee3-218cd1dc4157">
+        <orm:table name="WrapperValueProperties" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="3e13f8e6-0960-4d42-8b0d-653cce5579f8" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_required" property="Required" behavior="readwrite" uniqueId="f485603c-7141-4080-be1d-8efb772e2325" type="System.Boolean">
+          <orm:column name="Required" sql-type="bit" nullable="false" length="0" scale="0" ado-type="Bit" />
+        </orm:field>
+        <orm:field name="_wrapperReturnType_Id" property="WrapperReturnType_Id" behavior="readwrite" uniqueId="9d8e5440-e520-4476-8a38-30f650d5f6cd" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="WrapperReturnType_Id" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_wrapperInputParameter_Id" property="WrapperInputParameter_Id" behavior="readwrite" uniqueId="2a88912f-9a83-4aac-9eaf-c1a9f878bcb0" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="WrapperInputParameter_Id" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_wrapperMessageHeader_Id" property="WrapperMessageHeader_Id" behavior="readwrite" uniqueId="3218f64f-cf7c-417b-bf42-da9c71e0d0ec" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="WrapperMessageHeader_Id" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_qualifiedName_Id" property="QualifiedName_Id" behavior="readwrite" uniqueId="a710b4e0-2307-4c41-9357-ca6eb0747b35" type="System.Int32">
+          <orm:column name="QualifiedName_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_wrapperInputParameter" property="WrapperInputParameter" behavior="readwrite" uniqueId="ecc8e804-c8d7-40b0-8b45-da4860d50c35" type="AtiWrapperServicesORM.OpenAccess.WrapperInputParameter">
+          <orm:reference uniqueId="f742c528-1965-41ac-95a3-0485d9072195" association-name="WrapperValuePropertyHasWrapperInputParameter">
+            <orm:sharedfield name="_wrapperInputParameter_Id" target-class="AtiWrapperServicesORM.OpenAccess.WrapperInputParameter" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_wrapperReturnType" property="WrapperReturnType" behavior="readwrite" uniqueId="426ced06-abbf-4906-9b26-b5edb7fab84f" type="AtiWrapperServicesORM.OpenAccess.WrapperReturnType">
+          <orm:reference uniqueId="6f8cd2ff-aac6-4bc3-b6f6-51b4312a2f36" association-name="WrapperValuePropertyHasWrapperReturnType">
+            <orm:sharedfield name="_wrapperReturnType_Id" target-class="AtiWrapperServicesORM.OpenAccess.WrapperReturnType" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_wrapperMessageHeader" property="WrapperMessageHeader" behavior="readwrite" uniqueId="6ce4bebf-877d-4a35-b261-e1deb9855ab5" type="AtiWrapperServicesORM.OpenAccess.WrapperMessageHeader">
+          <orm:reference uniqueId="fb971f8c-e88f-4bff-a37a-94a929fc6546" association-name="WrapperValuePropertyHasWrapperMessageHeader">
+            <orm:sharedfield name="_wrapperMessageHeader_Id" target-class="AtiWrapperServicesORM.OpenAccess.WrapperMessageHeader" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_qualifiedName" property="QualifiedName" behavior="readwrite" uniqueId="363478cc-eb89-4c7d-b194-9b2c7f20043d" type="AtiWrapperServicesORM.OpenAccess.QualifiedName">
+          <orm:reference uniqueId="82b23d9e-c1cd-41af-b43f-c2ad17f14775" association-name="WrapperValuePropertyHasQualifiedName">
+            <orm:sharedfield name="_qualifiedName_Id" target-class="AtiWrapperServicesORM.OpenAccess.QualifiedName" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_wrapperValues" property="WrapperValues" behavior="readwrite" uniqueId="62ec1a96-5f20-4d82-99d1-8c6f5ce5823c" type="AtiWrapperServicesORM.OpenAccess.WrapperValue">
+          <orm:collection element-class="AtiWrapperServicesORM.OpenAccess.WrapperValue" inverse-field="_wrapperValueProperty" managed="true" order-by="" uniqueId="07f54b2a-6fea-421e-a782-3e98be323e91" />
+        </orm:field>
+        <orm:field name="_wrapperValues1" property="WrapperValues1" behavior="readwrite" uniqueId="436f53d6-4c41-4251-9596-c67883be3b8e" type="AtiWrapperServicesORM.OpenAccess.WrapperValue">
+          <orm:collection element-class="AtiWrapperServicesORM.OpenAccess.WrapperValue" inverse-field="_wrapperValueProperty1" managed="true" order-by="" uniqueId="e8c8d876-1d0d-471f-8bb2-5fe499597864" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="WrapperReturnType" uniqueId="76c91e10-ba2a-4697-9d72-7f7da26e025c">
+        <orm:table name="WrapperReturnTypes" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="813bdad9-4a50-4db5-9406-b69b8cbf4d2b" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_wrapperMethod_Id" property="WrapperMethod_Id" behavior="readwrite" uniqueId="b38ef9b3-af2e-48fb-b1ba-56d604e23ada" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="WrapperMethod_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_returnEncoding" property="ReturnEncoding" behavior="readwrite" uniqueId="a82450ea-0187-450f-a216-9c0d661da528" type="System.Int32">
+          <orm:column name="ReturnEncoding" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_wrapperMethod" property="WrapperMethod" behavior="readwrite" uniqueId="157f48d5-8a2e-44bb-ad3e-727f077df2fa" type="AtiWrapperServicesORM.OpenAccess.WrapperMethod">
+          <orm:reference uniqueId="ae4eabba-98bf-47b7-86d4-c62481ae81f5" association-name="WrapperReturnTypeHasWrapperMethod">
+            <orm:sharedfield name="_wrapperMethod_Id" target-class="AtiWrapperServicesORM.OpenAccess.WrapperMethod" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_wrapperValueProperties" property="WrapperValueProperties" behavior="readwrite" uniqueId="5f841a60-7d66-4bd2-b88c-850fc29567eb" type="AtiWrapperServicesORM.OpenAccess.WrapperValueProperty">
+          <orm:collection element-class="AtiWrapperServicesORM.OpenAccess.WrapperValueProperty" inverse-field="_wrapperReturnType" managed="true" order-by="" uniqueId="6f8cd2ff-aac6-4bc3-b6f6-51b4312a2f36" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="WrapperMethod" uniqueId="7c7890ae-46a7-42e2-b5ce-70e459fcd84e">
+        <orm:table name="WrapperMethods" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="43184bbc-2bea-467e-8cf1-1ed0b48e6637" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="f3673c72-e302-4e3a-8329-3c9c88e15faa" type="System.String">
+          <orm:column name="Name" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_serviceMethod_Id" property="ServiceMethod_Id" behavior="readwrite" uniqueId="d152ac68-f0c7-428c-a2f6-f3d9d6da69e7" type="System.Int32">
+          <orm:column name="ServiceMethod_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_serviceMethod" property="ServiceMethod" behavior="readwrite" uniqueId="f13f4b8b-c06f-4fcc-998a-69cc0d3a5e11" type="AtiWrapperServicesORM.OpenAccess.ServiceMethod">
+          <orm:reference uniqueId="87864bc1-c679-4b21-9f86-aa248fde8c5c" association-name="WrapperMethodHasServiceMethod">
+            <orm:sharedfield name="_serviceMethod_Id" target-class="AtiWrapperServicesORM.OpenAccess.ServiceMethod" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_wrapperInputParameters" property="WrapperInputParameters" behavior="readwrite" uniqueId="e3c450e9-7d4e-44c0-bf1a-409767ebed52" type="AtiWrapperServicesORM.OpenAccess.WrapperInputParameter">
+          <orm:collection element-class="AtiWrapperServicesORM.OpenAccess.WrapperInputParameter" inverse-field="_wrapperMethod" managed="true" order-by="" uniqueId="2a0f3d76-acc1-44e4-9a27-0a6c6396e333" />
+        </orm:field>
+        <orm:field name="_wrapperMessageHeaders" property="WrapperMessageHeaders" behavior="readwrite" uniqueId="da035729-5f84-4942-aff5-4175449640c1" type="AtiWrapperServicesORM.OpenAccess.WrapperMessageHeader">
+          <orm:collection element-class="AtiWrapperServicesORM.OpenAccess.WrapperMessageHeader" inverse-field="_wrapperMethod" managed="true" order-by="" uniqueId="f88adfcf-716c-4078-b0a0-dd1cfc7b18a3" />
+        </orm:field>
+        <orm:field name="_wrapperReturnTypes" property="WrapperReturnTypes" behavior="readwrite" uniqueId="6432e977-107d-482d-a572-9f8cc5100bda" type="AtiWrapperServicesORM.OpenAccess.WrapperReturnType">
+          <orm:collection element-class="AtiWrapperServicesORM.OpenAccess.WrapperReturnType" inverse-field="_wrapperMethod" managed="true" order-by="" uniqueId="ae4eabba-98bf-47b7-86d4-c62481ae81f5" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="WrapperMessageHeader" uniqueId="1b2fb96c-1050-4dd2-b684-8bf231b739fb">
+        <orm:table name="WrapperMessageHeaders" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="8811fae5-fe35-4485-bdf8-268cdf18ace6" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_wrapperMethod_Id" property="WrapperMethod_Id" behavior="readwrite" uniqueId="6a0ec444-b788-4521-af09-aa8c75d1f830" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="WrapperMethod_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_wrapperMethod" property="WrapperMethod" behavior="readwrite" uniqueId="02b65b20-7835-419d-83b8-ce87a860e845" type="AtiWrapperServicesORM.OpenAccess.WrapperMethod">
+          <orm:reference uniqueId="f88adfcf-716c-4078-b0a0-dd1cfc7b18a3" association-name="WrapperMessageHeaderHasWrapperMethod">
+            <orm:sharedfield name="_wrapperMethod_Id" target-class="AtiWrapperServicesORM.OpenAccess.WrapperMethod" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_wrapperValueProperties" property="WrapperValueProperties" behavior="readwrite" uniqueId="e79b39a9-e718-4c30-90c5-cf8c29d753e0" type="AtiWrapperServicesORM.OpenAccess.WrapperValueProperty">
+          <orm:collection element-class="AtiWrapperServicesORM.OpenAccess.WrapperValueProperty" inverse-field="_wrapperMessageHeader" managed="true" order-by="" uniqueId="fb971f8c-e88f-4bff-a37a-94a929fc6546" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="WrapperInputParameter" uniqueId="f2381340-c74c-4efb-a3ae-7a3b4df005fc">
+        <orm:table name="WrapperInputParameters" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="eb3d8d82-80a4-4b59-b11d-6ae65d94d713" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_wrapperMethod_Id" property="WrapperMethod_Id" behavior="readwrite" uniqueId="b6b0dbef-7629-4e7a-ac7d-3d8e0457235a" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="WrapperMethod_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_wrapperMethod" property="WrapperMethod" behavior="readwrite" uniqueId="91d641a3-c380-4ff4-b8e0-80b2cab2d949" type="AtiWrapperServicesORM.OpenAccess.WrapperMethod">
+          <orm:reference uniqueId="2a0f3d76-acc1-44e4-9a27-0a6c6396e333" association-name="WrapperInputParameterHasWrapperMethod">
+            <orm:sharedfield name="_wrapperMethod_Id" target-class="AtiWrapperServicesORM.OpenAccess.WrapperMethod" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_wrapperValueProperties" property="WrapperValueProperties" behavior="readwrite" uniqueId="203b02b4-8bd0-443b-8319-ca4af1e19c1a" type="AtiWrapperServicesORM.OpenAccess.WrapperValueProperty">
+          <orm:collection element-class="AtiWrapperServicesORM.OpenAccess.WrapperValueProperty" inverse-field="_wrapperInputParameter" managed="true" order-by="" uniqueId="f742c528-1965-41ac-95a3-0485d9072195" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="ServiceURL" uniqueId="135d82ab-2ec4-41c9-8e11-cec35ad3102b">
+        <orm:table name="ServiceURLs" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="40948816-2961-488d-827a-7938229c9836" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_productionURL" property="ProductionURL" behavior="readwrite" uniqueId="98e7644e-535e-48c1-95dc-4c6e503c5b1c" type="System.String">
+          <orm:column name="ProductionURL" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_testURL" property="TestURL" behavior="readwrite" uniqueId="4072b672-4c01-4998-9f6b-bda508847d0d" type="System.String">
+          <orm:column name="TestURL" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_customer_Id" property="Customer_Id" behavior="readwrite" uniqueId="1246b2e0-a4ce-42e1-bd69-e08e232fe657" type="System.Int32">
+          <orm:column name="Customer_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_productionUseSource" property="ProductionUseSource" behavior="readwrite" uniqueId="d90bc16e-7142-40f9-9f47-b4fe14d5f69a" type="AtiWrapperServices.AtiWrapperServicesEnums.UseSource">
+          <orm:column name="ProductionUseSource" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_productionWSDL" property="ProductionWSDL" behavior="readwrite" uniqueId="cd00f785-4301-4ae7-bfdb-ad4bd5a8e3a9" type="System.String">
+          <orm:column name="ProductionWSDL" sql-type="xml" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_productionCode" property="ProductionCode" behavior="readwrite" uniqueId="8333479b-767d-4c16-ad97-937e1a619f0a" type="System.String">
+          <orm:column name="ProductionCode" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_testUseSource" property="TestUseSource" behavior="readwrite" uniqueId="207fc0d0-8cd9-4953-85b7-7f6fa0cf1ddb" type="AtiWrapperServices.AtiWrapperServicesEnums.UseSource">
+          <orm:column name="TestUseSource" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_testWSDL" property="TestWSDL" behavior="readwrite" uniqueId="1239d176-e9ab-4c6d-bacb-f093adfed629" type="System.String">
+          <orm:column name="TestWSDL" sql-type="xml" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_testCode" property="TestCode" behavior="readwrite" uniqueId="f9094469-c679-4f5c-aa32-6d477a171806" type="System.String">
+          <orm:column name="TestCode" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_customer" property="Customer" behavior="readwrite" uniqueId="c084b285-6d38-4500-aa1c-16657e6b3641" type="AtiWrapperServicesORM.OpenAccess.Customer">
+          <orm:reference uniqueId="37fdec62-4622-4e69-899f-401f45ad7e7d" association-name="ServiceURLHasCustomer">
+            <orm:sharedfield name="_customer_Id" target-class="AtiWrapperServicesORM.OpenAccess.Customer" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_serviceNames" property="ServiceNames" behavior="readwrite" uniqueId="a936b081-d3f4-468c-a4a0-4cf18cf7d718" type="AtiWrapperServicesORM.OpenAccess.ServiceName">
+          <orm:collection element-class="AtiWrapperServicesORM.OpenAccess.ServiceName" inverse-field="_serviceURL" managed="true" order-by="" uniqueId="7a350c52-35b7-4105-8042-e23922978ec7" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="ServiceType" uniqueId="ab12fd11-3ad7-4c40-8200-7e9b77c0e7c1">
+        <orm:table name="ServiceTypes" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="74f911f5-b895-489f-aac7-5beefdacbc81" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="86830a6a-36e8-4432-b67a-4301e85946a6" type="System.String">
+          <orm:column name="Name" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_isSystemType" property="IsSystemType" behavior="readwrite" uniqueId="11680538-0384-46ba-ba66-712a9839a8e3" type="System.Boolean">
+          <orm:column name="IsSystemType" sql-type="bit" nullable="false" length="0" scale="0" ado-type="Bit" />
+        </orm:field>
+        <orm:field name="_typeName" property="TypeName" behavior="readwrite" uniqueId="995b06c2-ed7d-4edf-8f01-52eeb89d471e" type="System.String">
+          <orm:column name="TypeName" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_parentId" property="ParentId" behavior="readwrite" uniqueId="09d00181-658b-4e94-8956-cdbe1dec48ec" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ParentId" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_isCollectionType" property="IsCollectionType" behavior="readwrite" uniqueId="e2cb19b5-8ffa-41c0-b8db-74c76d90dae6" type="System.Boolean">
+          <orm:column name="IsCollectionType" sql-type="bit" nullable="false" length="0" scale="0" ado-type="Bit" />
+        </orm:field>
+        <orm:field name="_inputParamater_Id" property="InputParamater_Id" behavior="readwrite" uniqueId="7b96b50d-c866-497d-9ac9-655eb57c324d" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="InputParamater_Id" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_returnType_Id" property="ReturnType_Id" behavior="readwrite" uniqueId="2dc447c6-71dd-42d9-9a3b-8e902270bf59" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ReturnType_Id" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_serviceMessageHeader_Id" property="ServiceMessageHeader_Id" behavior="readwrite" uniqueId="32c6535d-4eb5-4e4f-af3b-089c3f39c383" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ServiceMessageHeader_Id" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_isEnum" property="IsEnum" behavior="readwrite" uniqueId="1ffe87a7-b13c-4a1e-8df1-65e901db541b" type="System.Boolean">
+          <orm:column name="IsEnum" sql-type="bit" nullable="false" length="0" scale="0" ado-type="Bit" />
+        </orm:field>
+        <orm:field name="_logParameter" property="LogParameter" behavior="readwrite" uniqueId="15acb282-9d63-47c6-a58f-0f5da93c2d73" type="System.Int32">
+          <orm:column name="LogParameter" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_qualifiedName_Id" property="QualifiedName_Id" behavior="readwrite" uniqueId="ee6e6563-04b4-40f1-999b-c94d7796eeb0" type="System.Int32">
+          <orm:column name="QualifiedName_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_inputParamater" property="InputParamater" behavior="readwrite" uniqueId="5bed9c70-edf1-474a-9fa8-17855faf4a22" type="AtiWrapperServicesORM.OpenAccess.InputParamater">
+          <orm:reference uniqueId="befe3acb-b51e-4b1c-8269-1cb873406b55" association-name="ServiceTypeHasInputParamater">
+            <orm:sharedfield name="_inputParamater_Id" target-class="AtiWrapperServicesORM.OpenAccess.InputParamater" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_returnType" property="ReturnType" behavior="readwrite" uniqueId="a82482fa-1e17-48b4-b4b5-4a3e8d00bcfb" type="AtiWrapperServicesORM.OpenAccess.ReturnType">
+          <orm:reference uniqueId="27b17b75-e33b-450f-ad05-e91a37e971f9" association-name="ServiceTypeHasReturnType">
+            <orm:sharedfield name="_returnType_Id" target-class="AtiWrapperServicesORM.OpenAccess.ReturnType" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_qualifiedName" property="QualifiedName" behavior="readwrite" uniqueId="79e64e80-3dd4-430c-b43b-f493dc3f1c94" type="AtiWrapperServicesORM.OpenAccess.QualifiedName">
+          <orm:reference uniqueId="abb7811e-588c-4525-ba66-77ab694b3db0" association-name="ServiceTypeHasQualifiedName">
+            <orm:sharedfield name="_qualifiedName_Id" target-class="AtiWrapperServicesORM.OpenAccess.QualifiedName" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_serviceMessageHeader" property="ServiceMessageHeader" behavior="readwrite" uniqueId="66b3e5a8-825e-4487-9963-d6aac4ddce0f" type="AtiWrapperServicesORM.OpenAccess.ServiceMessageHeader">
+          <orm:reference uniqueId="20083191-d3e4-4c0e-89e7-d49a9b6c0160" association-name="ServiceTypeHasServiceMessageHeader">
+            <orm:sharedfield name="_serviceMessageHeader_Id" target-class="AtiWrapperServicesORM.OpenAccess.ServiceMessageHeader" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+      </orm:class>
+      <orm:class name="ServiceName" uniqueId="89d6317d-5a54-4f1b-88e3-1e663e49a243">
+        <orm:table name="ServiceNames" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="a6b4431b-1b15-43da-838b-3f7cba5b2f2c" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="293c145b-e7a2-45c9-90c7-50cd2ae4f5d3" type="System.String">
+          <orm:column name="Name" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_serviceURL_Id" property="ServiceURL_Id" behavior="readwrite" uniqueId="767441af-b32c-45c2-a7ff-a6d80287b5bb" type="System.Int32">
+          <orm:column name="ServiceURL_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_serviceType" property="ServiceType" behavior="readwrite" uniqueId="70b88c5a-148a-4838-bffe-729332b2c165" type="System.Int32">
+          <orm:column name="ServiceType" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_serviceURL" property="ServiceURL" behavior="readwrite" uniqueId="5184420f-a147-463e-9b69-1d25ac5321d6" type="AtiWrapperServicesORM.OpenAccess.ServiceURL">
+          <orm:reference uniqueId="7a350c52-35b7-4105-8042-e23922978ec7" association-name="ServiceNameHasServiceURL">
+            <orm:sharedfield name="_serviceURL_Id" target-class="AtiWrapperServicesORM.OpenAccess.ServiceURL" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_serviceMethods" property="ServiceMethods" behavior="readwrite" uniqueId="2db021b1-b3f0-4146-b072-6f03e6a1ecfa" type="AtiWrapperServicesORM.OpenAccess.ServiceMethod">
+          <orm:collection element-class="AtiWrapperServicesORM.OpenAccess.ServiceMethod" inverse-field="_serviceName" managed="true" order-by="" uniqueId="bed132d7-1c89-49aa-9348-414c3d15eaa6" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="ServiceMethod" uniqueId="3cbf0eec-7af7-4e7b-a153-e1d2923fc8df">
+        <orm:table name="ServiceMethods" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="9bef0e27-9b5f-4179-8f59-1565760c315b" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="ea7eb84c-9333-4296-8a58-d1592998b394" type="System.String">
+          <orm:column name="Name" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_endpointAddressModifierOption" property="EndpointAddressModifierOption" behavior="readwrite" uniqueId="d5acbfff-0850-453d-9049-b7059906f737" type="System.Int32">
+          <orm:column name="EndpointAddressModifierOption" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_serviceName_Id" property="ServiceName_Id" behavior="readwrite" uniqueId="d0107cdc-0b2e-413b-bc88-f510921c0507" type="System.Int32">
+          <orm:column name="ServiceName_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_xmlTemplate" property="XmlTemplate" behavior="readwrite" uniqueId="82eaa21c-18ed-4455-9abf-91ff5a651847" type="System.String">
+          <orm:column name="XmlTemplate" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_xmlTypeSignature" property="XmlTypeSignature" behavior="readwrite" uniqueId="2f2c8c90-b08b-4b11-bebc-938d00b71a6f" type="System.String">
+          <orm:column name="XmlTypeSignature" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_serviceName" property="ServiceName" behavior="readwrite" uniqueId="a43b334c-34e7-4721-8e81-60c8c9a8ca2f" type="AtiWrapperServicesORM.OpenAccess.ServiceName">
+          <orm:reference uniqueId="bed132d7-1c89-49aa-9348-414c3d15eaa6" association-name="ServiceMethodHasServiceName">
+            <orm:sharedfield name="_serviceName_Id" target-class="AtiWrapperServicesORM.OpenAccess.ServiceName" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_wrapperMethods" property="WrapperMethods" behavior="readwrite" uniqueId="a87b1300-f692-4184-ade6-b330a40637d6" type="AtiWrapperServicesORM.OpenAccess.WrapperMethod">
+          <orm:collection element-class="AtiWrapperServicesORM.OpenAccess.WrapperMethod" inverse-field="_serviceMethod" managed="true" order-by="" uniqueId="87864bc1-c679-4b21-9f86-aa248fde8c5c" />
+        </orm:field>
+        <orm:field name="_inputParamaters" property="InputParamaters" behavior="readwrite" uniqueId="b48520ee-526a-4553-a9ec-d8e820fd7865" type="AtiWrapperServicesORM.OpenAccess.InputParamater">
+          <orm:collection element-class="AtiWrapperServicesORM.OpenAccess.InputParamater" inverse-field="_serviceMethod" managed="true" order-by="" uniqueId="72baefbb-b701-464b-a3b4-d374ab71d48e" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="ServiceMessageHeader" uniqueId="ec0bf0f3-94b6-4039-b937-8e990f966d52">
+        <orm:table name="ServiceMessageHeaders" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="64ee674f-476f-42a2-98c7-b9640eea7787" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_order" property="Order" behavior="readwrite" uniqueId="0b5fef84-fa2d-4973-9a17-59ea28c5d5de" type="System.Int32">
+          <orm:column name="Order" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_typeName" property="TypeName" behavior="readwrite" uniqueId="52f110d6-31a8-4c7f-b815-aae8a3c6d544" type="System.String">
+          <orm:column name="TypeName" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_assemblyName" property="AssemblyName" behavior="readwrite" uniqueId="766be7b6-6ae2-4859-9983-be1677252f44" type="System.String">
+          <orm:column name="AssemblyName" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_serviceMethod_Id" property="ServiceMethod_Id" behavior="readwrite" uniqueId="6630ef7f-530e-4224-ae7c-ceb90ab3a351" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ServiceMethod_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_serviceTypes" property="ServiceTypes" behavior="readwrite" uniqueId="adfe5d9f-2bd4-4067-a2fc-8d220ea80c42" type="AtiWrapperServicesORM.OpenAccess.ServiceType">
+          <orm:collection element-class="AtiWrapperServicesORM.OpenAccess.ServiceType" inverse-field="_serviceMessageHeader" managed="true" order-by="" uniqueId="20083191-d3e4-4c0e-89e7-d49a9b6c0160" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="ReturnType" uniqueId="db5cf47e-f947-4c72-ac0a-597fdef729df">
+        <orm:table name="ReturnTypes" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="d2454a46-08e5-4d8a-aa35-132d0a46050f" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_serviceMethod_Id" property="ServiceMethod_Id" behavior="readwrite" uniqueId="e28b821a-d359-411d-8f53-9799b9eff0e8" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ServiceMethod_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_serviceTypes" property="ServiceTypes" behavior="readwrite" uniqueId="757f651d-a198-4f32-ac65-d2b35c3be74c" type="AtiWrapperServicesORM.OpenAccess.ServiceType">
+          <orm:collection element-class="AtiWrapperServicesORM.OpenAccess.ServiceType" inverse-field="_returnType" managed="true" order-by="" uniqueId="27b17b75-e33b-450f-ad05-e91a37e971f9" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="QualifiedName" uniqueId="0976d4b7-297a-48ec-9b80-0c5127c0f3c2">
+        <orm:table name="QualifiedNames" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="7928467a-5df2-4a2d-9e30-c28d4620283e" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="399e795b-6156-4255-914d-6ff7af2d4951" type="System.String">
+          <orm:column name="Name" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_serviceTypes" property="ServiceTypes" behavior="readwrite" uniqueId="17f6e7d1-66e1-408b-901b-9200afe7f1c2" type="AtiWrapperServicesORM.OpenAccess.ServiceType">
+          <orm:collection element-class="AtiWrapperServicesORM.OpenAccess.ServiceType" inverse-field="_qualifiedName" managed="true" order-by="" uniqueId="abb7811e-588c-4525-ba66-77ab694b3db0" />
+        </orm:field>
+        <orm:field name="_wrapperValueProperties" property="WrapperValueProperties" behavior="readwrite" uniqueId="97c89f70-33dc-4b68-b843-1a4a6485b983" type="AtiWrapperServicesORM.OpenAccess.WrapperValueProperty">
+          <orm:collection element-class="AtiWrapperServicesORM.OpenAccess.WrapperValueProperty" inverse-field="_qualifiedName" managed="true" order-by="" uniqueId="82b23d9e-c1cd-41af-b43f-c2ad17f14775" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="InputParamater" uniqueId="e78f5ba3-15f6-4941-9ee6-fb9cc97acfb9">
+        <orm:table name="InputParamaters" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="ce2f8feb-7e76-453b-ad39-49f8f4f8a399" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_order" property="Order" behavior="readwrite" uniqueId="f9516881-40d9-4c56-8257-70818869bcab" type="System.Int32">
+          <orm:column name="Order" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_serviceMethod_Id" property="ServiceMethod_Id" behavior="readwrite" uniqueId="eaa9c479-96f8-469e-bb00-29fb0469aca3" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ServiceMethod_Id" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_serviceMethod" property="ServiceMethod" behavior="readwrite" uniqueId="a22ab354-d4c1-4167-ac81-9ee1aedb627e" type="AtiWrapperServicesORM.OpenAccess.ServiceMethod">
+          <orm:reference uniqueId="72baefbb-b701-464b-a3b4-d374ab71d48e" association-name="InputParamaterHasServiceMethod">
+            <orm:sharedfield name="_serviceMethod_Id" target-class="AtiWrapperServicesORM.OpenAccess.ServiceMethod" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_serviceTypes" property="ServiceTypes" behavior="readwrite" uniqueId="bb4df417-5c9e-40fd-89a7-cefc6498dc69" type="AtiWrapperServicesORM.OpenAccess.ServiceType">
+          <orm:collection element-class="AtiWrapperServicesORM.OpenAccess.ServiceType" inverse-field="_inputParamater" managed="true" order-by="" uniqueId="befe3acb-b51e-4b1c-8269-1cb873406b55" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Customer" uniqueId="cd0ebe0f-17da-45bb-bb77-faede0d5c31f">
+        <orm:table name="Customers" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="36ca76b5-0a1b-4572-9184-3bac562fa7ae" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="4475fa1a-69ac-42ea-9f3e-e09cc8d58721" type="System.String">
+          <orm:column name="Name" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_serviceURLs" property="ServiceURLs" behavior="readwrite" uniqueId="5dbce614-9631-4e2e-a530-db741d358fba" type="AtiWrapperServicesORM.OpenAccess.ServiceURL">
+          <orm:collection element-class="AtiWrapperServicesORM.OpenAccess.ServiceURL" inverse-field="_customer" managed="true" order-by="" uniqueId="37fdec62-4622-4e69-899f-401f45ad7e7d" />
+        </orm:field>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="WrapperValues">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="Value" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="DefaultWrapperValueProperty_Id" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="TestWrapperValueProperty_Id" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="WrapperValueProperties">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="Required" sql-type="bit" nullable="false" length="0" scale="0" ado-type="Bit" />
+        <orm:column name="WrapperReturnType_Id" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="WrapperInputParameter_Id" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="WrapperMessageHeader_Id" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="QualifiedName_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="WrapperReturnTypes">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="WrapperMethod_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="ReturnEncoding" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="WrapperMethods">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="Name" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="ServiceMethod_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="WrapperMessageHeaders">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="WrapperMethod_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="WrapperInputParameters">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="WrapperMethod_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="ServiceURLs">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="ProductionURL" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="TestURL" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="Customer_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="ProductionUseSource" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="ProductionWSDL" sql-type="xml" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="ProductionCode" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="TestUseSource" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="TestWSDL" sql-type="xml" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="TestCode" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+      </orm:table>
+      <orm:table name="ServiceTypes">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="Name" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="IsSystemType" sql-type="bit" nullable="false" length="0" scale="0" ado-type="Bit" />
+        <orm:column name="TypeName" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="ParentId" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="IsCollectionType" sql-type="bit" nullable="false" length="0" scale="0" ado-type="Bit" />
+        <orm:column name="InputParamater_Id" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="ReturnType_Id" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="ServiceMessageHeader_Id" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="IsEnum" sql-type="bit" nullable="false" length="0" scale="0" ado-type="Bit" />
+        <orm:column name="LogParameter" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="QualifiedName_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="ServiceNames">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="Name" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="ServiceURL_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="ServiceType" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="ServiceMethods">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="Name" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="EndpointAddressModifierOption" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="ServiceName_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="XmlTemplate" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="XmlTypeSignature" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+      </orm:table>
+      <orm:table name="ServiceMessageHeaders">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="Order" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="TypeName" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="AssemblyName" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="ServiceMethod_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="ReturnTypes">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="ServiceMethod_Id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="QualifiedNames">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="Name" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+      </orm:table>
+      <orm:table name="InputParamaters">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="Order" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="ServiceMethod_Id" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="Customers">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="Name" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+      </orm:table>
+    </orm:schema>
+    <orm:relational-naming-settings>
+      <orm:remove-leading-underscore>False</orm:remove-leading-underscore>
+      <orm:source-strategy>Property</orm:source-strategy>
+      <orm:remove-camel-case>False</orm:remove-camel-case>
+    </orm:relational-naming-settings>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>ServiceDataConnection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>Data Source=mtdog;Initial Catalog=ServiceData;Integrated Security=True</AppConfigConnectionString>
+    <InitialCatalog>ServiceData</InitialCatalog>
+    <NamingSettings>
+      <ClassRules>
+        <CaseMode>PascalCase</CaseMode>
+        <PluralizationMode>Singularize</PluralizationMode>
+      </ClassRules>
+      <FieldRules>
+        <AddPrefix>_</AddPrefix>
+        <CaseMode>CamelCase</CaseMode>
+      </FieldRules>
+      <PropertyRules>
+        <CaseMode>PascalCase</CaseMode>
+      </PropertyRules>
+      <NavigationPropertyRules />
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <GenerateDataAnnotationAttributes>true</GenerateDataAnnotationAttributes>
+      <MappingDefinitionType>Xml</MappingDefinitionType>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings>
+      <DeploymentProject>AtiWrapperServicesORM.OpenAccess</DeploymentProject>
+    </SchemaUpdateSettings>
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>MsSql</Backend>
+        <ProviderName>System.Data.SqlClient</ProviderName>
+        <Logging>
+          <MetricStoreSnapshotInterval>0</MetricStoreSnapshotInterval>
+        </Logging>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="45fe8179-b1f8-4840-9617-a46543e9131d" name="WrapperValue" namespace="AtiWrapperServicesORM.OpenAccess" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="a9c8c1e4-36b6-4203-8f03-903ac100a9fe" name="DefaultWrapperValueProperty_Id" type="Int32" label="DefaultWrapperValueProperty_Id : Int32" nullable="true" kind="Persistent" fieldName="_defaultWrapperValueProperty_Id" />
+      <Property Id="cde24232-c5c2-4385-8e9a-e2260ba86aaa" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="d9b3c3e3-7d38-45bd-8427-5845cbd0681a" name="TestWrapperValueProperty_Id" type="Int32" label="TestWrapperValueProperty_Id : Int32" nullable="true" kind="Persistent" fieldName="_testWrapperValueProperty_Id" />
+      <Property Id="6763da51-2b5d-4d96-a46f-118125019912" name="Value" label="Value : String" kind="Persistent" fieldName="_value" />
+      <AssociationTargets>
+        <Association Id="07f54b2a-6fea-421e-a782-3e98be323e91" SourceMultiplicity="ZeroOne" name="WrapperValueHasWrapperValueProperty">
+          <DomainClassMoniker name="/AtiWrapperServicesModel/WrapperValueProperty" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="385353fe-9030-4e2c-bf8a-ae776046c74f">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/WrapperValueProperty/WrapperValues" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="1d7221c8-05e5-4771-aa5a-8124a574fe53">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/WrapperValue/WrapperValueProperty" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="e8c8d876-1d0d-471f-8bb2-5fe499597864" SourceMultiplicity="ZeroOne" name="WrapperValueHasWrapperValueProperty1">
+          <DomainClassMoniker name="/AtiWrapperServicesModel/WrapperValueProperty" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="584f8e5d-0e25-402d-8fc8-3854926c3bba">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/WrapperValueProperty/WrapperValues1" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="01cc5096-7c24-4ec9-9e11-1dc2c65b7d66">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/WrapperValue/WrapperValueProperty1" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="914a97f3-f5df-4d85-9d05-7fa71f8108ce">
+          <NavigationalProperty Id="822f3487-e325-425d-bcff-b37455166fa1" name="WrapperValueProperty" type="WrapperValueProperty" label="WrapperValueProperty : WrapperValueProperty" nullable="true" kind="Persistent" fieldName="_wrapperValueProperty" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="f7403912-3f74-4410-b825-7f908712e634">
+          <NavigationalProperty Id="b4845ee1-db1b-495f-a520-144ed2338b81" name="WrapperValueProperty1" type="WrapperValueProperty" label="WrapperValueProperty1 : WrapperValueProperty" nullable="true" kind="Persistent" fieldName="_wrapperValueProperty1" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="a0e9b7e8-fe70-435b-9ee3-218cd1dc4157" name="WrapperValueProperty" namespace="AtiWrapperServicesORM.OpenAccess" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="3e13f8e6-0960-4d42-8b0d-653cce5579f8" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="a710b4e0-2307-4c41-9357-ca6eb0747b35" name="QualifiedName_Id" type="Int32" label="QualifiedName_Id : Int32" kind="Persistent" fieldName="_qualifiedName_Id" />
+      <Property Id="f485603c-7141-4080-be1d-8efb772e2325" name="Required" type="Boolean" label="Required : Boolean" kind="Persistent" fieldName="_required" />
+      <Property Id="2a88912f-9a83-4aac-9eaf-c1a9f878bcb0" name="WrapperInputParameter_Id" type="Int32" label="WrapperInputParameter_Id : Int32" nullable="true" kind="Persistent" fieldName="_wrapperInputParameter_Id" />
+      <Property Id="3218f64f-cf7c-417b-bf42-da9c71e0d0ec" name="WrapperMessageHeader_Id" type="Int32" label="WrapperMessageHeader_Id : Int32" nullable="true" kind="Persistent" fieldName="_wrapperMessageHeader_Id" />
+      <Property Id="9d8e5440-e520-4476-8a38-30f650d5f6cd" name="WrapperReturnType_Id" type="Int32" label="WrapperReturnType_Id : Int32" nullable="true" kind="Persistent" fieldName="_wrapperReturnType_Id" />
+      <AssociationTargets>
+        <Association Id="f742c528-1965-41ac-95a3-0485d9072195" SourceMultiplicity="ZeroOne" name="WrapperValuePropertyHasWrapperInputParameter">
+          <DomainClassMoniker name="/AtiWrapperServicesModel/WrapperInputParameter" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="62f77f6d-aa45-4389-8914-809f7c9a7db0">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/WrapperInputParameter/WrapperValueProperties" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="755facee-8c2b-4379-b9a6-99a6fc200b60">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/WrapperValueProperty/WrapperInputParameter" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="6f8cd2ff-aac6-4bc3-b6f6-51b4312a2f36" SourceMultiplicity="ZeroOne" name="WrapperValuePropertyHasWrapperReturnType">
+          <DomainClassMoniker name="/AtiWrapperServicesModel/WrapperReturnType" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="34cb36d1-b3e5-4867-90f8-ed8f8a56c0ac">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/WrapperReturnType/WrapperValueProperties" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="e92c16c2-4ea2-4e59-aa59-0dcbf4f147f0">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/WrapperValueProperty/WrapperReturnType" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="fb971f8c-e88f-4bff-a37a-94a929fc6546" SourceMultiplicity="ZeroOne" name="WrapperValuePropertyHasWrapperMessageHeader">
+          <DomainClassMoniker name="/AtiWrapperServicesModel/WrapperMessageHeader" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="10872681-9b52-43a2-b18d-993fe98c53a5">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/WrapperMessageHeader/WrapperValueProperties" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="e60669be-2632-401a-9144-1799be65c033">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/WrapperValueProperty/WrapperMessageHeader" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="82b23d9e-c1cd-41af-b43f-c2ad17f14775" SourceMultiplicity="ZeroOne" name="WrapperValuePropertyHasQualifiedName">
+          <DomainClassMoniker name="/AtiWrapperServicesModel/QualifiedName" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="b11b1cf9-69d5-498d-8b74-f30498ad7ea7">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/QualifiedName/WrapperValueProperties" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="d44f902b-5dff-4bd7-9e8a-808b56a78d4a">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/WrapperValueProperty/QualifiedName" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="313c5c90-17c7-409e-bc34-845ef3f345eb">
+          <NavigationalProperty Id="ecc8e804-c8d7-40b0-8b45-da4860d50c35" name="WrapperInputParameter" type="WrapperInputParameter" label="WrapperInputParameter : WrapperInputParameter" nullable="true" kind="Persistent" fieldName="_wrapperInputParameter" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="c6626741-9832-4284-aca6-f33f8e1b029e">
+          <NavigationalProperty Id="426ced06-abbf-4906-9b26-b5edb7fab84f" name="WrapperReturnType" type="WrapperReturnType" label="WrapperReturnType : WrapperReturnType" nullable="true" kind="Persistent" fieldName="_wrapperReturnType" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="9f8574e4-e2fb-4189-919a-0243d3be514a">
+          <NavigationalProperty Id="6ce4bebf-877d-4a35-b261-e1deb9855ab5" name="WrapperMessageHeader" type="WrapperMessageHeader" label="WrapperMessageHeader : WrapperMessageHeader" nullable="true" kind="Persistent" fieldName="_wrapperMessageHeader" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="51fce638-ceb1-4cda-bc82-69097a87afc8">
+          <NavigationalProperty Id="363478cc-eb89-4c7d-b194-9b2c7f20043d" name="QualifiedName" type="QualifiedName" label="QualifiedName : QualifiedName" nullable="true" kind="Persistent" fieldName="_qualifiedName" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="cf1d432f-9fa3-49fb-9276-d0decc4e2ff9">
+          <NavigationalProperty Id="62ec1a96-5f20-4d82-99d1-8c6f5ce5823c" name="WrapperValues" type="IList&lt;WrapperValue&gt;" label="WrapperValues : IList&lt;WrapperValue&gt;" nullable="true" kind="Persistent" fieldName="_wrapperValues" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="a491ff58-0424-4a7f-9efd-40610e4b21e9">
+          <NavigationalProperty Id="436f53d6-4c41-4251-9596-c67883be3b8e" name="WrapperValues1" type="IList&lt;WrapperValue&gt;" label="WrapperValues1 : IList&lt;WrapperValue&gt;" nullable="true" kind="Persistent" fieldName="_wrapperValues1" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="76c91e10-ba2a-4697-9d72-7f7da26e025c" name="WrapperReturnType" namespace="AtiWrapperServicesORM.OpenAccess" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="813bdad9-4a50-4db5-9406-b69b8cbf4d2b" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="a82450ea-0187-450f-a216-9c0d661da528" name="ReturnEncoding" type="Int32" label="ReturnEncoding : Int32" kind="Persistent" fieldName="_returnEncoding" />
+      <Property Id="b38ef9b3-af2e-48fb-b1ba-56d604e23ada" name="WrapperMethod_Id" type="Int32" label="WrapperMethod_Id : Int32" nullable="true" kind="Persistent" fieldName="_wrapperMethod_Id" />
+      <AssociationTargets>
+        <Association Id="ae4eabba-98bf-47b7-86d4-c62481ae81f5" SourceMultiplicity="ZeroOne" name="WrapperReturnTypeHasWrapperMethod">
+          <DomainClassMoniker name="/AtiWrapperServicesModel/WrapperMethod" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="dac505d1-10b6-4c90-9673-ef0de0ff4f2a">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/WrapperMethod/WrapperReturnTypes" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="8a8857aa-4113-4ac6-a911-bc1c6f72991a">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/WrapperReturnType/WrapperMethod" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="e77b5e0a-fbcc-4779-9fd0-6f9bea347e8a">
+          <NavigationalProperty Id="157f48d5-8a2e-44bb-ad3e-727f077df2fa" name="WrapperMethod" type="WrapperMethod" label="WrapperMethod : WrapperMethod" nullable="true" kind="Persistent" fieldName="_wrapperMethod" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="3b4973d6-aae7-42be-8eaf-d0c86f866943">
+          <NavigationalProperty Id="5f841a60-7d66-4bd2-b88c-850fc29567eb" name="WrapperValueProperties" type="IList&lt;WrapperValueProperty&gt;" label="WrapperValueProperties : IList&lt;WrapperValueProperty&gt;" nullable="true" kind="Persistent" fieldName="_wrapperValueProperties" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="7c7890ae-46a7-42e2-b5ce-70e459fcd84e" name="WrapperMethod" namespace="AtiWrapperServicesORM.OpenAccess" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="43184bbc-2bea-467e-8cf1-1ed0b48e6637" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="f3673c72-e302-4e3a-8329-3c9c88e15faa" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <Property Id="d152ac68-f0c7-428c-a2f6-f3d9d6da69e7" name="ServiceMethod_Id" type="Int32" label="ServiceMethod_Id : Int32" kind="Persistent" fieldName="_serviceMethod_Id" />
+      <AssociationTargets>
+        <Association Id="87864bc1-c679-4b21-9f86-aa248fde8c5c" SourceMultiplicity="ZeroOne" name="WrapperMethodHasServiceMethod">
+          <DomainClassMoniker name="/AtiWrapperServicesModel/ServiceMethod" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="43f6d07c-3bd5-4bc2-9f8c-519c415addcf">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/ServiceMethod/WrapperMethods" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="c9a8a9a6-7434-44fc-9a12-b7cb2d24da98">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/WrapperMethod/ServiceMethod" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="529d0961-eba1-4900-97e8-9ade7faaa01b">
+          <NavigationalProperty Id="f13f4b8b-c06f-4fcc-998a-69cc0d3a5e11" name="ServiceMethod" type="ServiceMethod" label="ServiceMethod : ServiceMethod" nullable="true" kind="Persistent" fieldName="_serviceMethod" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="cde0c948-d347-44e4-93f4-cf22941ea248">
+          <NavigationalProperty Id="e3c450e9-7d4e-44c0-bf1a-409767ebed52" name="WrapperInputParameters" type="IList&lt;WrapperInputParameter&gt;" label="WrapperInputParameters : IList&lt;WrapperInputParameter&gt;" nullable="true" kind="Persistent" fieldName="_wrapperInputParameters" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="ff48540c-548e-4895-95bb-ff5c75a58a5c">
+          <NavigationalProperty Id="da035729-5f84-4942-aff5-4175449640c1" name="WrapperMessageHeaders" type="IList&lt;WrapperMessageHeader&gt;" label="WrapperMessageHeaders : IList&lt;WrapperMessageHeader&gt;" nullable="true" kind="Persistent" fieldName="_wrapperMessageHeaders" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="c2730c5e-242f-4822-9a59-826186d793d2">
+          <NavigationalProperty Id="6432e977-107d-482d-a572-9f8cc5100bda" name="WrapperReturnTypes" type="IList&lt;WrapperReturnType&gt;" label="WrapperReturnTypes : IList&lt;WrapperReturnType&gt;" nullable="true" kind="Persistent" fieldName="_wrapperReturnTypes" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="1b2fb96c-1050-4dd2-b684-8bf231b739fb" name="WrapperMessageHeader" namespace="AtiWrapperServicesORM.OpenAccess" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="8811fae5-fe35-4485-bdf8-268cdf18ace6" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="6a0ec444-b788-4521-af09-aa8c75d1f830" name="WrapperMethod_Id" type="Int32" label="WrapperMethod_Id : Int32" nullable="true" kind="Persistent" fieldName="_wrapperMethod_Id" />
+      <AssociationTargets>
+        <Association Id="f88adfcf-716c-4078-b0a0-dd1cfc7b18a3" SourceMultiplicity="ZeroOne" name="WrapperMessageHeaderHasWrapperMethod">
+          <DomainClassMoniker name="/AtiWrapperServicesModel/WrapperMethod" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="6faba413-bc8d-4313-bb03-775b0d4ece5e">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/WrapperMethod/WrapperMessageHeaders" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="67a3780b-1e9d-4af2-8b2f-7d0b480cadfc">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/WrapperMessageHeader/WrapperMethod" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="a3f6fdb6-f105-4524-aa85-da1d855f8f8b">
+          <NavigationalProperty Id="02b65b20-7835-419d-83b8-ce87a860e845" name="WrapperMethod" type="WrapperMethod" label="WrapperMethod : WrapperMethod" nullable="true" kind="Persistent" fieldName="_wrapperMethod" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="feed4e92-51c7-43df-9e63-4ecee1f95a1b">
+          <NavigationalProperty Id="e79b39a9-e718-4c30-90c5-cf8c29d753e0" name="WrapperValueProperties" type="IList&lt;WrapperValueProperty&gt;" label="WrapperValueProperties : IList&lt;WrapperValueProperty&gt;" nullable="true" kind="Persistent" fieldName="_wrapperValueProperties" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="f2381340-c74c-4efb-a3ae-7a3b4df005fc" name="WrapperInputParameter" namespace="AtiWrapperServicesORM.OpenAccess" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="eb3d8d82-80a4-4b59-b11d-6ae65d94d713" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="b6b0dbef-7629-4e7a-ac7d-3d8e0457235a" name="WrapperMethod_Id" type="Int32" label="WrapperMethod_Id : Int32" nullable="true" kind="Persistent" fieldName="_wrapperMethod_Id" />
+      <AssociationTargets>
+        <Association Id="2a0f3d76-acc1-44e4-9a27-0a6c6396e333" SourceMultiplicity="ZeroOne" name="WrapperInputParameterHasWrapperMethod">
+          <DomainClassMoniker name="/AtiWrapperServicesModel/WrapperMethod" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="724ec6d4-2d9c-4ac7-9df1-2e798699ea10">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/WrapperMethod/WrapperInputParameters" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="2e4c0b4b-3bbd-4e05-96b8-11033b50667d">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/WrapperInputParameter/WrapperMethod" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="50f34f99-67bf-44e3-8f0a-260fae94b429">
+          <NavigationalProperty Id="91d641a3-c380-4ff4-b8e0-80b2cab2d949" name="WrapperMethod" type="WrapperMethod" label="WrapperMethod : WrapperMethod" nullable="true" kind="Persistent" fieldName="_wrapperMethod" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="abc565c2-a5ff-46b8-9ffa-3512f7e4eda1">
+          <NavigationalProperty Id="203b02b4-8bd0-443b-8319-ca4af1e19c1a" name="WrapperValueProperties" type="IList&lt;WrapperValueProperty&gt;" label="WrapperValueProperties : IList&lt;WrapperValueProperty&gt;" nullable="true" kind="Persistent" fieldName="_wrapperValueProperties" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="135d82ab-2ec4-41c9-8e11-cec35ad3102b" name="ServiceURL" namespace="AtiWrapperServicesORM.OpenAccess" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="40948816-2961-488d-827a-7938229c9836" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="1246b2e0-a4ce-42e1-bd69-e08e232fe657" name="Customer_Id" type="Int32" label="Customer_Id : Int32" kind="Persistent" fieldName="_customer_Id" />
+      <Property Id="8333479b-767d-4c16-ad97-937e1a619f0a" name="ProductionCode" label="ProductionCode : String" kind="Persistent" fieldName="_productionCode" />
+      <Property Id="98e7644e-535e-48c1-95dc-4c6e503c5b1c" name="ProductionURL" label="ProductionURL : String" kind="Persistent" fieldName="_productionURL" />
+      <Property Id="d90bc16e-7142-40f9-9f47-b4fe14d5f69a" name="ProductionUseSource" type="AtiWrapperServices.AtiWrapperServicesEnums.UseSource" label="ProductionUseSource : AtiWrapperServices.AtiWrapperServicesEnums.UseSource" kind="Persistent" fieldName="_productionUseSource" />
+      <Property Id="cd00f785-4301-4ae7-bfdb-ad4bd5a8e3a9" name="ProductionWSDL" label="ProductionWSDL : String" kind="Persistent" fieldName="_productionWSDL" />
+      <Property Id="f9094469-c679-4f5c-aa32-6d477a171806" name="TestCode" label="TestCode : String" kind="Persistent" fieldName="_testCode" />
+      <Property Id="4072b672-4c01-4998-9f6b-bda508847d0d" name="TestURL" label="TestURL : String" kind="Persistent" fieldName="_testURL" />
+      <Property Id="207fc0d0-8cd9-4953-85b7-7f6fa0cf1ddb" name="TestUseSource" type="AtiWrapperServices.AtiWrapperServicesEnums.UseSource" label="TestUseSource : AtiWrapperServices.AtiWrapperServicesEnums.UseSource" kind="Persistent" fieldName="_testUseSource" />
+      <Property Id="1239d176-e9ab-4c6d-bacb-f093adfed629" name="TestWSDL" label="TestWSDL : String" kind="Persistent" fieldName="_testWSDL" />
+      <AssociationTargets>
+        <Association Id="37fdec62-4622-4e69-899f-401f45ad7e7d" SourceMultiplicity="ZeroOne" name="ServiceURLHasCustomer">
+          <DomainClassMoniker name="/AtiWrapperServicesModel/Customer" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="774cdc3a-0883-4616-a0d9-44e23142bb21">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/Customer/ServiceURLs" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="06d6b067-2166-4c05-83e3-f3ad914d7e62">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/ServiceURL/Customer" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="ccd6954f-3df9-48cc-a368-e482a32ec801">
+          <NavigationalProperty Id="c084b285-6d38-4500-aa1c-16657e6b3641" name="Customer" type="Customer" label="Customer : Customer" nullable="true" kind="Persistent" fieldName="_customer" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="0169432e-a71b-4c72-bdce-66d28395a82f">
+          <NavigationalProperty Id="a936b081-d3f4-468c-a4a0-4cf18cf7d718" name="ServiceNames" type="IList&lt;ServiceName&gt;" label="ServiceNames : IList&lt;ServiceName&gt;" nullable="true" kind="Persistent" fieldName="_serviceNames" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="ab12fd11-3ad7-4c40-8200-7e9b77c0e7c1" name="ServiceType" namespace="AtiWrapperServicesORM.OpenAccess" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="74f911f5-b895-489f-aac7-5beefdacbc81" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="7b96b50d-c866-497d-9ac9-655eb57c324d" name="InputParamater_Id" type="Int32" label="InputParamater_Id : Int32" nullable="true" kind="Persistent" fieldName="_inputParamater_Id" />
+      <Property Id="e2cb19b5-8ffa-41c0-b8db-74c76d90dae6" name="IsCollectionType" type="Boolean" label="IsCollectionType : Boolean" kind="Persistent" fieldName="_isCollectionType" />
+      <Property Id="1ffe87a7-b13c-4a1e-8df1-65e901db541b" name="IsEnum" type="Boolean" label="IsEnum : Boolean" kind="Persistent" fieldName="_isEnum" />
+      <Property Id="11680538-0384-46ba-ba66-712a9839a8e3" name="IsSystemType" type="Boolean" label="IsSystemType : Boolean" kind="Persistent" fieldName="_isSystemType" />
+      <Property Id="15acb282-9d63-47c6-a58f-0f5da93c2d73" name="LogParameter" type="Int32" label="LogParameter : Int32" kind="Persistent" fieldName="_logParameter" />
+      <Property Id="86830a6a-36e8-4432-b67a-4301e85946a6" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <Property Id="09d00181-658b-4e94-8956-cdbe1dec48ec" name="ParentId" type="Int32" label="ParentId : Int32" nullable="true" kind="Persistent" fieldName="_parentId" />
+      <Property Id="ee6e6563-04b4-40f1-999b-c94d7796eeb0" name="QualifiedName_Id" type="Int32" label="QualifiedName_Id : Int32" kind="Persistent" fieldName="_qualifiedName_Id" />
+      <Property Id="2dc447c6-71dd-42d9-9a3b-8e902270bf59" name="ReturnType_Id" type="Int32" label="ReturnType_Id : Int32" nullable="true" kind="Persistent" fieldName="_returnType_Id" />
+      <Property Id="32c6535d-4eb5-4e4f-af3b-089c3f39c383" name="ServiceMessageHeader_Id" type="Int32" label="ServiceMessageHeader_Id : Int32" nullable="true" kind="Persistent" fieldName="_serviceMessageHeader_Id" />
+      <Property Id="995b06c2-ed7d-4edf-8f01-52eeb89d471e" name="TypeName" label="TypeName : String" kind="Persistent" fieldName="_typeName" />
+      <AssociationTargets>
+        <Association Id="befe3acb-b51e-4b1c-8269-1cb873406b55" SourceMultiplicity="ZeroOne" name="ServiceTypeHasInputParamater">
+          <DomainClassMoniker name="/AtiWrapperServicesModel/InputParamater" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="247dfa59-9cb7-40d7-b670-35bcc35e2b55">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/InputParamater/ServiceTypes" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="6c959794-e442-42a6-be40-2bd58693f43c">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/ServiceType/InputParamater" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="27b17b75-e33b-450f-ad05-e91a37e971f9" SourceMultiplicity="ZeroOne" name="ServiceTypeHasReturnType">
+          <DomainClassMoniker name="/AtiWrapperServicesModel/ReturnType" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="15d504c7-33b8-4b39-bade-32861d3376f5">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/ReturnType/ServiceTypes" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="b84a26d4-aa46-4505-9741-5f76a77ed76b">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/ServiceType/ReturnType" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="abb7811e-588c-4525-ba66-77ab694b3db0" SourceMultiplicity="ZeroOne" name="ServiceTypeHasQualifiedName">
+          <DomainClassMoniker name="/AtiWrapperServicesModel/QualifiedName" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="02d2a029-9a77-415d-9f30-d4dc7e82590c">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/QualifiedName/ServiceTypes" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="c079a510-f690-494f-9a0f-3d428e546c44">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/ServiceType/QualifiedName" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="20083191-d3e4-4c0e-89e7-d49a9b6c0160" SourceMultiplicity="ZeroOne" name="ServiceTypeHasServiceMessageHeader">
+          <DomainClassMoniker name="/AtiWrapperServicesModel/ServiceMessageHeader" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="f46b4475-d1a9-4ca3-bcd9-1a1942436bed">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/ServiceMessageHeader/ServiceTypes" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="08e2390a-3477-4447-93d6-3d420c74e168">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/ServiceType/ServiceMessageHeader" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="fc5484e7-d36b-47e1-b101-31dae69ebf7d">
+          <NavigationalProperty Id="5bed9c70-edf1-474a-9fa8-17855faf4a22" name="InputParamater" type="InputParamater" label="InputParamater : InputParamater" nullable="true" kind="Persistent" fieldName="_inputParamater" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="246fa97b-0710-4e35-b277-5ae23757a771">
+          <NavigationalProperty Id="a82482fa-1e17-48b4-b4b5-4a3e8d00bcfb" name="ReturnType" type="ReturnType" label="ReturnType : ReturnType" nullable="true" kind="Persistent" fieldName="_returnType" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="625b8ab8-8619-4038-986b-1a25d075e361">
+          <NavigationalProperty Id="79e64e80-3dd4-430c-b43b-f493dc3f1c94" name="QualifiedName" type="QualifiedName" label="QualifiedName : QualifiedName" nullable="true" kind="Persistent" fieldName="_qualifiedName" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="474eebee-2522-4dfa-8a11-b22239f2acac">
+          <NavigationalProperty Id="66b3e5a8-825e-4487-9963-d6aac4ddce0f" name="ServiceMessageHeader" type="ServiceMessageHeader" label="ServiceMessageHeader : ServiceMessageHeader" nullable="true" kind="Persistent" fieldName="_serviceMessageHeader" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="89d6317d-5a54-4f1b-88e3-1e663e49a243" name="ServiceName" namespace="AtiWrapperServicesORM.OpenAccess" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="a6b4431b-1b15-43da-838b-3f7cba5b2f2c" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="293c145b-e7a2-45c9-90c7-50cd2ae4f5d3" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <Property Id="70b88c5a-148a-4838-bffe-729332b2c165" name="ServiceType" type="Int32" label="ServiceType : Int32" kind="Persistent" fieldName="_serviceType" />
+      <Property Id="767441af-b32c-45c2-a7ff-a6d80287b5bb" name="ServiceURL_Id" type="Int32" label="ServiceURL_Id : Int32" kind="Persistent" fieldName="_serviceURL_Id" />
+      <AssociationTargets>
+        <Association Id="7a350c52-35b7-4105-8042-e23922978ec7" SourceMultiplicity="ZeroOne" name="ServiceNameHasServiceURL">
+          <DomainClassMoniker name="/AtiWrapperServicesModel/ServiceURL" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="5d593e6b-59d5-41d2-936d-8b4a0ba1eae6">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/ServiceURL/ServiceNames" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="23e89bb6-5d9c-4eb3-b236-2c3b08c30337">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/ServiceName/ServiceURL" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="367f0e9f-6315-4dda-b9f7-82014eba9178">
+          <NavigationalProperty Id="5184420f-a147-463e-9b69-1d25ac5321d6" name="ServiceURL" type="ServiceURL" label="ServiceURL : ServiceURL" nullable="true" kind="Persistent" fieldName="_serviceURL" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="cfc7ce96-00c1-4219-ad1a-75dbf99d6d93">
+          <NavigationalProperty Id="2db021b1-b3f0-4146-b072-6f03e6a1ecfa" name="ServiceMethods" type="IList&lt;ServiceMethod&gt;" label="ServiceMethods : IList&lt;ServiceMethod&gt;" nullable="true" kind="Persistent" fieldName="_serviceMethods" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="3cbf0eec-7af7-4e7b-a153-e1d2923fc8df" name="ServiceMethod" namespace="AtiWrapperServicesORM.OpenAccess" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="d5acbfff-0850-453d-9049-b7059906f737" name="EndpointAddressModifierOption" type="Int32" label="EndpointAddressModifierOption : Int32" kind="Persistent" fieldName="_endpointAddressModifierOption" />
+      <Property Id="9bef0e27-9b5f-4179-8f59-1565760c315b" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="ea7eb84c-9333-4296-8a58-d1592998b394" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <Property Id="d0107cdc-0b2e-413b-bc88-f510921c0507" name="ServiceName_Id" type="Int32" label="ServiceName_Id : Int32" kind="Persistent" fieldName="_serviceName_Id" />
+      <Property Id="82eaa21c-18ed-4455-9abf-91ff5a651847" name="XmlTemplate" label="XmlTemplate : String" kind="Persistent" fieldName="_xmlTemplate" />
+      <Property Id="2f2c8c90-b08b-4b11-bebc-938d00b71a6f" name="XmlTypeSignature" label="XmlTypeSignature : String" kind="Persistent" fieldName="_xmlTypeSignature" />
+      <AssociationTargets>
+        <Association Id="bed132d7-1c89-49aa-9348-414c3d15eaa6" SourceMultiplicity="ZeroOne" name="ServiceMethodHasServiceName">
+          <DomainClassMoniker name="/AtiWrapperServicesModel/ServiceName" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="a33d8987-964e-493e-9bcb-1a66a95339c2">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/ServiceName/ServiceMethods" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="617d67be-b60b-4563-89e1-ed7c0d061b66">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/ServiceMethod/ServiceName" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="fe3588c9-371a-4d5c-9be9-be07bfcae5b5">
+          <NavigationalProperty Id="a43b334c-34e7-4721-8e81-60c8c9a8ca2f" name="ServiceName" type="ServiceName" label="ServiceName : ServiceName" nullable="true" kind="Persistent" fieldName="_serviceName" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="0653c8dc-dda3-477b-b097-c3594752b946">
+          <NavigationalProperty Id="a87b1300-f692-4184-ade6-b330a40637d6" name="WrapperMethods" type="IList&lt;WrapperMethod&gt;" label="WrapperMethods : IList&lt;WrapperMethod&gt;" nullable="true" kind="Persistent" fieldName="_wrapperMethods" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="4434cc43-e556-45df-a92a-34f85de6f9ff">
+          <NavigationalProperty Id="b48520ee-526a-4553-a9ec-d8e820fd7865" name="InputParamaters" type="IList&lt;InputParamater&gt;" label="InputParamaters : IList&lt;InputParamater&gt;" nullable="true" kind="Persistent" fieldName="_inputParamaters" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="ec0bf0f3-94b6-4039-b937-8e990f966d52" name="ServiceMessageHeader" namespace="AtiWrapperServicesORM.OpenAccess" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="766be7b6-6ae2-4859-9983-be1677252f44" name="AssemblyName" label="AssemblyName : String" kind="Persistent" fieldName="_assemblyName" />
+      <Property Id="64ee674f-476f-42a2-98c7-b9640eea7787" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="0b5fef84-fa2d-4973-9a17-59ea28c5d5de" name="Order" type="Int32" label="Order : Int32" kind="Persistent" fieldName="_order" />
+      <Property Id="6630ef7f-530e-4224-ae7c-ceb90ab3a351" name="ServiceMethod_Id" type="Int32" label="ServiceMethod_Id : Int32" nullable="true" kind="Persistent" fieldName="_serviceMethod_Id" />
+      <Property Id="52f110d6-31a8-4c7f-b815-aae8a3c6d544" name="TypeName" label="TypeName : String" kind="Persistent" fieldName="_typeName" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="c5e15145-141b-4f1a-87c3-d776209e0c8c">
+          <NavigationalProperty Id="adfe5d9f-2bd4-4067-a2fc-8d220ea80c42" name="ServiceTypes" type="IList&lt;ServiceType&gt;" label="ServiceTypes : IList&lt;ServiceType&gt;" nullable="true" kind="Persistent" fieldName="_serviceTypes" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="db5cf47e-f947-4c72-ac0a-597fdef729df" name="ReturnType" namespace="AtiWrapperServicesORM.OpenAccess" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="d2454a46-08e5-4d8a-aa35-132d0a46050f" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="e28b821a-d359-411d-8f53-9799b9eff0e8" name="ServiceMethod_Id" type="Int32" label="ServiceMethod_Id : Int32" nullable="true" kind="Persistent" fieldName="_serviceMethod_Id" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="8624e533-f2ea-45c3-bb2c-05f4e96e9c22">
+          <NavigationalProperty Id="757f651d-a198-4f32-ac65-d2b35c3be74c" name="ServiceTypes" type="IList&lt;ServiceType&gt;" label="ServiceTypes : IList&lt;ServiceType&gt;" nullable="true" kind="Persistent" fieldName="_serviceTypes" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="0976d4b7-297a-48ec-9b80-0c5127c0f3c2" name="QualifiedName" namespace="AtiWrapperServicesORM.OpenAccess" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="7928467a-5df2-4a2d-9e30-c28d4620283e" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="399e795b-6156-4255-914d-6ff7af2d4951" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="7239d982-be3a-4a2d-9457-158e0753b852">
+          <NavigationalProperty Id="17f6e7d1-66e1-408b-901b-9200afe7f1c2" name="ServiceTypes" type="IList&lt;ServiceType&gt;" label="ServiceTypes : IList&lt;ServiceType&gt;" nullable="true" kind="Persistent" fieldName="_serviceTypes" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="af576c82-d3b0-4a17-9937-ff086e0c8aa8">
+          <NavigationalProperty Id="97c89f70-33dc-4b68-b843-1a4a6485b983" name="WrapperValueProperties" type="IList&lt;WrapperValueProperty&gt;" label="WrapperValueProperties : IList&lt;WrapperValueProperty&gt;" nullable="true" kind="Persistent" fieldName="_wrapperValueProperties" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="e78f5ba3-15f6-4941-9ee6-fb9cc97acfb9" name="InputParamater" namespace="AtiWrapperServicesORM.OpenAccess" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="ce2f8feb-7e76-453b-ad39-49f8f4f8a399" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="f9516881-40d9-4c56-8257-70818869bcab" name="Order" type="Int32" label="Order : Int32" kind="Persistent" fieldName="_order" />
+      <Property Id="eaa9c479-96f8-469e-bb00-29fb0469aca3" name="ServiceMethod_Id" type="Int32" label="ServiceMethod_Id : Int32" nullable="true" kind="Persistent" fieldName="_serviceMethod_Id" />
+      <AssociationTargets>
+        <Association Id="72baefbb-b701-464b-a3b4-d374ab71d48e" SourceMultiplicity="ZeroOne" name="InputParamaterHasServiceMethod">
+          <DomainClassMoniker name="/AtiWrapperServicesModel/ServiceMethod" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="c88c2073-f459-4364-87f3-ace0ff8e62a7">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/ServiceMethod/InputParamaters" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="c92ffaa4-c77d-4ed9-8cc3-41ece93bf79a">
+              <NavigationalPropertyMoniker name="/AtiWrapperServicesModel/InputParamater/ServiceMethod" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="294ca4cf-3e32-4a35-abed-082295313eef">
+          <NavigationalProperty Id="bb4df417-5c9e-40fd-89a7-cefc6498dc69" name="ServiceTypes" type="IList&lt;ServiceType&gt;" label="ServiceTypes : IList&lt;ServiceType&gt;" nullable="true" kind="Persistent" fieldName="_serviceTypes" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="c4de57cf-fbb7-4e23-8a65-4dd9f979ddda">
+          <NavigationalProperty Id="a22ab354-d4c1-4167-ac81-9ee1aedb627e" name="ServiceMethod" type="ServiceMethod" label="ServiceMethod : ServiceMethod" nullable="true" kind="Persistent" fieldName="_serviceMethod" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="cd0ebe0f-17da-45bb-bb77-faede0d5c31f" name="Customer" namespace="AtiWrapperServicesORM.OpenAccess" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="36ca76b5-0a1b-4572-9184-3bac562fa7ae" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="4475fa1a-69ac-42ea-9f3e-e09cc8d58721" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="5dd61640-326a-41ce-bcc3-07d43dee7c19">
+          <NavigationalProperty Id="5dbce614-9631-4e2e-a530-db741d358fba" name="ServiceURLs" type="IList&lt;ServiceURL&gt;" label="ServiceURLs : IList&lt;ServiceURL&gt;" nullable="true" kind="Persistent" fieldName="_serviceURLs" isDependent="false" isManaged="true" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="3df354e9-072e-4cf3-beda-92ea35e4ec71">
+      <domainContainer name="AtiWrapperServicesModel" namespace="AtiWrapperServicesORM.OpenAccess" showPropertiesCompartment="true">
+        <entitySetProperty name="WrapperValues" namespace="AtiWrapperServicesORM.OpenAccess" type="WrapperValue" label="WrapperValues : IQueryable&lt;AtiWrapperServicesORM.OpenAccess.WrapperValue&gt;" />
+        <entitySetProperty name="WrapperValueProperties" namespace="AtiWrapperServicesORM.OpenAccess" type="WrapperValueProperty" label="WrapperValueProperties : IQueryable&lt;AtiWrapperServicesORM.OpenAccess.WrapperValueProperty&gt;" />
+        <entitySetProperty name="WrapperReturnTypes" namespace="AtiWrapperServicesORM.OpenAccess" type="WrapperReturnType" label="WrapperReturnTypes : IQueryable&lt;AtiWrapperServicesORM.OpenAccess.WrapperReturnType&gt;" />
+        <entitySetProperty name="WrapperMethods" namespace="AtiWrapperServicesORM.OpenAccess" type="WrapperMethod" label="WrapperMethods : IQueryable&lt;AtiWrapperServicesORM.OpenAccess.WrapperMethod&gt;" />
+        <entitySetProperty name="WrapperMessageHeaders" namespace="AtiWrapperServicesORM.OpenAccess" type="WrapperMessageHeader" label="WrapperMessageHeaders : IQueryable&lt;AtiWrapperServicesORM.OpenAccess.WrapperMessageHeader&gt;" />
+        <entitySetProperty name="WrapperInputParameters" namespace="AtiWrapperServicesORM.OpenAccess" type="WrapperInputParameter" label="WrapperInputParameters : IQueryable&lt;AtiWrapperServicesORM.OpenAccess.WrapperInputParameter&gt;" />
+        <entitySetProperty name="ServiceURLs" namespace="AtiWrapperServicesORM.OpenAccess" type="ServiceURL" label="ServiceURLs : IQueryable&lt;AtiWrapperServicesORM.OpenAccess.ServiceURL&gt;" />
+        <entitySetProperty name="ServiceTypes" namespace="AtiWrapperServicesORM.OpenAccess" type="ServiceType" label="ServiceTypes : IQueryable&lt;AtiWrapperServicesORM.OpenAccess.ServiceType&gt;" />
+        <entitySetProperty name="ServiceNames" namespace="AtiWrapperServicesORM.OpenAccess" type="ServiceName" label="ServiceNames : IQueryable&lt;AtiWrapperServicesORM.OpenAccess.ServiceName&gt;" />
+        <entitySetProperty name="ServiceMethods" namespace="AtiWrapperServicesORM.OpenAccess" type="ServiceMethod" label="ServiceMethods : IQueryable&lt;AtiWrapperServicesORM.OpenAccess.ServiceMethod&gt;" />
+        <entitySetProperty name="ServiceMessageHeaders" namespace="AtiWrapperServicesORM.OpenAccess" type="ServiceMessageHeader" label="ServiceMessageHeaders : IQueryable&lt;AtiWrapperServicesORM.OpenAccess.ServiceMessageHeader&gt;" />
+        <entitySetProperty name="ReturnTypes" namespace="AtiWrapperServicesORM.OpenAccess" type="ReturnType" label="ReturnTypes : IQueryable&lt;AtiWrapperServicesORM.OpenAccess.ReturnType&gt;" />
+        <entitySetProperty name="QualifiedNames" namespace="AtiWrapperServicesORM.OpenAccess" type="QualifiedName" label="QualifiedNames : IQueryable&lt;AtiWrapperServicesORM.OpenAccess.QualifiedName&gt;" />
+        <entitySetProperty name="InputParamaters" namespace="AtiWrapperServicesORM.OpenAccess" type="InputParamater" label="InputParamaters : IQueryable&lt;AtiWrapperServicesORM.OpenAccess.InputParamater&gt;" />
+        <entitySetProperty name="Customers" namespace="AtiWrapperServicesORM.OpenAccess" type="Customer" label="Customers : IQueryable&lt;AtiWrapperServicesORM.OpenAccess.Customer&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>

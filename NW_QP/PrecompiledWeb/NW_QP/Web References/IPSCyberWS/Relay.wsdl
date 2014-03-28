@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.activetelesource.com/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.activetelesource.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.activetelesource.com/webservices/">
+      <s:element name="RunTrans">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantReferenceCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReconciliationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InvoiceReferenceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserPO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerAccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NameSuffix" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardExpiration" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardSecurityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InvalidAVSCodes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OptionalParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Test" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunTransResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RunTransResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authorize">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantReferenceCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReconciliationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InvoiceReferenceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserPO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerAccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NameSuffix" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardExpiration" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardSecurityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InvalidAVSCodes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OptionalParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Test" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthorizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Capture">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AuthRequestID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReconciliationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantReferenceCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OptionalParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Test" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CaptureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CaptureResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthReversal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantReferenceCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AuthRequestID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReversalAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OptionalParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Test" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthReversalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthReversalResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RunTransSoapIn">
+    <wsdl:part name="parameters" element="tns:RunTrans" />
+  </wsdl:message>
+  <wsdl:message name="RunTransSoapOut">
+    <wsdl:part name="parameters" element="tns:RunTransResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthorizeSoapIn">
+    <wsdl:part name="parameters" element="tns:Authorize" />
+  </wsdl:message>
+  <wsdl:message name="AuthorizeSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthorizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CaptureSoapIn">
+    <wsdl:part name="parameters" element="tns:Capture" />
+  </wsdl:message>
+  <wsdl:message name="CaptureSoapOut">
+    <wsdl:part name="parameters" element="tns:CaptureResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthReversalSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthReversal" />
+  </wsdl:message>
+  <wsdl:message name="AuthReversalSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthReversalResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RelaySoap">
+    <wsdl:operation name="RunTrans">
+      <wsdl:input message="tns:RunTransSoapIn" />
+      <wsdl:output message="tns:RunTransSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Authorize">
+      <wsdl:input message="tns:AuthorizeSoapIn" />
+      <wsdl:output message="tns:AuthorizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Capture">
+      <wsdl:input message="tns:CaptureSoapIn" />
+      <wsdl:output message="tns:CaptureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthReversal">
+      <wsdl:input message="tns:AuthReversalSoapIn" />
+      <wsdl:output message="tns:AuthReversalSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RelaySoap" type="tns:RelaySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RunTrans">
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/RunTrans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authorize">
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/Authorize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Capture">
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/Capture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthReversal">
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/AuthReversal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RelaySoap12" type="tns:RelaySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RunTrans">
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/RunTrans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authorize">
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/Authorize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Capture">
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/Capture" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthReversal">
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/AuthReversal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Relay">
+    <wsdl:port name="RelaySoap" binding="tns:RelaySoap">
+      <soap:address location="http://mtgoode/IPSCyberWS2/Relay.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RelaySoap12" binding="tns:RelaySoap12">
+      <soap12:address location="http://mtgoode/IPSCyberWS2/Relay.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

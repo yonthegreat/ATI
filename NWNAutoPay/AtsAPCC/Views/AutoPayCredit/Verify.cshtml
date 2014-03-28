@@ -1,0 +1,83 @@
+﻿@using AtsAPCC.Extensions
+@model AtsAPCC.Models.AutoPayEditModel
+@{
+    ViewBag.Title = "NWN | Auto Pay by Debit/Credit Card";
+}
+ <h1 class="big">Auto Pay by Debit/Credit Card</h1>
+
+        <div id="progress-indicator"><!--BEGIN PROGRESS INDICATOR-->
+          <div class="step">
+            <div class="number">1</div>
+            <div class="title">Billing Information</div>
+          </div>
+          <div class="step current">
+            <div class="number">2</div>
+            <div class="title">Confirm</div>
+          </div>
+          <div class="step">
+            <div class="number">3</div>
+            <div class="title">Receipt</div>
+          </div>
+        </div><!--END PROGRESS INDICATOR-->
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.ExpirationMonth)
+    @Html.HiddenFor(x => x.ExpirationYear)
+    <div class="signup">
+        <table>
+            <tr>
+                <td class="labels">
+                    @Html.LabelFor(x => x.AccountNumber)
+                </td>
+                <td class="inputs">  
+                    @Html.DisplayFor(x => x.AccountNumber)
+                </td>
+            </tr>              
+            <tr>
+                <td class="labels">
+                    @Html.LabelFor(x => x.NameOnCard)
+                </td>
+                <td class="InputWidth60">  
+                    @Html.DisplayFor(x => x.NameOnCard)
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    @Html.LabelFor(x => x.ObscuredPaymentCardNumber)
+                </td>
+                <td class="inputs">  
+                   <span>************</span>@Html.DisplayFor(x => x.ObscuredPaymentCardNumber)
+                </td>
+            </tr>
+             <tr>
+                <td class="labels">
+                    @Html.LabelFor(x => x.PaymentCardSecurityCode)
+                </td>
+                <td class="inputs">  
+                    <span>***</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    @Html.LabelFor(x => x.ExpirationMonth)
+                </td>
+                <td class="inputs">  
+                    @Html.DisplayFor(x => x.ExpirationMonth)/@Html.DisplayFor(x => x.ExpirationYear)
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    @Html.LabelFor(x => x.PhoneNumber)
+                </td>
+                <td class="InputWidth60">  
+                    @Html.DisplayFor(x => x.PhoneNumber)
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="process-actions">
+        @Html.SubmitButton("Submit", cssClass: "iebutton right")
+        @Html.ActionLink("Back", "Index")
+    </div>
+}

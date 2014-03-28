@@ -1,0 +1,240 @@
+﻿/*
+Mobile styles
+*/
+
+/* Don's Styles' */
+
+p {
+    font-size: smaller;
+}
+.message {
+    float: left;
+    width: 96%;
+    height: auto;
+    padding: 10px;
+    color: #333;
+    border: 1px solid #386485;
+    background: #eaf4f5;
+    color: #386485;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px; 
+    font-weight: bold;
+    margin: 3px 3px;
+}
+
+.message.error {
+    border: 1px solid #812f17;
+    background: #e6cec1;
+    color: #812f17;
+    margin: 3px 7px;
+}
+
+.message.success {
+	border: 1px solid #3e9322;
+	background: #d1f6d6;
+	color: #3e9322;
+}
+
+.validation-summary-errors {
+    width: 91%;
+    height: auto;
+    clear: both;
+    padding: 10px;
+    margin: 0px 0 15px;
+    display: block;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #812f17;
+    background: #e6cec1;
+    color: #812f17;
+}
+
+.alert-errors {
+    width: 100%;
+    clear: both;
+    padding: 5px 5px 5px 5px;
+    margin: 0px 0 0px 0px;
+    display: block;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    border: 0px solid #812f17;
+    background: #e6cec1;
+    color: #fff;
+    text-align: center;
+    vertical-align:text-bottom;
+}
+
+a.alert-errors {color: #812f17; text-decoration: none; }
+a:link.alert-errors {color: #812f17; text-decoration: none; }
+a:active.alert-errors {color: #812f17; text-decoration: none; }
+a:visited.alert-errors {color: #812f17; text-decoration: none; }
+a:hover.alert-errors {color: #812f17; text-decoration: none; }
+
+.validation-summary-errors UL LI
+{
+    display: list-item;
+    list-style-type: disc;
+    list-style-image: none;
+    margin-top: 5px;
+}
+
+.label-value-pair {
+    margin-bottom: 10px;
+}
+
+.label-value-pair label 
+{
+    font-weight: bold;
+}
+
+/* Don's Styles' */
+
+.leftPadding25 
+{
+    padding-left: 25px; 
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.textRight {
+     text-align: right;
+}
+
+.textLeft {
+     text-align: left;
+}
+
+.tout 
+{
+    width:100px;
+    height:60px; 
+    float: left; 
+    border-radius: 15px; 
+    text-align: center; 
+    vertical-align: middle; 
+    display: table-cell; 
+    padding-top: 40px; 
+    border-width: 9px; 
+    text-decoration: none;
+    
+}
+.tout.right {
+    float: right;
+}
+
+.tout.left {
+    float: left;
+}
+.tout.Green 
+{
+    background: #BBEC9B; 
+    color: #3A6b1a;     
+    border: #BBEC9B;
+    background-image: linear-gradient(top,#BBEC9B,#FFFFFF);
+    
+}
+
+.tout.Blue 
+{
+    background: #6497D9;
+    color: #B6CBE4;    
+}
+
+.noLinkUnderline {
+    text-decoration: none;
+}
+
+h3.mobile {
+    margin:2px 2px 2px 2px;
+    color: #4B7C94;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.ui-icon-myapp-email {
+    background-image: url(/css/img/AllenIcon.png);
+}
+
+.ui-icon-email {
+    background-image: url(/css/img/email.png);
+}
+
+.ui-icon-phone {
+    background-image: url(/css/img/Phone.png);
+}
+
+
+.ui-icon-key {
+    background-image: url(/css/img/key.png);
+}
+.ui-icon-door {
+    background-image: url(/css/img/22537A.png);
+    visibility:hidden;
+    
+}
+.ui-icon-hidden {
+    visibility:hidden;
+    
+}
+
+.ui-selectmenu { z-index: 1100; }
+ 
+ .tRed {
+     color: #ff0000;
+     float: left;
+ }
+ 
+ .search-result-navigation {
+    text-align: center;
+     clear: both;
+    display: block;
+     width: 100%;
+}
+
+.search-result-navigation div 
+{
+    clear: both;
+    display: block;
+    position:relative;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    float: left;
+    text-align: center;
+    width: 99%;
+}
+
+.search-result-navigation-inner{
+margin: 0 auto;
+}
+
+.moneyColumn {    
+    text-align: right;
+    text-wrap: none;
+}
+
+.payMyBillSubNote {    
+            padding-left: 25px;
+            font-weight: bold;
+            }
+
+.mobileAccountHistoryText {
+font-size: 15px;
+}
+
+.paystationResults {
+     padding: 20px; 
+}
+.paystationResultsIndent {
+     padding: 25px; 
+}
+
+/* from type-image.css */
+h2.subhead { font-size: 15px; color: #777676; font-weight: bold; margin: 5px 0 10px 0; }

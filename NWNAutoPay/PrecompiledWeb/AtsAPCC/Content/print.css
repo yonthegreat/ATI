@@ -1,0 +1,58 @@
+﻿#leftnav, #header, #leftnav ul, #leftnav ul li, #leftnav div, #footer, #quick-profile, .no-print, #sidebar,
+input[type=button],input[type=submit]
+{
+    display:none;
+    position:absolute;
+
+}
+
+.NominationReportMessage
+{
+    display:none;
+    position:absolute;
+}
+
+
+#wrap, #page, #main, #content
+{
+    width:7.5in;
+}
+
+#content #main 
+{
+    width:auto;
+    float:none;
+}
+
+.smallbox TABLE TR TD INPUT[type=text],
+input[type=text]
+{
+    border:0px;
+}
+
+select
+{
+    display:none;
+}
+
+.print-only
+{
+    display:inline;
+}
+
+#nominationpartial
+{
+    display:block;    
+    width:6.5in;
+    font-size:90%;
+}
+
+#nominationpartial TABLE TR TD
+{
+    font-size:90%;
+}
+
+.statement
+{   
+    font-size:90%;
+}

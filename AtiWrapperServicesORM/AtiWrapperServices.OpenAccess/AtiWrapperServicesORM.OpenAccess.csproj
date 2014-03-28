@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9544B1CE-E0AE-4550-A439-352E2183D465}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AtiWrapperServicesORM.OpenAccess</RootNamespace>
+    <AssemblyName>AtiWrapperServicesORM.OpenAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Microsoft.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <HintPath>..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.ComponentModel.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <HintPath>..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.DataSetExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.XML.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess, Version=2013.3.1320.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342">
+      <HintPath>C:\Program Files (x86)\Telerik\Data Access\bin\Telerik.OpenAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess.35.Extensions, Version=2013.3.1320.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342">
+      <HintPath>C:\Program Files (x86)\Telerik\Data Access\bin\Telerik.OpenAccess.35.Extensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AtiWrapperServicesEnums\AtiWrapperServicesEnums.cs" />
+    <Compile Include="AtiWrapperServicesModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AtiWrapperServicesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.generated.cs">
+      <DependentUpon>AtiWrapperServicesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="InputParamater.generated.cs">
+      <DependentUpon>AtiWrapperServicesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EntityDiagrams.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityDiagrams.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="QualifiedName.generated.cs">
+      <DependentUpon>AtiWrapperServicesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="ReturnType.generated.cs">
+      <DependentUpon>AtiWrapperServicesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceMessageHeader.generated.cs">
+      <DependentUpon>AtiWrapperServicesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceMethod.generated.cs">
+      <DependentUpon>AtiWrapperServicesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceName.generated.cs">
+      <DependentUpon>AtiWrapperServicesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceType.generated.cs">
+      <DependentUpon>AtiWrapperServicesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceURL.generated.cs">
+      <DependentUpon>AtiWrapperServicesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="WrapperInputParameter.generated.cs">
+      <DependentUpon>AtiWrapperServicesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="WrapperMessageHeader.generated.cs">
+      <DependentUpon>AtiWrapperServicesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="WrapperMethod.generated.cs">
+      <DependentUpon>AtiWrapperServicesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="WrapperReturnType.generated.cs">
+      <DependentUpon>AtiWrapperServicesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="WrapperValue.generated.cs">
+      <DependentUpon>AtiWrapperServicesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="WrapperValueProperty.generated.cs">
+      <DependentUpon>AtiWrapperServicesModel.rlinq</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <OpenAccessDeploy Include="EntityDiagrams.rlinq">
+      <Generator>MetaModelCodeGenerator</Generator>
+      <LastGenOutput>EntityDiagrams.cs</LastGenOutput>
+    </OpenAccessDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <OpenAccessDeploy Include="AtiWrapperServicesModel.rlinq">
+      <Generator>MetaModelCodeGenerator</Generator>
+      <LastGenOutput>AtiWrapperServicesModel.cs</LastGenOutput>
+    </OpenAccessDeploy>
+    <None Include="AtiWrapperServicesModel.rlinq.diagram">
+      <DependentUpon>AtiWrapperServicesModel.rlinq</DependentUpon>
+    </None>
+    <None Include="EntityDiagrams.rlinq.diagram">
+      <DependentUpon>EntityDiagrams.rlinq</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Condition="Exists('$(MSBuildExtensionsPath)\OpenAccess.targets')" Project="$(MSBuildExtensionsPath)\OpenAccess.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

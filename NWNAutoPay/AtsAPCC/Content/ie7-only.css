@@ -1,0 +1,6 @@
+.process-actions input[type=submit].iebutton {
+	overflow: visible;
+	padding: 3px 6px;
+	border: none;
+	font-family: Helvetica, Arial, Sans-Serif;
+}

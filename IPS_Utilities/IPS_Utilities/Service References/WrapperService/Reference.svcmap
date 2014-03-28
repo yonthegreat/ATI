@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1b35eb7b-3c15-4dd6-9a05-cf312d4516c8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://MtDog:81/WrapperService/WrapperService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WrapperService3.xsd" MetadataType="Schema" ID="621e7448-5488-4081-b4fd-99db735d02d4" SourceId="1" SourceUrl="http://mtdog:81/WrapperService/WrapperService.svc?xsd=xsd0" />
+    <MetadataFile FileName="WrapperService31.xsd" MetadataType="Schema" ID="90624aa2-9b9f-4936-8cdb-4947c0d306f2" SourceId="1" SourceUrl="http://mtdog:81/WrapperService/WrapperService.svc?xsd=xsd1" />
+    <MetadataFile FileName="WrapperService1.wsdl" MetadataType="Wsdl" ID="a789edb6-70df-48cd-9631-2d29581e8eda" SourceId="1" SourceUrl="http://mtdog:81/WrapperService/WrapperService.svc?wsdl" />
+    <MetadataFile FileName="WrapperService32.xsd" MetadataType="Schema" ID="6eb726dd-7474-462d-b21a-954f929695a0" SourceId="1" SourceUrl="http://mtdog:81/WrapperService/WrapperService.svc?xsd=xsd2" />
+    <MetadataFile FileName="WrapperService1.disco" MetadataType="Disco" ID="390ec1c1-aed9-46ae-ac52-8b6d1bc22020" SourceId="1" SourceUrl="http://mtdog:81/WrapperService/WrapperService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,153 @@
+﻿.rounded_ie
+{
+    position: relative;
+    border: none;
+    display:inline-block;
+}
+
+.rounded_ie .tl, 
+.rounded_ie .tr, 
+.rounded_ie .bl, 
+.rounded_ie .br
+{
+    width: 4px;
+    height: 4px;
+    position:absolute;    
+}
+
+.rounded_ie .tl
+{
+    background: url(./img/Button_no_hover_tl.png) top left no-repeat;
+    top: 0;
+    left: 0;
+}
+
+.rounded_ie .tr
+{
+    background: url(./img/Button_no_hover_tr.png) top right no-repeat;
+    top: 0;
+    right: 0;
+}
+
+.rounded_ie .bl
+{
+    background: url(./img/Button_no_hover_bl.png) bottom left no-repeat;
+    bottom: 0;
+    left: 0;
+}
+
+.rounded_ie .br
+{
+    background: url(./img/Button_no_hover_br.png) bottom right no-repeat;
+    bottom:0;
+    right: 0;
+}
+
+.rounded_ie:hover .tl
+{
+    background: url(./img/Button_hover_tl.png) top left no-repeat;
+}
+
+.rounded_ie:hover .tr
+{
+    background: url(./img/Button_hover_tr.png) top right no-repeat;
+}
+
+.rounded_ie:hover .bl
+{
+    background: url(./img/Button_hover_bl.png) bottom left no-repeat;
+}
+
+.rounded_ie:hover .br
+{
+    background: url(./img/Button_hover_br.png) bottom right no-repeat;
+}
+
+.process-actions INPUT[type=submit]
+{
+    border: 0px;
+    margin: 0px;
+
+}
+
+
+.process-actions .iebutton
+{
+    margin-left:10px;
+}
+
+
+
+
+.qv-signin .rounded_ie .tl
+{
+    background: url(./img/qv_Button_no_hover_tl.png) top left no-repeat;
+    top: 0;
+    left: 0;
+}
+
+.qv-signin .rounded_ie .tr
+{
+    background: url(./img/qv_Button_no_hover_tr.png) top right no-repeat;
+    top: 0;
+    right: 0;
+}
+
+.qv-signin .rounded_ie .bl
+{
+    background: url(./img/qv_Button_no_hover_bl.png) bottom left no-repeat;
+    bottom: 0;
+    left: 0;
+}
+
+.qv-signin .rounded_ie .br
+{
+    background: url(./img/qv_Button_no_hover_br.png) bottom right no-repeat;
+    bottom:0;
+    right: 0;
+}
+
+.qv-signin .rounded_ie:hover .tl
+{
+    background: url(./img/qv_Button_hover_tl.png) top left no-repeat;
+}
+
+.qv-signin .rounded_ie:hover .tr
+{
+    background: url(./img/qv_Button_hover_tr.png) top right no-repeat;
+}
+
+.qv-signin .rounded_ie:hover .bl
+{
+    background: url(./img/qv_Button_hover_bl.png) bottom left no-repeat;
+}
+
+.qv-signin .rounded_ie:hover .br
+{
+    background: url(./img/qv_Button_hover_br.png) bottom right no-repeat;
+}
+
+#main #contractor-search form INPUT[type=submit]
+{
+	background: url(../css/img/button-generic-alt.jpg);
+    margin-left: 0px;
+}
+
+.process-actions div.large-button input[type=submit]
+{
+    background: url(../css/img/bg-button-generic-large.jpg) top left no-repeat;
+    padding: 0px 15px;
+    width: auto;
+    height: 52px;
+}
+
+.process-actions div.large-button input[type=submit]:hover 
+{
+    text-decoration: none; background-position: bottom left;
+}
+
+#mapcanvas img {
+    margin-top: -2px;
+    margin-left: -2px;
+    border:0px
+ }

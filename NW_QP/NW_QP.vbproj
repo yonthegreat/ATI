@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{8653992D-9FBC-47CB-8082-AC3C68C131D9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NW_QP</RootNamespace>
+    <AssemblyName>NW_QP</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>NW_QP.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DefineConstants>DEBUG</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>NW_QP.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AntiXSSLibrary">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Information Security\AntiXSS Library v4.2\NET35\AntiXSSLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Confirm.aspx" />
+    <Content Include="css\960.css" />
+    <Content Include="css\img\bg-acct-content.png" />
+    <Content Include="css\img\bg-leftnav-current-indicator.png" />
+    <Content Include="css\img\bg-leftnav-hover.png" />
+    <Content Include="css\img\bg-leftnav-states.png" />
+    <Content Include="css\img\bg-leftnav-sub-indicator.png" />
+    <Content Include="css\img\bg-quick-profile.png" />
+    <Content Include="css\img\bg-subnav-current.png" />
+    <Content Include="css\img\calendar-icon.png" />
+    <Content Include="css\img\carousel-nav.png" />
+    <Content Include="css\img\cc-logos.png" />
+    <Content Include="css\img\door.png" />
+    <Content Include="css\img\earth.png" />
+    <Content Include="css\img\email.png" />
+    <Content Include="css\img\key.png" />
+    <Content Include="css\img\Phone.png" />
+    <Content Include="css\img\ViewMobile.jpg" />
+    <Content Include="css\NwnMobileStyle.css" />
+    <Content Include="css\NWNStyle.css" />
+    <Content Include="Content\images\icons-18-black.png" />
+    <Content Include="Content\images\icons-18-white.png" />
+    <Content Include="Content\images\icons-36-black.png" />
+    <Content Include="Content\images\icons-36-white.png" />
+    <Content Include="Content\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\jquery-ui-1.8.12.custom.css" />
+    <Content Include="Content\jquery.countdown.css" />
+    <Content Include="Content\jquery.mobile-1.0rc2.css" />
+    <Content Include="Content\jquery.mobile-1.0rc2.min.css" />
+    <Content Include="Content\jquery.mobile.datebox.min.css" />
+    <Content Include="Content\jquery.mobile.structure-1.0rc2.css" />
+    <Content Include="Content\jquery.mobile.structure-1.0rc2.min.css" />
+    <Content Include="Content\Mobile.css" />
+    <Content Include="Content\NwnJQTheme.css" />
+    <Content Include="Content\NwnMobileSwatchN.css" />
+    <Content Include="Content\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\ui-lightness\jquery-ui-1.7.2.custom.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="ExpiredForbidden.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\bg-mainnav.jpg" />
+    <Content Include="Images\bg-page.jpg" />
+    <Content Include="Images\bg-subnav-current.jpg" />
+    <Content Include="Images\bg-tout-button.jpg" />
+    <Content Include="Images\bg.jpg" />
+    <Content Include="Images\button-gas-benefits.jpg" />
+    <Content Include="Images\button-generic-alt.jpg" />
+    <Content Include="Images\button-smart-energy.jpg" />
+    <Content Include="Images\button-twitter.jpg" />
+    <Content Include="Images\error.jpg" />
+    <Content Include="Images\error.png" />
+    <Content Include="Images\InterActive_logo.png" />
+    <Content Include="Images\IPS2.gif" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\McAfee.gif" />
+    <Content Include="Images\NWNhz_small.jpg" />
+    <Content Include="Images\QualysGuard2.jpg" />
+    <Content Include="Images\search_bg.jpg" />
+    <Content Include="Images\search_bg_ie8.jpg" />
+    <Content Include="Images\security_code.gif" />
+    <Content Include="Images\VerisignLogo.gif" />
+    <Content Include="Images\visamcdisc.gif" />
+    <Content Include="MaintenancePage.aspx" />
+    <Content Include="NwnSecCode.aspx" />
+    <Content Include="PaymentInformation.aspx" />
+    <Content Include="Receipt.aspx" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery.mobile-1.0rc2.min.js" />
+    <Content Include="Scripts\jquery.mobile.datebox.min.js" />
+    <Content Include="Scripts\menuscript.js" />
+    <None Include="My Project\DataSources\System.Data.DataSet.datasource" />
+    <None Include="My Project\DataSources\System.Xml.XmlNode.datasource" />
+    <None Include="Service References\App_In_Maintenance\Utility.wsdl" />
+    <None Include="Service References\AtiWrapperServices\AtiWrapperServices.wsdl" />
+    <None Include="Service References\AtiWrapperServices\AtiWrapperServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AtiWrapperServices\AtiWrapperServices1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AtiWrapperServices\AtiWrapperServices2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AtiWrapperServices\AtiWrapperServices3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\AtiWrapperServices\NW_QP.AtiWrapperServices.WrapperResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\IPSToolsWS\Tools1.wsdl" />
+    <None Include="Service References\NWWS_Relay\NW_QP.NWWS_Relay.AccountInformation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NWWS_Relay\NW_QP.NWWS_Relay.PaymentNotificationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NWWS_Relay\configuration91.svcinfo" />
+    <None Include="Service References\NWWS_Relay\configuration.svcinfo" />
+    <None Include="Service References\NWWS_Relay\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\NWWS_Relay\Relay1.wsdl" />
+    <None Include="Service References\NWWS_TestRelay\NW_QP.NWWS_TestRelay.AccountInformation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NWWS_TestRelay\NW_QP.NWWS_TestRelay.PaymentNotificationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NWWS_TestRelay\configuration91.svcinfo" />
+    <None Include="Service References\NWWS_TestRelay\configuration.svcinfo" />
+    <None Include="Service References\NWWS_TestRelay\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\IPSToolsWS\configuration91.svcinfo" />
+    <None Include="Service References\IPSToolsWS\configuration.svcinfo" />
+    <None Include="Service References\IPSToolsWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\NWWS_TestRelay\TestRelay1.wsdl" />
+    <None Include="Service References\IPSToolsWS\Tools1.disco" />
+    <None Include="Service References\NWWS_TestRelay\TestRelay1.disco" />
+    <None Include="Service References\NWWS_Relay\Relay1.disco" />
+    <None Include="Service References\App_In_Maintenance\Utility.disco" />
+    <None Include="Service References\App_In_Maintenance\configuration91.svcinfo" />
+    <None Include="Service References\App_In_Maintenance\configuration.svcinfo" />
+    <None Include="Service References\App_In_Maintenance\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\AtiWrapperServices\AtiWrapperServices.disco" />
+    <None Include="Service References\AtiWrapperServices\configuration91.svcinfo" />
+    <None Include="Service References\AtiWrapperServices\configuration.svcinfo" />
+    <None Include="Service References\AtiWrapperServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="SubmissionIssue.aspx" />
+    <None Include="Web References\IPSCyberWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\IPSCyberWS\Relay.disco" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Web References\IPSCyberWS\Relay.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppTextLog.vb" />
+    <Compile Include="Confirm.aspx.designer.vb">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Confirm.aspx.vb">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExpiredForbidden.aspx.designer.vb">
+      <DependentUpon>ExpiredForbidden.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExpiredForbidden.aspx.vb">
+      <DependentUpon>ExpiredForbidden.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenancePage.aspx.designer.vb">
+      <DependentUpon>MaintenancePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenancePage.aspx.vb">
+      <DependentUpon>MaintenancePage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Models\CreditCardRequestModel.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="NWN.Master.designer.vb">
+      <DependentUpon>NWN.Master</DependentUpon>
+    </Compile>
+    <Compile Include="NWN.Master.vb">
+      <DependentUpon>NWN.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NWNMobile.Master.designer.vb">
+      <DependentUpon>NWNMobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="NWNMobile.Master.vb">
+      <DependentUpon>NWNMobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NwnSecCode.aspx.designer.vb">
+      <DependentUpon>NwnSecCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NwnSecCode.aspx.vb">
+      <DependentUpon>NwnSecCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaymentInformation.aspx.designer.vb">
+      <DependentUpon>PaymentInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentInformation.aspx.vb">
+      <DependentUpon>PaymentInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Receipt.aspx.designer.vb">
+      <DependentUpon>Receipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Receipt.aspx.vb">
+      <DependentUpon>Receipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service References\App_In_Maintenance\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\AtiWrapperServices\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\IPSToolsWS\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NWWS_Relay\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NWWS_TestRelay\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SharedModules.vb" />
+    <Compile Include="SubmissionIssue.aspx.designer.vb">
+      <DependentUpon>SubmissionIssue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubmissionIssue.aspx.vb">
+      <DependentUpon>SubmissionIssue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tools.vb" />
+    <Compile Include="Web References\IPSCyberWS\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Thumbs.db" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="NWN.Master" />
+    <Content Include="NWNMobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\App_In_Maintenance\" />
+    <WCFMetadataStorage Include="Service References\AtiWrapperServices\" />
+    <WCFMetadataStorage Include="Service References\IPSToolsWS\" />
+    <WCFMetadataStorage Include="Service References\NWWS_Relay\" />
+    <WCFMetadataStorage Include="Service References\NWWS_TestRelay\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://mtgoode/IPSCyberWS2/">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\IPSCyberWS\</RelPath>
+      <UpdateFromURL>http://mtgoode/IPSCyberWS2/</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>NW_QP_IPSCyberWS_Relay</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60302</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60302/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

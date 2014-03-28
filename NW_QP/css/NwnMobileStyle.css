@@ -1,0 +1,51 @@
+﻿
+            H1 {
+                color: #4b7c94;
+                font-size: 19px;
+                font-weight: bold;
+                margin: 2px 2px 2px 2px;
+            }
+
+            .label { padding-top: 10px; }
+
+            .example {
+                font-size: smaller;
+                padding-bottom: 10px;
+            }
+
+            .center { text-align: center; }
+
+
+            .formField {
+                float: left;
+                width: 94%;
+            }
+
+
+            .Error {
+                float: left;
+                padding-left: 0;
+                padding-top: 15px;
+                width: 16px;
+            }
+
+            .example { clear: left; }
+
+            .validation-summary-errors {
+                -moz-border-radius: 6px;
+                -webkit-border-radius: 6px;
+                background: #e6cec1;
+                border: 1px solid #812f17;
+                border-radius: 6px;
+                clear: both;
+                color: #812f17;
+                display: block;
+                font-size: smaller;
+                height: auto;
+                margin: 0 0 15px;
+                padding: 10px;
+                text-align: left;
+                width: 96%;
+            }
+
+        

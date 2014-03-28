@@ -1,0 +1,279 @@
+/*-- required & default rules --*/
+
+.loading {
+position: relative;
+top: 80px;
+left: 280px;
+border: none; padding: none;
+}
+
+#slide_holder img { padding: 0; border: none; }
+
+#content #slide_holder {
+	width: 640px;
+	height: 287px;
+	float: left;
+	margin-right: 13px;
+	background: #f1f1f1;
+	-moz-border-radius: 5px; /* FF1+ */
+	-webkit-border-radius: 5px; /* Saf3+, Chrome */
+	border-radius: 5px; /* Opera 10.5, IE 9 */
+	overflow: hidden;
+	position: relative;
+	z-index: 8;
+}
+#content #slide_holder #slider {
+	position: absolute;
+	top: 0;
+	z-index: 9;
+	overflow: hidden;
+	float: left;
+	width: 640px;
+	height: 287px;
+	-moz-border-radius: 5px; /* FF1+ */
+	-webkit-border-radius: 5px; /* Saf3+, Chrome */
+	border-radius: 5px; /* Opera 10.5, IE 9 */
+}
+
+#content #slide_holder #slider ul#slides, #content #slide_holder #slider ul#slides li {
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+#content #slide_holder #slider ul li { 
+		/* 
+			define width and height of list item (slide)
+			entire slider area will adjust according to the parameters provided here
+		*/ 
+	width:640px;
+	height:287px;
+	overflow:hidden; 
+}
+
+#content #slide_holder ul#slide_nav {
+	position: absolute;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	height: 30px;
+	width: 511px;
+	z-index: 4000;
+	top: 260px;
+	left: 500px;
+}
+
+/*-- for slide buttons --*/
+
+#slide_nav li:hover, #pause_button, .prev_button, .next_button, #hover_next_button, #hover_prev_button, #first_button, #last_button {
+cursor: pointer;
+cursor: hand;
+z-index: 5000;
+}
+#carousel_controls #button_selected, #carousel_controls .prev_button_disabled, #carousel_controls  .next_button_disabled, #carousel_controls  .first_button_diabled, #carousel_controls  .last_button_disabled {
+cursor: auto;
+}
+#slide_nav li span, #pause_button span, .prev_button span, .next_button span, #first_button span, #last_button span, #hover_next_button span, #hover_prev_button span, #water_mark span {
+margin-left: -10000px;
+}
+#slide_nav li span {
+margin: 0 auto;
+}
+#slide_nav li, #pause_button, .prev_button, .next_button, #first_button, #last_button, #water_mark {
+background-repeat: no-repeat;
+overflow: hidden;
+top: 0px;
+}
+ul#slide_nav li {
+background: url(./img/carousel-nav.png) top left;
+display: block;
+float: left;
+height: 12px;
+list-style: none;
+margin: 0 5px 0 0px;
+padding: 4px 2px 4px 2px;
+width: 16px;
+color: #fff;
+font-weight: bold;
+text-align: center;
+}
+ul#slide_nav li:hover {
+background: url(./img/carousel-nav.png) top right;
+}
+ul#slide_nav li#button_selected {
+background: url(./img/carousel-nav.png) top right;
+}
+ul#slide_nav li#button_selected:hover {
+}
+/*-- first & last buttons --*/
+
+#first_button {
+background-image: url(./img/first.png);
+height: 29px;
+left: 354px;
+width: 34px;
+background-position: 0 -36px;
+}
+#first_button:hover {
+background-position: 0 0;
+}
+#last_button {
+background-image: url(./img/last.png);
+height: 29px;
+left: 474px;
+width: 34px;
+background-position: 0 -36px;
+}
+#last_button:hover {
+background-position: 0 0;
+}
+
+/*-- end first & last buttons --*/
+
+/*-- next & prev buttons --*/
+#nex_prev_buttons {
+position: absolute;
+left: 0;
+z-index: 5000;
+}
+#next_button {
+background-image: url(images/next.png);
+background-position: 0 -36px;
+height: 29px;
+left: 443px;
+width: 31px;
+}
+#next_button:hover {
+background-position: 0 0;
+}
+#prev_button {
+background-image: url(images/prev.png);
+background-position: 0 -36px;
+height: 29px;
+left: 388px;
+width: 31px;
+}
+#prev_button:hover {
+background-position: 0 0;
+}
+/*-- end next & prev buttons --*/
+
+
+/*-- looks like pause button --*/
+.pause_button {
+background-image: url(images/pause.png);
+background-position: 0 -36px;
+height: 29px;
+left: 419px;
+width: 24px;
+}
+.pause_button:hover {
+background-position: 0 0;
+}
+/*-- looks like play button --*/
+.paused_button {
+background-image: url(images/play.png);
+background-position: 0 -36px;
+height: 29px;
+left: 419px;
+width: 24px;
+}
+.paused_button:hover {
+background-position: 0 0;
+}
+
+/*-- hover next & hoverprev buttons --*/
+
+#hover_next_button, #hover_prev_button {
+height: 125px;
+background-repeat: no-repeat;
+display: none;
+overflow: hidden;
+width: 77px;
+top: 35px;
+z-index: 6000;
+}
+#hover_next_button span {
+}
+#hover_next_button {
+background-image: url(images/hover_next.png);
+background-position: 21px 35px;
+padding: 30px 0 30px 30px;
+right: 0;
+}
+#hover_prev_button {
+background-image: url(images/hover_prev.png);
+background-position: 8px 35px;
+padding: 30px 30px 30px 0;
+left: 0;
+}
+
+/*-- end next & prev buttons --*/
+
+/*-- rules for slide captions --*/
+
+#slide_captions {
+color: #333;
+left: 8px;
+overflow: visible;
+top: 5px;
+z-index: 6000;
+}
+#slide_captions span {
+font-family: Tahoma;
+font-size: 15px;
+height: 20px;
+line-height: 20px;
+overflow: visible;
+}
+
+/*-- end rules for slide captions --*/
+
+/*-- rules for watermark --*/
+
+#water_mark {
+background-image: url(images/water_mark.png);
+height: 30px;
+left: 202px;
+width: 246px;
+top: 208px;
+z-index: 6000;
+}
+
+#water_mark span {
+}
+
+/*-- end rules for slide captions --*/
+
+/*-- slide number display --*/
+
+#slide_number_display {
+background-image: url(images/bg_swatch.png);
+background-position: 0 0;
+background-repeat: no-repeat;
+color: #333;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 15px;
+height: 23px;
+padding: 4px;
+right: 7px;
+text-align: center;
+top: 208px;
+width: 37px;
+z-index: 5000;
+}
+
+/*-- for carousel view --*/
+
+#row_of_slides {
+position: absolute;
+top: 0;
+}
+#row_of_slides .slide {
+display: none;
+position: absolute;
+}
+				
+/*-- end for carousel view --*/				
+
+/*-- end number display --*/
+
+/*-- end required & default rules --*/

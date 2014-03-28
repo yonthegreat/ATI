@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.activetelesource.com/webservices/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.activetelesource.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.activetelesource.com/webservices/">
+      <s:element name="ValidABARoutingNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RoutingNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidABARoutingNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidABARoutingNumberResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ABABankData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RoutingNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ABABankDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ABABankDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidCreditCardNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidCreditCardNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidCreditCardNumberResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidCreditCardExpiration">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MMYY" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidCreditCardExpirationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidCreditCardExpirationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreditCardType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreditCardTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreditCardTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogACHTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ACH_TransTable" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IVR_HistoryID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="IVR_ProfileID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Web_HistoryID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransDateTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerAccountID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillAddr1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillAddr2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RoutingNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountLast4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fee" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransAmount" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransIsDebit" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransIsCredit" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransIsChargeback" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransIsVoid" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="WasVoided" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="VoidReferenceID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Reconciled" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataTokenID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantDecision" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantReasonCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantAuthCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MerchantBatchID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReconBatchID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReconDateTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="RecurringPayment" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="RecurringReferenceID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringReferenceText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Failure" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransNote" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc4" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogACHTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogACHTransactionResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogCreditCardTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Card_TransTable" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IVR_HistoryID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="IVR_ProfileID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Web_HistoryID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransDateTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerAccountID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillAddr1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillAddr2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountLast4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fee" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransAmount" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransIsDebit" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransIsCredit" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransIsChargeback" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransIsVoid" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="WasVoided" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="VoidReferenceID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Reconciled" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataTokenID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantDecision" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantReasonCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantAuthCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantAVSCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MerchantBatchID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReconBatchID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReconDateTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="RecurringPayment" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="RecurringReferenceID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringReferenceText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Failure" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransNote" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc4" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogCreditCardTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogCreditCardTransactionResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogCreditCardTransaction2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Card_TransTable" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IVR_HistoryID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="IVR_ProfileID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Web_HistoryID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransDateTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerAccountID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillAddr1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillAddr2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountLast4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fee" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransAmount" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransIsDebit" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransIsCredit" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransIsChargeback" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransIsVoid" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="WasVoided" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="VoidReferenceID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Reconciled" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataTokenID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantRequestID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantDecision" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantReasonCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantAuthCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantAVSCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MerchantBatchID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReconBatchID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReconDateTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="RecurringPayment" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="RecurringReferenceID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringReferenceText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Failure" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransNote" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc4" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogCreditCardTransaction2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogCreditCardTransaction2Result" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCreditCardTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Card_TransTable" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Card_TransID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="IVR_HistoryID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="IVR_ProfileID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Web_HistoryID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransDateTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerAccountID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillAddr1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillAddr2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountLast4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fee" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransAmount" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransIsDebit" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransIsCredit" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransIsChargeback" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransIsVoid" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="WasVoided" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="VoidReferenceID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Reconciled" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataTokenID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantRequestID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantDecision" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantReasonCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantAuthCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantAVSCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MerchantBatchID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReconBatchID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReconDateTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="RecurringPayment" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="RecurringReferenceID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringReferenceText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Failure" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransNote" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc4" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCreditCardTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCreditCardTransactionResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogWebHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Web_HistoryTable" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Web_ProfileID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SessionIP" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SessionStart" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="SessionFinish" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Schedule" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Credentials" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerAccountID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CardTransID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ACHTransID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="WebError" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="TextCaption1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TextCaption2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TextCaption3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TextCaption4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TextCaption5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TextCaption6" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TextCaption7" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TextCaption8" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Text1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Text2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Text3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Text4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Text5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Text6" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Text7" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Text8" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateCaption1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateCaption2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateCaption3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateCaption4" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Date1" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="Date2" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="Date3" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="Date4" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="IntegerCaption1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IntegerCaption2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IntegerCaption3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IntegerCaption4" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Integer1" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Integer2" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Integer3" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Integer4" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumericCaption1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumericCaption2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumericCaption3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumericCaption4" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Numeric1" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Numeric2" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Numeric3" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Numeric4" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoneyCaption1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoneyCaption2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoneyCaption3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoneyCaption4" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Money1" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Money2" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Money3" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Money4" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="BitCaption1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BitCaption2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BitCaption3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BitCaption4" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Bit1" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Bit2" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Bit3" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Bit4" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogWebHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogWebHistoryResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateWebHistoryEventLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Web_HistoryTable" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Web_HistoryID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Web_EventLog" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SessionFinish" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerAccountID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CardTransID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ACHTransID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="WebError" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateWebHistoryEventLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateWebHistoryEventLogResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateWebHistoryCustom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Web_HistoryTable" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Web_HistoryID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="SessionFinish" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Schedule" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Credentials" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerAccountID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CardTransID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ACHTransID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="WebError" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="TextCaption1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TextCaption2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TextCaption3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TextCaption4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TextCaption5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TextCaption6" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TextCaption7" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TextCaption8" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Text1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Text2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Text3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Text4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Text5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Text6" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Text7" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Text8" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateCaption1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateCaption2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateCaption3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateCaption4" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Date1" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="Date2" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="Date3" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="Date4" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="IntegerCaption1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IntegerCaption2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IntegerCaption3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IntegerCaption4" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Integer1" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Integer2" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Integer3" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Integer4" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumericCaption1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumericCaption2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumericCaption3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumericCaption4" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Numeric1" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Numeric2" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Numeric3" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Numeric4" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoneyCaption1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoneyCaption2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoneyCaption3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoneyCaption4" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Money1" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Money2" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Money3" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Money4" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="BitCaption1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BitCaption2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BitCaption3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BitCaption4" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Bit1" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Bit2" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Bit3" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Bit4" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateWebHistoryCustomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateWebHistoryCustomResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ValidABARoutingNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidABARoutingNumber" />
+  </wsdl:message>
+  <wsdl:message name="ValidABARoutingNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidABARoutingNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ABABankDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ABABankData" />
+  </wsdl:message>
+  <wsdl:message name="ABABankDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ABABankDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidCreditCardNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidCreditCardNumber" />
+  </wsdl:message>
+  <wsdl:message name="ValidCreditCardNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidCreditCardNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidCreditCardExpirationSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidCreditCardExpiration" />
+  </wsdl:message>
+  <wsdl:message name="ValidCreditCardExpirationSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidCreditCardExpirationResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreditCardTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:CreditCardType" />
+  </wsdl:message>
+  <wsdl:message name="CreditCardTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:CreditCardTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogACHTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:LogACHTransaction" />
+  </wsdl:message>
+  <wsdl:message name="LogACHTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:LogACHTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogCreditCardTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:LogCreditCardTransaction" />
+  </wsdl:message>
+  <wsdl:message name="LogCreditCardTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:LogCreditCardTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogCreditCardTransaction2SoapIn">
+    <wsdl:part name="parameters" element="tns:LogCreditCardTransaction2" />
+  </wsdl:message>
+  <wsdl:message name="LogCreditCardTransaction2SoapOut">
+    <wsdl:part name="parameters" element="tns:LogCreditCardTransaction2Response" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCreditCardTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCreditCardTransaction" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCreditCardTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCreditCardTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogWebHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:LogWebHistory" />
+  </wsdl:message>
+  <wsdl:message name="LogWebHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:LogWebHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWebHistoryEventLogSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateWebHistoryEventLog" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWebHistoryEventLogSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateWebHistoryEventLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWebHistoryCustomSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateWebHistoryCustom" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWebHistoryCustomSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateWebHistoryCustomResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ToolsSoap">
+    <wsdl:operation name="ValidABARoutingNumber">
+      <wsdl:input message="tns:ValidABARoutingNumberSoapIn" />
+      <wsdl:output message="tns:ValidABARoutingNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ABABankData">
+      <wsdl:input message="tns:ABABankDataSoapIn" />
+      <wsdl:output message="tns:ABABankDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidCreditCardNumber">
+      <wsdl:input message="tns:ValidCreditCardNumberSoapIn" />
+      <wsdl:output message="tns:ValidCreditCardNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidCreditCardExpiration">
+      <wsdl:input message="tns:ValidCreditCardExpirationSoapIn" />
+      <wsdl:output message="tns:ValidCreditCardExpirationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreditCardType">
+      <wsdl:input message="tns:CreditCardTypeSoapIn" />
+      <wsdl:output message="tns:CreditCardTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogACHTransaction">
+      <wsdl:input message="tns:LogACHTransactionSoapIn" />
+      <wsdl:output message="tns:LogACHTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogCreditCardTransaction">
+      <wsdl:input message="tns:LogCreditCardTransactionSoapIn" />
+      <wsdl:output message="tns:LogCreditCardTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogCreditCardTransaction2">
+      <wsdl:input message="tns:LogCreditCardTransaction2SoapIn" />
+      <wsdl:output message="tns:LogCreditCardTransaction2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCreditCardTransaction">
+      <wsdl:input message="tns:UpdateCreditCardTransactionSoapIn" />
+      <wsdl:output message="tns:UpdateCreditCardTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogWebHistory">
+      <wsdl:input message="tns:LogWebHistorySoapIn" />
+      <wsdl:output message="tns:LogWebHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWebHistoryEventLog">
+      <wsdl:input message="tns:UpdateWebHistoryEventLogSoapIn" />
+      <wsdl:output message="tns:UpdateWebHistoryEventLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWebHistoryCustom">
+      <wsdl:input message="tns:UpdateWebHistoryCustomSoapIn" />
+      <wsdl:output message="tns:UpdateWebHistoryCustomSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ToolsSoap" type="tns:ToolsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidABARoutingNumber">
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/ValidABARoutingNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABABankData">
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/ABABankData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidCreditCardNumber">
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/ValidCreditCardNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidCreditCardExpiration">
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/ValidCreditCardExpiration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditCardType">
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/CreditCardType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogACHTransaction">
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/LogACHTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogCreditCardTransaction">
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/LogCreditCardTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogCreditCardTransaction2">
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/LogCreditCardTransaction2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCreditCardTransaction">
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/UpdateCreditCardTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogWebHistory">
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/LogWebHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWebHistoryEventLog">
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/UpdateWebHistoryEventLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWebHistoryCustom">
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/UpdateWebHistoryCustom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ToolsSoap12" type="tns:ToolsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidABARoutingNumber">
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/ValidABARoutingNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABABankData">
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/ABABankData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidCreditCardNumber">
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/ValidCreditCardNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidCreditCardExpiration">
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/ValidCreditCardExpiration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditCardType">
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/CreditCardType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogACHTransaction">
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/LogACHTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogCreditCardTransaction">
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/LogCreditCardTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogCreditCardTransaction2">
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/LogCreditCardTransaction2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCreditCardTransaction">
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/UpdateCreditCardTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogWebHistory">
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/LogWebHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWebHistoryEventLog">
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/UpdateWebHistoryEventLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWebHistoryCustom">
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/UpdateWebHistoryCustom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Tools">
+    <wsdl:port name="ToolsSoap" binding="tns:ToolsSoap">
+      <soap:address location="http://mtgoode/IPSToolsWS4/Tools.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ToolsSoap12" binding="tns:ToolsSoap12">
+      <soap12:address location="http://mtgoode/IPSToolsWS4/Tools.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,22 @@
+﻿@model AtiWrapperServicesUI.Models.SoapHeaderModel
+
+@{
+    ViewBag.Title = "AddSoapHeaderView";
+}
+
+
+<h2>AddSoapHeaderView</h2>
+    
+    @using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>SoapHeader</legend>
+        @Html.EditorFor(x => x.SoapHeader)
+
+        <p>
+            <input type="submit" value="AddSoapHeader" />
+        </p>
+    </fieldset>
+}

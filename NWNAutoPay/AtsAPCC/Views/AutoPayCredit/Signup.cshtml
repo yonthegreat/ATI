@@ -1,0 +1,65 @@
+﻿@using AtsAPCC.Extensions
+@{
+    ViewBag.Title = "NWN | Auto Pay by Debit/Credit Card";
+}
+<h1 class="big">Auto Pay by Debit/Credit Card (For Test Only)</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(false, "Please correct the errors and try again.")
+    <div class="signup">
+        <table>
+            <tr>
+                <td class="labels"><span class="required">*</span>
+                    Account Number
+                </td>
+                <td class="InputWidth60">  
+                    @Html.TextBox("AccountNumber")
+                </td>
+            </tr>
+            <tr>
+                <td class="labels"><span class="required">*</span>
+                    First Name
+                </td>
+                <td class="inputs">  
+                    @Html.TextBox("FirstName")
+                </td>
+            </tr>
+            <tr>
+                <td class="labels"><span class="required">*</span>
+                    Last Name
+                </td>
+                <td class="inputs">  
+                    @Html.TextBox("LastName")
+                </td>
+            </tr>
+            <tr>
+                <td class="labels"><span class="required">*</span>
+                    Phone Number
+                </td>
+                <td class="inputs">  
+                    @Html.TextBox("PhoneNumber")
+                </td>
+            </tr>
+            <tr>
+                <td class="labels"><span class="required">*</span>
+                    Email Address
+                </td>
+                <td class="inputs">  
+                    @Html.TextBox("EmailAddress")
+                </td>
+            </tr>
+            <tr>
+                <td class="labels"><span class="required">*</span>
+                    Billing Zip Code
+                </td>
+                <td class="inputs">  
+                    @Html.TextBox("BillingZipCode")
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="process-actions">
+        @Html.SubmitButton("Start Test", "iebutton right")
+    </div>
+}

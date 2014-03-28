@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:55000/EnrollCard.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CardEnrollmentService" />
+  <xs:element name="EnrollCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AccountAccountNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CardFullNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CardLast4" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CardExpiresMonth" type="xs:int" />
+        <xs:element minOccurs="0" name="CardExpriresYear" type="xs:int" />
+        <xs:element minOccurs="0" name="CardSecurityCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CardHolderFirstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CardHolderLastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CardHolderInitial" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CardHolderAppearsOnCard" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AddressAddress1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AddressAddress2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AddressAddress3" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AddressCity" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AddressState" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AddressZip" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ContactTelephone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ContactEmail" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnrollCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CardEnrollmentService" minOccurs="0" name="EnrollCardResult" nillable="true" type="q1:EnrollmentResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

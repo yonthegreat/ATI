@@ -1,0 +1,76 @@
+h2.subhead { display: block; float: none; }
+
+#content #main .pay-header h2 { margin-bottom: 0; padding-bottom: 10px; }
+
+/*ul#mainnav { float: left; clear: left; width: 590px !important; z-index: 20; }*/
+
+#top-search { float: right; clear: right; }
+
+#big-login input#login-button { margin-right: -10px; }
+
+.carousel-inset { filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9922537a',endColorstr='#9922537a'); /* IE6,IE7 */ }
+
+.center #quick-profile #quick-profile-inner #qp-content { zoom: 1; }
+
+#contractor-search form table tr td { vertical-align: middle; }
+#contractor-search-filters #contractor-results-filter form table tr td { vertical-align: middle; }
+#contractor-search-filters #contractor-results-filter form table tr td input[type=submit] { width: 100%; }
+
+span.password-strength-bar {
+	padding: 2px 3px 1px 3px;
+}
+
+ul#mainnav li ul.subnav li a { padding: 7px; }
+
+div.dp-popup {
+	border: 1px solid #666666;
+}
+
+table.jCalendar {
+	margin: 0;
+}
+
+#content #main #acct-header .name-addy span { line-height: 24px; }
+#content #main #acct-header .name-addy span.address { float: left; }
+
+.acct-history-filter { padding-bottom: 25px; }
+
+input.large-button.threeHund, input[type=submit].large-button.threeHund { width: 300px; padding: 8px 0 7px 0; }
+
+a.gen-button span.ie7 { padding: 6px 7px 5px 12px; }
+
+tr.alt>td { background-color: #e5f1fe !important; }
+
+#content #main .sub-section .sub-section-image {
+    height: 118px !important;
+}
+
+#content #main .pay-body .pay-body-right ul#other-pay-options,
+#content #main .acct-content .acct-right .acct-inner ul#other-pay-options {
+	width: 240px;
+	height: auto;
+	display: block;
+	margin: 0;
+	float: left;
+	padding-bottom: 10px;
+}
+
+
+/*below is NWNatural additions to this stylesheet for the eRecruit menu   */
+#content .eRecruitMenu ul li:hover .messageEr{
+	display:block;
+	float:none;
+	margin-left: 5px;	
+    margin-top: 5px;
+}
+
+
+#content .eRecruitMenu ul li.currentEr .messageEr{
+	display:block;
+	float:none;	
+	margin-left: 5px;	
+    margin-top: 5px;
+	background-color:rgb(247, 244, 237);	
+
+}
+/*above is NWNatural additions to this stylesheet for the eRecruit menu   */

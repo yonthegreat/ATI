@@ -1,0 +1,2339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn::IVRService" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="urn::IVRService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provides data in support of the IVR/VRU system</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="urn::IVRService">
+      <s:element name="ValidateAccountNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateAccountNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateAccountNumberResult" type="tns:AccountInformation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AccountInformation">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:WebResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="TimingMessage" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsNSF" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsCommercial" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NoticeExpirationDate" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="NoticeAmount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="ServiceHouseNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ServiceStreetAddress" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ServiceCity" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ServiceState" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ServiceZipCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PlanAmount" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="PlanPastDueAmount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentPlanType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ServiceStatus" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="LastPaymentAmount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="LastPaymentDate" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PlanBalance" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="RoutingNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CheckingAccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NextMeterReadDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CurrentDueDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PreviousDueDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BillDate" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="TotalBalance" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="PastDueBalance" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="BillAmount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="DisconnectDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="HasUrgentNotice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="HasNotice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsOnPaymentPlan" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsEnrolledInWARM" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsEligibleForInspection" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsNOWEBAPS" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsDisconnected" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsAutoPay" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsBlacklisted" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsICOM" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsClosed" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CityState" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StreetAddress" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CheckDigit" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PremiseNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MiddleInitial" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="WebResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAccountNumberByPhoneNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountNumberByPhoneNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountNumberByPhoneNumberResult" type="tns:AccountInformation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LookupAccountNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LookupAccountNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LookupAccountNumberResult" type="tns:AccountInformation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountInformationExternal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountInformationExternalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountInformationExternalResult" type="tns:AccountInformation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountInformationResult" type="tns:AccountInformation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StopService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="middleInitial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mailingAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="workPhoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="workExtension" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StopServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StopServiceResult" type="tns:StopServiceInformation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StopServiceInformation">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:WebResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StopDate" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CanAccountBeTransferred">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CanAccountBeTransferredResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CanAccountBeTransferredResult" type="tns:WebResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CanAccountBeTransferredToThisPremise">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="premiseNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CanAccountBeTransferredToThisPremiseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CanAccountBeTransferredToThisPremiseResult" type="tns:PremiseTransferInformation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PremiseTransferInformation">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:WebResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="OrderType" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CanAccountBeTransferredToThisPremiseTest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="premiseNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CanAccountBeTransferredToThisPremiseTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CanAccountBeTransferredToThisPremiseTestResult" type="tns:PremiseTransferInformationTest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PremiseTransferInformationTest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:PremiseTransferInformation">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="TransferService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="premiseNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="closeDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="indicator" type="tns:ServiceOrderIndicatorFlag" />
+            <s:element minOccurs="0" maxOccurs="1" name="mailingAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contactName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contactPhoneNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ServiceOrderIndicatorFlag">
+        <s:restriction base="s:string">
+          <s:enumeration value="START" />
+          <s:enumeration value="PICK" />
+          <s:enumeration value="ACCEPT" />
+          <s:enumeration value="NEXT" />
+          <s:enumeration value="VIRT" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="TransferServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransferServiceResult" type="tns:TransferServiceInformation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransferServiceInformation">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:WebResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ReturnCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ServiceOrderDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ServiceOrderNumber" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="SelectServiceOrderDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="indicatorFlag" type="tns:ServiceOrderIndicatorFlag" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contactTypeCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectServiceOrderDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectServiceOrderDateResult" type="tns:ServiceOrderResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ServiceOrderResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:WebResponse">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IsValidDate" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IsAccountDNAC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsAccountDNACResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsAccountDNACResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="street" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="houseNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apartmentNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateAddressResult" type="tns:AddressValidationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AddressValidationResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:WebResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="PremiseNumber" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetPaymentLocationsByCityAndState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="direction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPaymentLocationsByCityAndStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPaymentLocationsByCityAndStateResult" type="tns:PaymentLocationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PaymentLocationResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:WebResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Locations" type="tns:ArrayOfPaymentLocation" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfPaymentLocation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PaymentLocation" nillable="true" type="tns:PaymentLocation" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PaymentLocation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PayStationId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Direction" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="County" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FeeAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecondaryLanguage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeOfBusiness" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Latitude" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Longitude" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPublic" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OrderEqualPayBrochure">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderEqualPayBrochureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderEqualPayBrochureResult" type="tns:ContactResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ContactResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:WebResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetEqualPayQuote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEqualPayQuoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEqualPayQuoteResult" type="tns:EqualPayQuoteResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EqualPayQuoteResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:WebResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PlanAmount" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="AccountBalance" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="NextDueDate" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsOver30Days" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="ConfirmationCode" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="OrderStatementOfAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderStatementOfAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderStatementOfAccountResult" type="tns:ContactResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderDuplicateBill">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderDuplicateBillResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderDuplicateBillResult" type="tns:ContactResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderAutoPayPacket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderAutoPayPacketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderAutoPayPacketResult" type="tns:ContactResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExtendDueDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExtendDueDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExtendDueDateResult" type="tns:DueDateExtension" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DueDateExtension">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:WebResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="DueDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="SignUpForEqualPay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="balance" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignUpForEqualPayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SignUpForEqualPayResult" type="tns:EqualPaySignupResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EqualPaySignupResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EqualPayQuoteResponse" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ValidateRoutingNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="routingNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateRoutingNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateRoutingNumberResult" type="tns:Bank" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Bank">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:WebResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="RoutingNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="SendCheckPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="street" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apsFee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="abaNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="checkingAccountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendCheckPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendCheckPaymentResult" type="tns:Payment" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Payment">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:WebResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ChangeWARMStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="option" type="tns:WARMOption" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="WARMOption">
+        <s:restriction base="s:string">
+          <s:enumeration value="OptIn" />
+          <s:enumeration value="OptOut" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ChangeWARMStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangeWARMStatusResult" type="tns:WARMResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WARMResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:WebResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="SubmitMeterRead">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="meterReading" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitMeterReadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitMeterReadResult" type="tns:MeterReadResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MeterReadResult">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:WebResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ResultId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="WriteNoPaymentArrangementsOfferedContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reason" type="tns:NoPaymentArragementsOfferedReason" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="NoPaymentArragementsOfferedReason">
+        <s:restriction base="s:string">
+          <s:enumeration value="CA" />
+          <s:enumeration value="NP" />
+          <s:enumeration value="PD" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="WriteNoPaymentArrangementsOfferedContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WriteNoPaymentArrangementsOfferedContactResult" type="tns:ContactResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteBalanceInquiryContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="balanceDue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastPayment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastPaymentDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nextPayment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nextPaymentDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nextBillDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="plan" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteBalanceInquiryContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WriteBalanceInquiryContactResult" type="tns:ContactResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WritePastDueBalanceInquiryContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="balanceDue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastPayment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastPaymentDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pastDueAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pastDueOriginationDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pastDueAmountDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="plan" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WritePastDueBalanceInquiryContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WritePastDueBalanceInquiryContactResult" type="tns:ContactResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteBillMatrixConfirmationCodeContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="confirmationCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteBillMatrixConfirmationCodeContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WriteBillMatrixConfirmationCodeContactResult" type="tns:ContactResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountPaymentHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountPaymentHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountPaymentHistoryResult" type="tns:PaymentHistoryResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PaymentHistoryResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:WebResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentHistory" type="tns:ArrayOfPaymentHistory" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfPaymentHistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PaymentHistory" nillable="true" type="tns:PaymentHistory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PaymentHistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetStoredPaymentInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStoredPaymentInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStoredPaymentInformationResult" type="tns:StoredPaymentInformationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StoredPaymentInformationResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:WebResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="RoutingNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CheckingAccountNumber" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="WriteTestLogEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteTestLogEntryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WriteTestLogEntryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteTextException">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteTextExceptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WriteTextExceptionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLoginCodes">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLoginCodesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLoginCodesResult" type="tns:ArrayOfLoginCode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLoginCode">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LoginCode" nillable="true" type="tns:LoginCode" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LoginCode">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LoginPrefix" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Task" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Color" type="tns:KnownColor" />
+          <s:element minOccurs="1" maxOccurs="1" name="SortOrder" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="KnownColor">
+        <s:restriction base="s:string">
+          <s:enumeration value="ActiveBorder" />
+          <s:enumeration value="ActiveCaption" />
+          <s:enumeration value="ActiveCaptionText" />
+          <s:enumeration value="AppWorkspace" />
+          <s:enumeration value="Control" />
+          <s:enumeration value="ControlDark" />
+          <s:enumeration value="ControlDarkDark" />
+          <s:enumeration value="ControlLight" />
+          <s:enumeration value="ControlLightLight" />
+          <s:enumeration value="ControlText" />
+          <s:enumeration value="Desktop" />
+          <s:enumeration value="GrayText" />
+          <s:enumeration value="Highlight" />
+          <s:enumeration value="HighlightText" />
+          <s:enumeration value="HotTrack" />
+          <s:enumeration value="InactiveBorder" />
+          <s:enumeration value="InactiveCaption" />
+          <s:enumeration value="InactiveCaptionText" />
+          <s:enumeration value="Info" />
+          <s:enumeration value="InfoText" />
+          <s:enumeration value="Menu" />
+          <s:enumeration value="MenuText" />
+          <s:enumeration value="ScrollBar" />
+          <s:enumeration value="Window" />
+          <s:enumeration value="WindowFrame" />
+          <s:enumeration value="WindowText" />
+          <s:enumeration value="Transparent" />
+          <s:enumeration value="AliceBlue" />
+          <s:enumeration value="AntiqueWhite" />
+          <s:enumeration value="Aqua" />
+          <s:enumeration value="Aquamarine" />
+          <s:enumeration value="Azure" />
+          <s:enumeration value="Beige" />
+          <s:enumeration value="Bisque" />
+          <s:enumeration value="Black" />
+          <s:enumeration value="BlanchedAlmond" />
+          <s:enumeration value="Blue" />
+          <s:enumeration value="BlueViolet" />
+          <s:enumeration value="Brown" />
+          <s:enumeration value="BurlyWood" />
+          <s:enumeration value="CadetBlue" />
+          <s:enumeration value="Chartreuse" />
+          <s:enumeration value="Chocolate" />
+          <s:enumeration value="Coral" />
+          <s:enumeration value="CornflowerBlue" />
+          <s:enumeration value="Cornsilk" />
+          <s:enumeration value="Crimson" />
+          <s:enumeration value="Cyan" />
+          <s:enumeration value="DarkBlue" />
+          <s:enumeration value="DarkCyan" />
+          <s:enumeration value="DarkGoldenrod" />
+          <s:enumeration value="DarkGray" />
+          <s:enumeration value="DarkGreen" />
+          <s:enumeration value="DarkKhaki" />
+          <s:enumeration value="DarkMagenta" />
+          <s:enumeration value="DarkOliveGreen" />
+          <s:enumeration value="DarkOrange" />
+          <s:enumeration value="DarkOrchid" />
+          <s:enumeration value="DarkRed" />
+          <s:enumeration value="DarkSalmon" />
+          <s:enumeration value="DarkSeaGreen" />
+          <s:enumeration value="DarkSlateBlue" />
+          <s:enumeration value="DarkSlateGray" />
+          <s:enumeration value="DarkTurquoise" />
+          <s:enumeration value="DarkViolet" />
+          <s:enumeration value="DeepPink" />
+          <s:enumeration value="DeepSkyBlue" />
+          <s:enumeration value="DimGray" />
+          <s:enumeration value="DodgerBlue" />
+          <s:enumeration value="Firebrick" />
+          <s:enumeration value="FloralWhite" />
+          <s:enumeration value="ForestGreen" />
+          <s:enumeration value="Fuchsia" />
+          <s:enumeration value="Gainsboro" />
+          <s:enumeration value="GhostWhite" />
+          <s:enumeration value="Gold" />
+          <s:enumeration value="Goldenrod" />
+          <s:enumeration value="Gray" />
+          <s:enumeration value="Green" />
+          <s:enumeration value="GreenYellow" />
+          <s:enumeration value="Honeydew" />
+          <s:enumeration value="HotPink" />
+          <s:enumeration value="IndianRed" />
+          <s:enumeration value="Indigo" />
+          <s:enumeration value="Ivory" />
+          <s:enumeration value="Khaki" />
+          <s:enumeration value="Lavender" />
+          <s:enumeration value="LavenderBlush" />
+          <s:enumeration value="LawnGreen" />
+          <s:enumeration value="LemonChiffon" />
+          <s:enumeration value="LightBlue" />
+          <s:enumeration value="LightCoral" />
+          <s:enumeration value="LightCyan" />
+          <s:enumeration value="LightGoldenrodYellow" />
+          <s:enumeration value="LightGray" />
+          <s:enumeration value="LightGreen" />
+          <s:enumeration value="LightPink" />
+          <s:enumeration value="LightSalmon" />
+          <s:enumeration value="LightSeaGreen" />
+          <s:enumeration value="LightSkyBlue" />
+          <s:enumeration value="LightSlateGray" />
+          <s:enumeration value="LightSteelBlue" />
+          <s:enumeration value="LightYellow" />
+          <s:enumeration value="Lime" />
+          <s:enumeration value="LimeGreen" />
+          <s:enumeration value="Linen" />
+          <s:enumeration value="Magenta" />
+          <s:enumeration value="Maroon" />
+          <s:enumeration value="MediumAquamarine" />
+          <s:enumeration value="MediumBlue" />
+          <s:enumeration value="MediumOrchid" />
+          <s:enumeration value="MediumPurple" />
+          <s:enumeration value="MediumSeaGreen" />
+          <s:enumeration value="MediumSlateBlue" />
+          <s:enumeration value="MediumSpringGreen" />
+          <s:enumeration value="MediumTurquoise" />
+          <s:enumeration value="MediumVioletRed" />
+          <s:enumeration value="MidnightBlue" />
+          <s:enumeration value="MintCream" />
+          <s:enumeration value="MistyRose" />
+          <s:enumeration value="Moccasin" />
+          <s:enumeration value="NavajoWhite" />
+          <s:enumeration value="Navy" />
+          <s:enumeration value="OldLace" />
+          <s:enumeration value="Olive" />
+          <s:enumeration value="OliveDrab" />
+          <s:enumeration value="Orange" />
+          <s:enumeration value="OrangeRed" />
+          <s:enumeration value="Orchid" />
+          <s:enumeration value="PaleGoldenrod" />
+          <s:enumeration value="PaleGreen" />
+          <s:enumeration value="PaleTurquoise" />
+          <s:enumeration value="PaleVioletRed" />
+          <s:enumeration value="PapayaWhip" />
+          <s:enumeration value="PeachPuff" />
+          <s:enumeration value="Peru" />
+          <s:enumeration value="Pink" />
+          <s:enumeration value="Plum" />
+          <s:enumeration value="PowderBlue" />
+          <s:enumeration value="Purple" />
+          <s:enumeration value="Red" />
+          <s:enumeration value="RosyBrown" />
+          <s:enumeration value="RoyalBlue" />
+          <s:enumeration value="SaddleBrown" />
+          <s:enumeration value="Salmon" />
+          <s:enumeration value="SandyBrown" />
+          <s:enumeration value="SeaGreen" />
+          <s:enumeration value="SeaShell" />
+          <s:enumeration value="Sienna" />
+          <s:enumeration value="Silver" />
+          <s:enumeration value="SkyBlue" />
+          <s:enumeration value="SlateBlue" />
+          <s:enumeration value="SlateGray" />
+          <s:enumeration value="Snow" />
+          <s:enumeration value="SpringGreen" />
+          <s:enumeration value="SteelBlue" />
+          <s:enumeration value="Tan" />
+          <s:enumeration value="Teal" />
+          <s:enumeration value="Thistle" />
+          <s:enumeration value="Tomato" />
+          <s:enumeration value="Turquoise" />
+          <s:enumeration value="Violet" />
+          <s:enumeration value="Wheat" />
+          <s:enumeration value="White" />
+          <s:enumeration value="WhiteSmoke" />
+          <s:enumeration value="Yellow" />
+          <s:enumeration value="YellowGreen" />
+          <s:enumeration value="ButtonFace" />
+          <s:enumeration value="ButtonHighlight" />
+          <s:enumeration value="ButtonShadow" />
+          <s:enumeration value="GradientActiveCaption" />
+          <s:enumeration value="GradientInactiveCaption" />
+          <s:enumeration value="MenuBar" />
+          <s:enumeration value="MenuHighlight" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="InsertLoginCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="loginPrefix" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="task" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="color" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sortOrder" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertLoginCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertLoginCodeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLoginCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="loginPrefix" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="task" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="color" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sortOrder" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLoginCodeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteLoginCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteLoginCodeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCurrentUser">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCurrentUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCurrentUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitPaymentNotification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isTest" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="referenceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rep" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitPaymentNotificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitPaymentNotificationResult" type="tns:PaymentNotificationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PaymentNotificationResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:WebResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ReturnCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ReturnText" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetPaymentLocationsByZipCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zipCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPaymentLocationsByZipCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPaymentLocationsByZipCodeResult" type="tns:PaymentLocationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPaymentLocations">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPaymentLocationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPaymentLocationsResult" type="tns:PaymentLocationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ValidateAccountNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateAccountNumber" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAccountNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateAccountNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountNumberByPhoneNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountNumberByPhoneNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountNumberByPhoneNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountNumberByPhoneNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="LookupAccountNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:LookupAccountNumber" />
+  </wsdl:message>
+  <wsdl:message name="LookupAccountNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:LookupAccountNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInformationExternalSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountInformationExternal" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInformationExternalSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountInformationExternalResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountInformation" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="StopServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:StopService" />
+  </wsdl:message>
+  <wsdl:message name="StopServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:StopServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="CanAccountBeTransferredSoapIn">
+    <wsdl:part name="parameters" element="tns:CanAccountBeTransferred" />
+  </wsdl:message>
+  <wsdl:message name="CanAccountBeTransferredSoapOut">
+    <wsdl:part name="parameters" element="tns:CanAccountBeTransferredResponse" />
+  </wsdl:message>
+  <wsdl:message name="CanAccountBeTransferredToThisPremiseSoapIn">
+    <wsdl:part name="parameters" element="tns:CanAccountBeTransferredToThisPremise" />
+  </wsdl:message>
+  <wsdl:message name="CanAccountBeTransferredToThisPremiseSoapOut">
+    <wsdl:part name="parameters" element="tns:CanAccountBeTransferredToThisPremiseResponse" />
+  </wsdl:message>
+  <wsdl:message name="CanAccountBeTransferredToThisPremiseTestSoapIn">
+    <wsdl:part name="parameters" element="tns:CanAccountBeTransferredToThisPremiseTest" />
+  </wsdl:message>
+  <wsdl:message name="CanAccountBeTransferredToThisPremiseTestSoapOut">
+    <wsdl:part name="parameters" element="tns:CanAccountBeTransferredToThisPremiseTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransferServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:TransferService" />
+  </wsdl:message>
+  <wsdl:message name="TransferServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:TransferServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectServiceOrderDateSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectServiceOrderDate" />
+  </wsdl:message>
+  <wsdl:message name="SelectServiceOrderDateSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectServiceOrderDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsAccountDNACSoapIn">
+    <wsdl:part name="parameters" element="tns:IsAccountDNAC" />
+  </wsdl:message>
+  <wsdl:message name="IsAccountDNACSoapOut">
+    <wsdl:part name="parameters" element="tns:IsAccountDNACResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateAddress" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentLocationsByCityAndStateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPaymentLocationsByCityAndState" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentLocationsByCityAndStateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPaymentLocationsByCityAndStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderEqualPayBrochureSoapIn">
+    <wsdl:part name="parameters" element="tns:OrderEqualPayBrochure" />
+  </wsdl:message>
+  <wsdl:message name="OrderEqualPayBrochureSoapOut">
+    <wsdl:part name="parameters" element="tns:OrderEqualPayBrochureResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEqualPayQuoteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEqualPayQuote" />
+  </wsdl:message>
+  <wsdl:message name="GetEqualPayQuoteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEqualPayQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderStatementOfAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:OrderStatementOfAccount" />
+  </wsdl:message>
+  <wsdl:message name="OrderStatementOfAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:OrderStatementOfAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderDuplicateBillSoapIn">
+    <wsdl:part name="parameters" element="tns:OrderDuplicateBill" />
+  </wsdl:message>
+  <wsdl:message name="OrderDuplicateBillSoapOut">
+    <wsdl:part name="parameters" element="tns:OrderDuplicateBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderAutoPayPacketSoapIn">
+    <wsdl:part name="parameters" element="tns:OrderAutoPayPacket" />
+  </wsdl:message>
+  <wsdl:message name="OrderAutoPayPacketSoapOut">
+    <wsdl:part name="parameters" element="tns:OrderAutoPayPacketResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExtendDueDateSoapIn">
+    <wsdl:part name="parameters" element="tns:ExtendDueDate" />
+  </wsdl:message>
+  <wsdl:message name="ExtendDueDateSoapOut">
+    <wsdl:part name="parameters" element="tns:ExtendDueDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="SignUpForEqualPaySoapIn">
+    <wsdl:part name="parameters" element="tns:SignUpForEqualPay" />
+  </wsdl:message>
+  <wsdl:message name="SignUpForEqualPaySoapOut">
+    <wsdl:part name="parameters" element="tns:SignUpForEqualPayResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateRoutingNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateRoutingNumber" />
+  </wsdl:message>
+  <wsdl:message name="ValidateRoutingNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateRoutingNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendCheckPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:SendCheckPayment" />
+  </wsdl:message>
+  <wsdl:message name="SendCheckPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:SendCheckPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeWARMStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeWARMStatus" />
+  </wsdl:message>
+  <wsdl:message name="ChangeWARMStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeWARMStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitMeterReadSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitMeterRead" />
+  </wsdl:message>
+  <wsdl:message name="SubmitMeterReadSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitMeterReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteNoPaymentArrangementsOfferedContactSoapIn">
+    <wsdl:part name="parameters" element="tns:WriteNoPaymentArrangementsOfferedContact" />
+  </wsdl:message>
+  <wsdl:message name="WriteNoPaymentArrangementsOfferedContactSoapOut">
+    <wsdl:part name="parameters" element="tns:WriteNoPaymentArrangementsOfferedContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteBalanceInquiryContactSoapIn">
+    <wsdl:part name="parameters" element="tns:WriteBalanceInquiryContact" />
+  </wsdl:message>
+  <wsdl:message name="WriteBalanceInquiryContactSoapOut">
+    <wsdl:part name="parameters" element="tns:WriteBalanceInquiryContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="WritePastDueBalanceInquiryContactSoapIn">
+    <wsdl:part name="parameters" element="tns:WritePastDueBalanceInquiryContact" />
+  </wsdl:message>
+  <wsdl:message name="WritePastDueBalanceInquiryContactSoapOut">
+    <wsdl:part name="parameters" element="tns:WritePastDueBalanceInquiryContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteBillMatrixConfirmationCodeContactSoapIn">
+    <wsdl:part name="parameters" element="tns:WriteBillMatrixConfirmationCodeContact" />
+  </wsdl:message>
+  <wsdl:message name="WriteBillMatrixConfirmationCodeContactSoapOut">
+    <wsdl:part name="parameters" element="tns:WriteBillMatrixConfirmationCodeContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountPaymentHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountPaymentHistory" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountPaymentHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountPaymentHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStoredPaymentInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStoredPaymentInformation" />
+  </wsdl:message>
+  <wsdl:message name="GetStoredPaymentInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStoredPaymentInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteTestLogEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:WriteTestLogEntry" />
+  </wsdl:message>
+  <wsdl:message name="WriteTestLogEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:WriteTestLogEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteTextExceptionSoapIn">
+    <wsdl:part name="parameters" element="tns:WriteTextException" />
+  </wsdl:message>
+  <wsdl:message name="WriteTextExceptionSoapOut">
+    <wsdl:part name="parameters" element="tns:WriteTextExceptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLoginCodesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLoginCodes" />
+  </wsdl:message>
+  <wsdl:message name="GetLoginCodesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLoginCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertLoginCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertLoginCode" />
+  </wsdl:message>
+  <wsdl:message name="InsertLoginCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertLoginCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLoginCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateLoginCode" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLoginCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateLoginCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLoginCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteLoginCode" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLoginCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteLoginCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentUser" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitPaymentNotificationSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitPaymentNotification" />
+  </wsdl:message>
+  <wsdl:message name="SubmitPaymentNotificationSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitPaymentNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentLocationsByZipCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPaymentLocationsByZipCode" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentLocationsByZipCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPaymentLocationsByZipCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentLocationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPaymentLocations" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentLocationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPaymentLocationsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IVR_x0020_Web_x0020_ServiceSoap">
+    <wsdl:operation name="ValidateAccountNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Determines whether or not an account number is a valid account.  Returns an Account object if the account is valid, null if it is not.</wsdl:documentation>
+      <wsdl:input message="tns:ValidateAccountNumberSoapIn" />
+      <wsdl:output message="tns:ValidateAccountNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountNumberByPhoneNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves an empty AccountInformation object with the AccountNumber populated if one matches the phone number specified.</wsdl:documentation>
+      <wsdl:input message="tns:GetAccountNumberByPhoneNumberSoapIn" />
+      <wsdl:output message="tns:GetAccountNumberByPhoneNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LookupAccountNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Looks up an account by it's phone number.  If a unique match is found, an Account object is returned.  If not, null is returned.</wsdl:documentation>
+      <wsdl:input message="tns:LookupAccountNumberSoapIn" />
+      <wsdl:output message="tns:LookupAccountNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInformationExternal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves an account object by account number.  Suitable for use by external applications</wsdl:documentation>
+      <wsdl:input message="tns:GetAccountInformationExternalSoapIn" />
+      <wsdl:output message="tns:GetAccountInformationExternalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInformation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves an account object by account number</wsdl:documentation>
+      <wsdl:input message="tns:GetAccountInformationSoapIn" />
+      <wsdl:output message="tns:GetAccountInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StopService">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets up a stop service order</wsdl:documentation>
+      <wsdl:input message="tns:StopServiceSoapIn" />
+      <wsdl:output message="tns:StopServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CanAccountBeTransferred">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Determines whether or not an account can have their service transferred</wsdl:documentation>
+      <wsdl:input message="tns:CanAccountBeTransferredSoapIn" />
+      <wsdl:output message="tns:CanAccountBeTransferredSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CanAccountBeTransferredToThisPremise">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Determines whether or not a customer can transfer their account to the premise specified</wsdl:documentation>
+      <wsdl:input message="tns:CanAccountBeTransferredToThisPremiseSoapIn" />
+      <wsdl:output message="tns:CanAccountBeTransferredToThisPremiseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CanAccountBeTransferredToThisPremiseTest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Determines whether or not a customer can transfer their account to the premise specified</wsdl:documentation>
+      <wsdl:input message="tns:CanAccountBeTransferredToThisPremiseTestSoapIn" />
+      <wsdl:output message="tns:CanAccountBeTransferredToThisPremiseTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransferService">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Transfers an account to a new premise.</wsdl:documentation>
+      <wsdl:input message="tns:TransferServiceSoapIn" />
+      <wsdl:output message="tns:TransferServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectServiceOrderDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Selects a new service order date</wsdl:documentation>
+      <wsdl:input message="tns:SelectServiceOrderDateSoapIn" />
+      <wsdl:output message="tns:SelectServiceOrderDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAccountDNAC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Use to check if an account can accept checks</wsdl:documentation>
+      <wsdl:input message="tns:IsAccountDNACSoapIn" />
+      <wsdl:output message="tns:IsAccountDNACSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Use to check an address and verify if it is a valid service address</wsdl:documentation>
+      <wsdl:input message="tns:ValidateAddressSoapIn" />
+      <wsdl:output message="tns:ValidateAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentLocationsByCityAndState">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves a list of payment locations by city and state</wsdl:documentation>
+      <wsdl:input message="tns:GetPaymentLocationsByCityAndStateSoapIn" />
+      <wsdl:output message="tns:GetPaymentLocationsByCityAndStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderEqualPayBrochure">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets up an order for an Equal Pay brochure</wsdl:documentation>
+      <wsdl:input message="tns:OrderEqualPayBrochureSoapIn" />
+      <wsdl:output message="tns:OrderEqualPayBrochureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEqualPayQuote">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves a quote for the Equal Pay program for the account specified</wsdl:documentation>
+      <wsdl:input message="tns:GetEqualPayQuoteSoapIn" />
+      <wsdl:output message="tns:GetEqualPayQuoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderStatementOfAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Request a Statement of Account to be mailed</wsdl:documentation>
+      <wsdl:input message="tns:OrderStatementOfAccountSoapIn" />
+      <wsdl:output message="tns:OrderStatementOfAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderDuplicateBill">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Order Duplicate Bill</wsdl:documentation>
+      <wsdl:input message="tns:OrderDuplicateBillSoapIn" />
+      <wsdl:output message="tns:OrderDuplicateBillSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderAutoPayPacket">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets up an order for an Auto Pay packet</wsdl:documentation>
+      <wsdl:input message="tns:OrderAutoPayPacketSoapIn" />
+      <wsdl:output message="tns:OrderAutoPayPacketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExtendDueDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Extends a customer's billing due date</wsdl:documentation>
+      <wsdl:input message="tns:ExtendDueDateSoapIn" />
+      <wsdl:output message="tns:ExtendDueDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SignUpForEqualPay">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Signs up a customer for Equal Pay</wsdl:documentation>
+      <wsdl:input message="tns:SignUpForEqualPaySoapIn" />
+      <wsdl:output message="tns:SignUpForEqualPaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateRoutingNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validates a bank routing number</wsdl:documentation>
+      <wsdl:input message="tns:ValidateRoutingNumberSoapIn" />
+      <wsdl:output message="tns:ValidateRoutingNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendCheckPayment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Queues a pay-by-check payment for the account specified</wsdl:documentation>
+      <wsdl:input message="tns:SendCheckPaymentSoapIn" />
+      <wsdl:output message="tns:SendCheckPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeWARMStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Opts a customer in or out of the WARM program</wsdl:documentation>
+      <wsdl:input message="tns:ChangeWARMStatusSoapIn" />
+      <wsdl:output message="tns:ChangeWARMStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitMeterRead">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Submits a meter reading</wsdl:documentation>
+      <wsdl:input message="tns:SubmitMeterReadSoapIn" />
+      <wsdl:output message="tns:SubmitMeterReadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteNoPaymentArrangementsOfferedContact">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Writes a customer contact when a customer is not offered payment arrangements</wsdl:documentation>
+      <wsdl:input message="tns:WriteNoPaymentArrangementsOfferedContactSoapIn" />
+      <wsdl:output message="tns:WriteNoPaymentArrangementsOfferedContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteBalanceInquiryContact">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Writes a customer contact when a customer receives a balance inquiry</wsdl:documentation>
+      <wsdl:input message="tns:WriteBalanceInquiryContactSoapIn" />
+      <wsdl:output message="tns:WriteBalanceInquiryContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WritePastDueBalanceInquiryContact">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Writes a customer contact when a customer receives a balance inquiry on a past due balance</wsdl:documentation>
+      <wsdl:input message="tns:WritePastDueBalanceInquiryContactSoapIn" />
+      <wsdl:output message="tns:WritePastDueBalanceInquiryContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteBillMatrixConfirmationCodeContact">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Writes a customer contact on receipt of a Bill Matrix confirmation code</wsdl:documentation>
+      <wsdl:input message="tns:WriteBillMatrixConfirmationCodeContactSoapIn" />
+      <wsdl:output message="tns:WriteBillMatrixConfirmationCodeContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountPaymentHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves payment history for an account</wsdl:documentation>
+      <wsdl:input message="tns:GetAccountPaymentHistorySoapIn" />
+      <wsdl:output message="tns:GetAccountPaymentHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStoredPaymentInformation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves stored payment information for an account</wsdl:documentation>
+      <wsdl:input message="tns:GetStoredPaymentInformationSoapIn" />
+      <wsdl:output message="tns:GetStoredPaymentInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteTestLogEntry">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">QA Utility to test SQL Log Functionality</wsdl:documentation>
+      <wsdl:input message="tns:WriteTestLogEntrySoapIn" />
+      <wsdl:output message="tns:WriteTestLogEntrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteTextException">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">QA Utility to test SQL Log functionality for Exceptions</wsdl:documentation>
+      <wsdl:input message="tns:WriteTextExceptionSoapIn" />
+      <wsdl:output message="tns:WriteTextExceptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoginCodes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves a list of Login Codes for the Soft Phone utility</wsdl:documentation>
+      <wsdl:input message="tns:GetLoginCodesSoapIn" />
+      <wsdl:output message="tns:GetLoginCodesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertLoginCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Inserts a new login code for the Soft Phone utility</wsdl:documentation>
+      <wsdl:input message="tns:InsertLoginCodeSoapIn" />
+      <wsdl:output message="tns:InsertLoginCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLoginCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates an existing login code for the Soft Phone utility</wsdl:documentation>
+      <wsdl:input message="tns:UpdateLoginCodeSoapIn" />
+      <wsdl:output message="tns:UpdateLoginCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLoginCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes an existing login code in the Soft Phone utility</wsdl:documentation>
+      <wsdl:input message="tns:DeleteLoginCodeSoapIn" />
+      <wsdl:output message="tns:DeleteLoginCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test method that returns the current user this web service is impersonating</wsdl:documentation>
+      <wsdl:input message="tns:GetCurrentUserSoapIn" />
+      <wsdl:output message="tns:GetCurrentUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitPaymentNotification">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Cancels outstanding service orders and notifies NWN of a credit card payment</wsdl:documentation>
+      <wsdl:input message="tns:SubmitPaymentNotificationSoapIn" />
+      <wsdl:output message="tns:SubmitPaymentNotificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentLocationsByZipCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Shell method to support IVR service promotion 6/5/2007</wsdl:documentation>
+      <wsdl:input message="tns:GetPaymentLocationsByZipCodeSoapIn" />
+      <wsdl:output message="tns:GetPaymentLocationsByZipCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentLocations">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Shell method to support IVR service promotion 6/5/2007</wsdl:documentation>
+      <wsdl:input message="tns:GetPaymentLocationsSoapIn" />
+      <wsdl:output message="tns:GetPaymentLocationsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IVR_x0020_Web_x0020_ServiceSoap" type="tns:IVR_x0020_Web_x0020_ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidateAccountNumber">
+      <soap:operation soapAction="urn::IVRService/ValidateAccountNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountNumberByPhoneNumber">
+      <soap:operation soapAction="urn::IVRService/GetAccountNumberByPhoneNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LookupAccountNumber">
+      <soap:operation soapAction="urn::IVRService/LookupAccountNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInformationExternal">
+      <soap:operation soapAction="urn::IVRService/GetAccountInformationExternal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInformation">
+      <soap:operation soapAction="urn::IVRService/GetAccountInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopService">
+      <soap:operation soapAction="urn::IVRService/StopService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanAccountBeTransferred">
+      <soap:operation soapAction="urn::IVRService/CanAccountBeTransferred" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanAccountBeTransferredToThisPremise">
+      <soap:operation soapAction="urn::IVRService/CanAccountBeTransferredToThisPremise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanAccountBeTransferredToThisPremiseTest">
+      <soap:operation soapAction="urn::IVRService/CanAccountBeTransferredToThisPremiseTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransferService">
+      <soap:operation soapAction="urn::IVRService/TransferService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectServiceOrderDate">
+      <soap:operation soapAction="urn::IVRService/SelectServiceOrderDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAccountDNAC">
+      <soap:operation soapAction="urn::IVRService/IsAccountDNAC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAddress">
+      <soap:operation soapAction="urn::IVRService/ValidateAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentLocationsByCityAndState">
+      <soap:operation soapAction="urn::IVRService/GetPaymentLocationsByCityAndState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderEqualPayBrochure">
+      <soap:operation soapAction="urn::IVRService/OrderEqualPayBrochure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEqualPayQuote">
+      <soap:operation soapAction="urn::IVRService/GetEqualPayQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderStatementOfAccount">
+      <soap:operation soapAction="urn::IVRService/OrderStatementOfAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderDuplicateBill">
+      <soap:operation soapAction="urn::IVRService/OrderDuplicateBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderAutoPayPacket">
+      <soap:operation soapAction="urn::IVRService/OrderAutoPayPacket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExtendDueDate">
+      <soap:operation soapAction="urn::IVRService/ExtendDueDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignUpForEqualPay">
+      <soap:operation soapAction="urn::IVRService/SignUpForEqualPay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateRoutingNumber">
+      <soap:operation soapAction="urn::IVRService/ValidateRoutingNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendCheckPayment">
+      <soap:operation soapAction="urn::IVRService/SendCheckPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeWARMStatus">
+      <soap:operation soapAction="urn::IVRService/ChangeWARMStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitMeterRead">
+      <soap:operation soapAction="urn::IVRService/SubmitMeterRead" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteNoPaymentArrangementsOfferedContact">
+      <soap:operation soapAction="urn::IVRService/WriteNoPaymentArrangementsOfferedContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteBalanceInquiryContact">
+      <soap:operation soapAction="urn::IVRService/WriteBalanceInquiryContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WritePastDueBalanceInquiryContact">
+      <soap:operation soapAction="urn::IVRService/WritePastDueBalanceInquiryContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteBillMatrixConfirmationCodeContact">
+      <soap:operation soapAction="urn::IVRService/WriteBillMatrixConfirmationCodeContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountPaymentHistory">
+      <soap:operation soapAction="urn::IVRService/GetAccountPaymentHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStoredPaymentInformation">
+      <soap:operation soapAction="urn::IVRService/GetStoredPaymentInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteTestLogEntry">
+      <soap:operation soapAction="urn::IVRService/WriteTestLogEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteTextException">
+      <soap:operation soapAction="urn::IVRService/WriteTextException" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoginCodes">
+      <soap:operation soapAction="urn::IVRService/GetLoginCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLoginCode">
+      <soap:operation soapAction="urn::IVRService/InsertLoginCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLoginCode">
+      <soap:operation soapAction="urn::IVRService/UpdateLoginCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLoginCode">
+      <soap:operation soapAction="urn::IVRService/DeleteLoginCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentUser">
+      <soap:operation soapAction="urn::IVRService/GetCurrentUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitPaymentNotification">
+      <soap:operation soapAction="urn::IVRService/SubmitPaymentNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentLocationsByZipCode">
+      <soap:operation soapAction="urn::IVRService/GetPaymentLocationsByZipCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentLocations">
+      <soap:operation soapAction="urn::IVRService/GetPaymentLocations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IVR_x0020_Web_x0020_ServiceSoap12" type="tns:IVR_x0020_Web_x0020_ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidateAccountNumber">
+      <soap12:operation soapAction="urn::IVRService/ValidateAccountNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountNumberByPhoneNumber">
+      <soap12:operation soapAction="urn::IVRService/GetAccountNumberByPhoneNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LookupAccountNumber">
+      <soap12:operation soapAction="urn::IVRService/LookupAccountNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInformationExternal">
+      <soap12:operation soapAction="urn::IVRService/GetAccountInformationExternal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInformation">
+      <soap12:operation soapAction="urn::IVRService/GetAccountInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopService">
+      <soap12:operation soapAction="urn::IVRService/StopService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanAccountBeTransferred">
+      <soap12:operation soapAction="urn::IVRService/CanAccountBeTransferred" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanAccountBeTransferredToThisPremise">
+      <soap12:operation soapAction="urn::IVRService/CanAccountBeTransferredToThisPremise" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanAccountBeTransferredToThisPremiseTest">
+      <soap12:operation soapAction="urn::IVRService/CanAccountBeTransferredToThisPremiseTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransferService">
+      <soap12:operation soapAction="urn::IVRService/TransferService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectServiceOrderDate">
+      <soap12:operation soapAction="urn::IVRService/SelectServiceOrderDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAccountDNAC">
+      <soap12:operation soapAction="urn::IVRService/IsAccountDNAC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAddress">
+      <soap12:operation soapAction="urn::IVRService/ValidateAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentLocationsByCityAndState">
+      <soap12:operation soapAction="urn::IVRService/GetPaymentLocationsByCityAndState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderEqualPayBrochure">
+      <soap12:operation soapAction="urn::IVRService/OrderEqualPayBrochure" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEqualPayQuote">
+      <soap12:operation soapAction="urn::IVRService/GetEqualPayQuote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderStatementOfAccount">
+      <soap12:operation soapAction="urn::IVRService/OrderStatementOfAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderDuplicateBill">
+      <soap12:operation soapAction="urn::IVRService/OrderDuplicateBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderAutoPayPacket">
+      <soap12:operation soapAction="urn::IVRService/OrderAutoPayPacket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExtendDueDate">
+      <soap12:operation soapAction="urn::IVRService/ExtendDueDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignUpForEqualPay">
+      <soap12:operation soapAction="urn::IVRService/SignUpForEqualPay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateRoutingNumber">
+      <soap12:operation soapAction="urn::IVRService/ValidateRoutingNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendCheckPayment">
+      <soap12:operation soapAction="urn::IVRService/SendCheckPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeWARMStatus">
+      <soap12:operation soapAction="urn::IVRService/ChangeWARMStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitMeterRead">
+      <soap12:operation soapAction="urn::IVRService/SubmitMeterRead" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteNoPaymentArrangementsOfferedContact">
+      <soap12:operation soapAction="urn::IVRService/WriteNoPaymentArrangementsOfferedContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteBalanceInquiryContact">
+      <soap12:operation soapAction="urn::IVRService/WriteBalanceInquiryContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WritePastDueBalanceInquiryContact">
+      <soap12:operation soapAction="urn::IVRService/WritePastDueBalanceInquiryContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteBillMatrixConfirmationCodeContact">
+      <soap12:operation soapAction="urn::IVRService/WriteBillMatrixConfirmationCodeContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountPaymentHistory">
+      <soap12:operation soapAction="urn::IVRService/GetAccountPaymentHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStoredPaymentInformation">
+      <soap12:operation soapAction="urn::IVRService/GetStoredPaymentInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteTestLogEntry">
+      <soap12:operation soapAction="urn::IVRService/WriteTestLogEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteTextException">
+      <soap12:operation soapAction="urn::IVRService/WriteTextException" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoginCodes">
+      <soap12:operation soapAction="urn::IVRService/GetLoginCodes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLoginCode">
+      <soap12:operation soapAction="urn::IVRService/InsertLoginCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLoginCode">
+      <soap12:operation soapAction="urn::IVRService/UpdateLoginCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLoginCode">
+      <soap12:operation soapAction="urn::IVRService/DeleteLoginCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentUser">
+      <soap12:operation soapAction="urn::IVRService/GetCurrentUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitPaymentNotification">
+      <soap12:operation soapAction="urn::IVRService/SubmitPaymentNotification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentLocationsByZipCode">
+      <soap12:operation soapAction="urn::IVRService/GetPaymentLocationsByZipCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentLocations">
+      <soap12:operation soapAction="urn::IVRService/GetPaymentLocations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IVR_x0020_Web_x0020_Service">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provides data in support of the IVR/VRU system</wsdl:documentation>
+    <wsdl:port name="IVR_x0020_Web_x0020_ServiceSoap" binding="tns:IVR_x0020_Web_x0020_ServiceSoap">
+      <soap:address location="http://futureshock/IVRService/IVRService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IVR_x0020_Web_x0020_ServiceSoap12" binding="tns:IVR_x0020_Web_x0020_ServiceSoap12">
+      <soap12:address location="http://futureshock/IVRService/IVRService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

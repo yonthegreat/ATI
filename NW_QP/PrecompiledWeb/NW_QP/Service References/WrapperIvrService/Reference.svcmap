@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="674d8d47-6b64-434b-aaf8-855c7030ac23" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localHost/WrapperService/WrapperService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WrapperService.xsd" MetadataType="Schema" ID="f0689fc0-6460-4b2d-b939-4c6888fc9f79" SourceId="1" SourceUrl="http://localhost/WrapperService/WrapperService.svc?xsd=xsd1" />
+    <MetadataFile FileName="WrapperService1.xsd" MetadataType="Schema" ID="f97c305e-c640-40b5-b6da-b65781a5b40b" SourceId="1" SourceUrl="http://localhost/WrapperService/WrapperService.svc?xsd=xsd2" />
+    <MetadataFile FileName="WrapperService2.xsd" MetadataType="Schema" ID="7bcabe2a-7682-4040-af99-db87bb255456" SourceId="1" SourceUrl="http://localhost/WrapperService/WrapperService.svc?xsd=xsd0" />
+    <MetadataFile FileName="WrapperService.disco" MetadataType="Disco" ID="6d30adfa-d6ec-42f9-9e5c-1c54b8b78e04" SourceId="1" SourceUrl="http://localhost/WrapperService/WrapperService.svc?disco" />
+    <MetadataFile FileName="WrapperService.wsdl" MetadataType="Wsdl" ID="ed454975-631f-4be4-b3f7-2058c341e5b6" SourceId="1" SourceUrl="http://localhost/WrapperService/WrapperService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

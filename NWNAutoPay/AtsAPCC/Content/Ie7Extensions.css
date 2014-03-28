@@ -1,0 +1,33 @@
+﻿.rounded_ie
+{
+    display: inline;
+    position: relative;
+    left: 10px;
+}
+
+#main #contractor-search form table tr td
+{
+    padding-right: 15px; 
+}
+
+
+.process-actions div.large-button input[type=submit]
+{
+    width: 300px;
+}
+
+.heads-up 
+{
+	margin: 10px 0 0 15px;
+}
+
+#mapcanvas img {
+    margin-top: -2px;
+    margin-left: -2px;
+    border:0px
+ }
+  .paystation a {
+     margin-top:0px;
+     float: none;
+     font-weight:normal;
+ }

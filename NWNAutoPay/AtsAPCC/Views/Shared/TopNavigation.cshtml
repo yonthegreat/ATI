@@ -1,0 +1,22 @@
+﻿@using System.Configuration
+<img src="@Url.Content("~/Content/img/logo.jpg")" class="print-only" />
+     <div id="header"><!--BEGIN HEADER -->
+      <a href="@Url.Content("~/")"><div id="logo"></div></a>
+      <div id="rightinfo">
+        <ul>
+          <li><a href="@Url.Content("~/")">Home</a> | </li>
+          <li><a href="@Url.Content("~/AboutNWNatural/TheCompany/Careers")">Careers</a> | </li>
+          <li><a href="@ConfigurationManager.AppSettings["InvestorSiteUrl"]">Investors</a> | </li>
+          <li class="last"><a href="@Url.Content("~/ContactUs")">Contact Us</a></li>
+        </ul>
+        </div>
+        <div style="clear:right;float:right">
+        <p>Customer Service: <b>800-422-4012</b><br />
+        Natural Gas Odor? <b>800-882-3377</b></p>
+      </div>
+
+     
+      @Html.Partial("TopNavigationTabs")
+      <div id="subnav-placeholder"></div>
+    </div><!--END HEADER -->
+

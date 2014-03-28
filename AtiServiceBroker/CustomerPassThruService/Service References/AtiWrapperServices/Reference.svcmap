@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="69e9e65d-80dc-4a67-8ab3-43f8385a93f1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54015/AtiWrapperServices.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AtiWrapperServices.wsdl" MetadataType="Wsdl" ID="e6e41db2-c655-4a24-9b6b-f7fa46f3b3cf" SourceId="1" SourceUrl="http://localhost:54015/AtiWrapperServices.svc?wsdl" />
+    <MetadataFile FileName="AtiWrapperServices.xsd" MetadataType="Schema" ID="b32e4ef9-33a7-488c-ad84-f7cc31b71dd0" SourceId="1" SourceUrl="http://localhost:54015/AtiWrapperServices.svc?xsd=xsd3" />
+    <MetadataFile FileName="AtiWrapperServices1.xsd" MetadataType="Schema" ID="6f1eaa6e-7c03-4b0b-852e-d7925002dcf3" SourceId="1" SourceUrl="http://localhost:54015/AtiWrapperServices.svc?xsd=xsd2" />
+    <MetadataFile FileName="AtiWrapperServices2.xsd" MetadataType="Schema" ID="1c167525-ea87-431e-8654-d66e93eec17d" SourceId="1" SourceUrl="http://localhost:54015/AtiWrapperServices.svc?xsd=xsd1" />
+    <MetadataFile FileName="AtiWrapperServices3.xsd" MetadataType="Schema" ID="fe50f84c-779f-4f1f-a6c7-0b51298a4df5" SourceId="1" SourceUrl="http://localhost:54015/AtiWrapperServices.svc?xsd=xsd0" />
+    <MetadataFile FileName="AtiWrapperServices.disco" MetadataType="Disco" ID="c09a92a3-e267-4f7a-8141-411752672651" SourceId="1" SourceUrl="http://localhost:54015/AtiWrapperServices.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

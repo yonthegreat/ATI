@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WrapperService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/WrapperService/WrapperService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/WrapperService/WrapperService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/WrapperService/WrapperService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WrapperService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWrapperService_TestService_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestService" />
+  </wsdl:message>
+  <wsdl:message name="IWrapperService_TestService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWrapperService_ProductionService_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProductionService" />
+  </wsdl:message>
+  <wsdl:message name="IWrapperService_ProductionService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProductionServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWrapperService_AddNewServiceProxy_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewServiceProxy" />
+  </wsdl:message>
+  <wsdl:message name="IWrapperService_AddNewServiceProxy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewServiceProxyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWrapperService">
+    <wsdl:operation name="TestService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWrapperService/TestService" message="tns:IWrapperService_TestService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWrapperService/TestServiceResponse" message="tns:IWrapperService_TestService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductionService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWrapperService/ProductionService" message="tns:IWrapperService_ProductionService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWrapperService/ProductionServiceResponse" message="tns:IWrapperService_ProductionService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewServiceProxy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWrapperService/AddNewServiceProxy" message="tns:IWrapperService_AddNewServiceProxy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWrapperService/AddNewServiceProxyResponse" message="tns:IWrapperService_AddNewServiceProxy_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWrapperService" type="tns:IWrapperService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TestService">
+      <soap:operation soapAction="http://tempuri.org/IWrapperService/TestService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductionService">
+      <soap:operation soapAction="http://tempuri.org/IWrapperService/ProductionService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewServiceProxy">
+      <soap:operation soapAction="http://tempuri.org/IWrapperService/AddNewServiceProxy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WrapperService">
+    <wsdl:port name="BasicHttpBinding_IWrapperService" binding="tns:BasicHttpBinding_IWrapperService">
+      <soap:address location="http://localhost/WrapperService/WrapperService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

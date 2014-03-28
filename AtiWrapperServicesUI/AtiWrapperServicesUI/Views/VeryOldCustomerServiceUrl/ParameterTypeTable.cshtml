@@ -1,0 +1,16 @@
+﻿@model AtiWrapperServicesUI.Models.CustomerServiceUrlViewModel
+
+@{
+    ViewBag.Title = "ParameterTypeTable";
+}
+<h2>
+    Parameter Type Table
+</h2>
+@{
+    var grid = new WebGrid(Model.FlatParameters);
+}
+@grid.GetHtml()
+
+<div>
+    <input type="button" value="Back To Create Web Service" onclick="window.location.href='@Url.Action("Create", "CustomerServiceUrl")'" />
+</div>

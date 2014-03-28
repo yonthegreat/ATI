@@ -1,0 +1,93 @@
+﻿@using AtsAPCC.Extensions
+@model AtsAPCC.Models.AutoPayEditModel
+@{
+    ViewBag.Title = "NWN | Auto Pay by Debit/Credit Card";
+}
+ <h1 class="big">Auto Pay by Debit/Credit Card</h1>
+
+        <div id="progress-indicator"><!--BEGIN PROGRESS INDICATOR-->
+          <div class="step">
+            <div class="number">1</div>
+            <div class="title">Billing Information</div>
+          </div>
+          <div class="step">
+            <div class="number">2</div>
+            <div class="title">Confirm</div>
+          </div>
+          <div class="step current">
+            <div class="number">3</div>
+            <div class="title">Receipt</div>
+          </div>
+        </div><!--END PROGRESS INDICATOR-->
+
+<p class="instructions">Your authorization was successfully sent.  New enrollments are effective with your next bill.  If you are updating an existing Auto Pay, changes are immediate.</p>
+<p class="instructions">If you wish to cancel this authorization, please visit our website or contact Customer Service at 800-422-4012.</p>
+<p class="instructions">Thank you for using our online services.  Please print this page as your receipt.</p>
+
+<div class="signup">
+    <table>
+            <tr>
+                <td class="labels">
+                    @Html.LabelFor(x => x.AccountNumber)
+                </td>
+                <td class="inputs">  
+                    @Html.DisplayFor(x => x.AccountNumber)
+                </td>
+            </tr>          
+        <tr>
+            <td class="labels">
+                @Html.LabelFor(x => x.NameOnCard)
+            </td>
+            <td class="InputWidth60">  
+                @Html.DisplayFor(x => x.NameOnCard)
+            </td>
+        </tr>
+        <tr>
+            <td class="labels">
+                @Html.LabelFor(x => x.ObscuredPaymentCardNumber)
+            </td>
+            <td class="inputs">  
+               <span>************</span> @Html.DisplayFor(x => x.ObscuredPaymentCardNumber)
+            </td>
+        </tr>
+         <tr>
+                <td class="labels">
+                    @Html.LabelFor(x => x.PaymentCardSecurityCode)
+                </td>
+                <td class="inputs">  
+                    <span>***</span>
+                </td>
+            </tr>
+        <tr>
+            <td class="labels">
+                @Html.LabelFor(x => x.ExpirationMonth)
+            </td>
+            <td class="inputs">  
+                @Html.DisplayFor(x => x.ExpirationMonth)/@Html.DisplayFor(x => x.ExpirationYear)
+            </td>
+        </tr>
+        <tr>
+            <td class="labels">
+                @Html.LabelFor(x => x.PhoneNumber)
+            </td>
+            <td class="InputWidth60">  
+                @Html.DisplayFor(x => x.PhoneNumber)
+            </td>
+        </tr>
+        <tr>
+            <td class="labels">
+                @Html.LabelFor(x => x.ConfirmationNumber)
+            </td>
+            <td>  
+                @Html.DisplayFor(x => x.ConfirmationNumber)
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div class="process-actions">
+        <a href="https://www.nwnatural.com/AccountDashboard" class="gen-button right"><span>Return To Your Dashboard</span></a>
+          <div class="PrintJSButton"> 
+            <span class="right">&nbsp;&nbsp;</span>
+            <a onclick="window.print();" class="gen-button right"><span>Print This Page</span></a>
+        </div>
+    </div>

@@ -1,0 +1,60 @@
+﻿@model AtiWrapperServicesUI.Models.ServiceMethodParameterViewModel
+
+@{
+    ViewBag.Title = "ServiceMethodParameterView";
+}
+
+<h2>ServiceMethodParameterView</h2>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.SoapHeaderTypeName)
+
+    if (Model.SoapHeaders.Count > 0)
+    {
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <td>
+                            <h2>Name</h2>
+                        </td>
+                        <td>
+                            <h2>Type</h2>
+                        </td>
+                        <td>
+                            <h2>Value</h2>
+                        </td>
+                    </tr>
+                </thead>
+
+            @for (int i = 0; i < Model.SoapHeaders.Count; i++)
+            {
+                    @Html.EditorFor(x => x.SoapHeaders[i])
+            }
+            </table>
+        </div>
+    }
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        <h2>Name</h2>
+                    </td>
+                    <td>
+                        <h2>Type</h2>
+                    </td>
+                    <td>
+                        <h2>Value</h2>
+                    </td>
+                </tr>
+            </thead>
+
+        @for (int i = 0; i < Model.Parameters.Count; i++)
+        {
+                @Html.EditorFor(x => x.Parameters[i])
+        }
+        </table>
+    </div>
+<input type ="submit" value="OK" />
+}

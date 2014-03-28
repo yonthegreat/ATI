@@ -1,0 +1,14 @@
+﻿@using AtsAPCC.Extensions
+<ul id="mainnav">
+    @foreach (SiteMapNode topNavNode in SiteMap.RootNode.ChildNodes)
+    {
+        <li class="@topNavNode.CssClassForCurrent(ViewContext.HttpContext.Session)"><a href="@Url.Content("~" + topNavNode.Url)"><span>@topNavNode.Title</span></a>
+            <ul class="subnav">
+                @foreach (SiteMapNode subNavNode in topNavNode.ChildNodes)
+                {
+                    <li><a href="@Url.Content("~" + subNavNode.Url)" class="@subNavNode.CssClassForCurrent(ViewContext.HttpContext.Session)">@subNavNode.Title</a></li>
+                }
+            </ul>
+        </li>
+    }
+</ul>

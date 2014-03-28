@@ -1,0 +1,20 @@
+#content #main .sub-section .sub-section-text { width: 350px; }
+
+#contractor-results #contractor-results-grid .contractor-result { margin-right: 14px; }
+
+body #wrap #page #content #main.wide { width: 660px !important; }
+body #wrap #page #content #main.double { width: 700px; }
+
+.step .number { padding: 6px 9px 6px 10px; }
+
+#contractor-search-filters #contractor-results-pagination { line-height: 15px; }
+
+.process-actions input[type=submit].iebutton {
+	width: 100px;
+	padding: 3px 6px;
+	overflow: auto;
+}
+
+.process-actions input[type=submit].iebutton.long {
+	width: 155px;
+}

@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>@ViewBag.Title</title>
+
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/style.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/type-image.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/StyleExtensions.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/DatePicker.css")" />
+    <link rel="Stylesheet" type="text/css" media="print" href="@Url.Content("~/Content/print.css")" />
+
+<!--[if lt IE 8]>
+<script src="@Url.Content("~/Scripts/modernizr-2.6.2.js")" type="text/javascript"></script>
+<![endif]-->
+
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" media="all" href="@Url.Content("~/Content/ie8.css")" />
+<![endif]-->
+
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" media="all" href="@Url.Content("~/Content/ie7-only.css")" />
+<![endif]-->
+
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" media="all" href="@Url.Content("~/Content/ie7.css")" />
+<![endif]-->
+
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" media="all" href="@Url.Content("~/Content/ie6.css")" />
+<script src="@Url.Content("~/Scripts/dd_pngfix.js")"></script>
+<script>
+DD_belatedPNG.fix('div, li, img, a, span');
+</script>
+<![endif]-->
+
+<!--[if lte IE 8]>
+<link rel="stylesheet" type="text/css" media="all" href="@Url.Content("~/Content/IeExtensions.css")" />
+<![endif]-->
+
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" media="all" href="@Url.Content("~/Content/Ie7Extensions.css")" />
+<![endif]-->
+
+<script src="@Url.Content("~/Scripts/jquery-2.0.3.min.js")" type="text/javascript"></script>
+    
+<!--[if gt IE 7]>
+<script src="@Url.Content("~/Scripts/modernizr-2.6.2.js")" type="text/javascript"></script>
+<![endif]-->
+    
+    <!--[if lt IE 8]>
+<script src="@Url.Content("~/Scripts/modernizr-2.6.2.js")" type="text/javascript"></script>
+<![endif]-->
+
+<!-- required plugins -->
+<script type="text/javascript" src="@Url.Content("~/Scripts/date.js")"></script>
+<!--[if lt IE 9]><script type="text/javascript" src="@Url.Content("~/Scripts/jquery.bgiframe.js")"></script><![endif]-->
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('.PrintJSButton').show();
+    });
+
+    $(document).ready(function () {
+        $(".qpShow").click(function () {
+            $("#quick-profile-inner").find("div#qp-content:visible").slideUp();
+            $("#quick-profile-inner").find("div#qp-content:hidden").slideDown();
+        });
+    });
+
+    $.fn.autotab = function () {
+        $(this).keyup(function (e) {
+            switch (e.keyCode) {
+                // ignore the following keys   
+                case 9: // tab
+                    return false;
+                case 16: // shift
+                    return false;
+                case 20: // capslock
+                    return false;
+                default: // any other keyup actions will trigger 
+                    var maxlength = $(this).attr('maxlength'); // get maxlength value
+                    var inputlength = $(this).val().length; // get the length of the text
+                    if (inputlength >= maxlength) { // if the text is equal of more than the max length
+                        $(this).next('input[type="text"]').focus(); // set focus to the next text field
+                    }
+                    return true;
+            }
+        });
+    };
+    
+    (function ($) {
+        $.fn.popupWindow = function (instanceSettings) {
+
+            return this.each(function () {
+
+                $(this).click(function () {
+
+                    $.fn.popupWindow.defaultSettings = {
+                        centerBrowser: 0, // center window over browser window? {1 (YES) or 0 (NO)}. overrides top and left
+                        centerScreen: 0, // center window over entire screen? {1 (YES) or 0 (NO)}. overrides top and left
+                        height: 500, // sets the height in pixels of the window.
+                        left: 0, // left position when the window appears.
+                        location: 0, // determines whether the address bar is displayed {1 (YES) or 0 (NO)}.
+                        menubar: 0, // determines whether the menu bar is displayed {1 (YES) or 0 (NO)}.
+                        resizable: 0, // whether the window can be resized {1 (YES) or 0 (NO)}. Can also be overloaded using resizable.
+                        scrollbars: 0, // determines whether scrollbars appear on the window {1 (YES) or 0 (NO)}.
+                        status: 0, // whether a status line appears at the bottom of the window {1 (YES) or 0 (NO)}.
+                        width: 500, // sets the width in pixels of the window.
+                        windowName: null, // name of window set from the name attribute of the element that invokes the click
+                        windowURL: null, // url used for the popup
+                        top: 0, // top position when the window appears.
+                        toolbar: 0 // determines whether a toolbar (includes the forward and back buttons) is displayed {1 (YES) or 0 (NO)}.
+                    };
+
+                    settings = $.extend({}, $.fn.popupWindow.defaultSettings, instanceSettings || {});
+
+                    var windowFeatures = 'height=' + settings.height +
+                                            ',width=' + settings.width +
+                                            ',toolbar=' + settings.toolbar +
+                                            ',scrollbars=' + settings.scrollbars +
+                                            ',status=' + settings.status +
+                                            ',resizable=' + settings.resizable +
+                                            ',location=' + settings.location +
+                                            ',menuBar=' + settings.menubar;
+
+                    settings.windowName = this.name || settings.windowName;
+                    settings.windowURL = this.href || settings.windowURL;
+                    var centeredY, centeredX;
+
+                    if (settings.centerBrowser) {
+
+                        if ($.browser.msie) {//hacked together for IE browsers
+                            centeredY = (window.screenTop - 120) + ((((document.documentElement.clientHeight + 120) / 2) - (settings.height / 2)));
+                            centeredX = window.screenLeft + ((((document.body.offsetWidth + 20) / 2) - (settings.width / 2)));
+                        } else {
+                            centeredY = window.screenY + (((window.outerHeight / 2) - (settings.height / 2)));
+                            centeredX = window.screenX + (((window.outerWidth / 2) - (settings.width / 2)));
+                        }
+                        window.open(settings.windowURL, settings.windowName, windowFeatures + ',left=' + centeredX + ',top=' + centeredY).focus();
+                    } else if (settings.centerScreen) {
+                        centeredY = (screen.height - settings.height) / 2;
+                        centeredX = (screen.width - settings.width) / 2;
+                        window.open(settings.windowURL, settings.windowName, windowFeatures + ',left=' + centeredX + ',top=' + centeredY).focus();
+                    } else {
+                        window.open(settings.windowURL, settings.windowName, windowFeatures + ',left=' + settings.left + ',top=' + settings.top).focus();
+                    }
+                    return false;
+                });
+
+            });
+        };
+    })(jQuery);
+
+</script>
+</head>
+<body id="sub">
+<div id="wrap"><!--OPEN LAYOUT WRAPPER -->
+  <div id="page"><!--BEGIN PAGE -->
+   @Html.Partial("TopNavigation")
+    
+    <div id="content" class="sub"><!--BEGIN CONTENT -->
+      <div id="main" class="double">
+          @RenderBody()
+      </div>
+      <div id="sidebar"></div>
+    </div><!--END CONTENT -->
+    
+    @Html.Partial("Footer")
+   
+  </div><!--END PAGE -->
+</div><!--CLOSE LAYOUT WRAPPER -->
+
+@Html.Partial("DisableMultipleSubmits")
+</body>
+</html>
