@@ -111,9 +111,9 @@ Public Class Tools
         If Val(Web_HistoryID) < 1 Then
 
             If Test Then
-                objWebSvc = New NWWS_TestRelay.TestRelaySoapClient
+                objWebSvc = New NWWSTestRelay.TestRelaySoapClient
             Else
-                objWebSvc = New NWWS_Relay.RelaySoapClient
+                objWebSvc = New NWWSRelay.RelaySoapClient
             End If
 
             Try
@@ -147,9 +147,9 @@ Public Class Tools
         WebHistory = Right(WebHistory, 8000)
 
         If Test Then
-            objWebSvc = New NWWS_TestRelay.TestRelaySoapClient
+            objWebSvc = New NWWSTestRelay.TestRelaySoapClient
         Else
-            objWebSvc = New NWWS_Relay.RelaySoapClient
+            objWebSvc = New NWWSRelay.RelaySoapClient
         End If
 
         Try

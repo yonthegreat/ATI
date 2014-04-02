@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AtiWrapperServices" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AtiWrapperServices" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WrapperService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WrapperService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:complexType name="WrapperResult">
     <xs:sequence>
       <xs:element minOccurs="0" name="FailureReason" nillable="true" type="xs:anyType" />
@@ -17,4 +17,12 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="WrapperResult.ATIWrapperServiceStatusEnum" nillable="true" type="tns:WrapperResult.ATIWrapperServiceStatusEnum" />
+  <xs:simpleType name="ServiceMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Production" />
+      <xs:enumeration value="Test" />
+      <xs:enumeration value="Development" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ServiceMode" nillable="true" type="tns:ServiceMode" />
 </xs:schema>

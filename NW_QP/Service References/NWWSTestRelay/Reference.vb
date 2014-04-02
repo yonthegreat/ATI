@@ -14,30 +14,30 @@ Option Explicit On
 Imports System
 Imports System.Runtime.Serialization
 
-Namespace NWWS_TestRelay
+Namespace NWWSTestRelay
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
      System.Runtime.Serialization.DataContractAttribute(Name:="WebResponse", [Namespace]:="urn::IVRService"),  _
      System.SerializableAttribute(),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWS_TestRelay.StopServiceInformation)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWS_TestRelay.PremiseTransferInformation)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWS_TestRelay.TransferServiceInformation)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWS_TestRelay.ServiceOrderResponse)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWS_TestRelay.AddressValidationResponse)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWS_TestRelay.PaymentLocationResponse)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWS_TestRelay.ContactResponse)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWS_TestRelay.EqualPayQuoteResponse)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWS_TestRelay.EqualPaySignupResponse)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWS_TestRelay.DueDateExtension)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWS_TestRelay.Payment)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWS_TestRelay.WARMResponse)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWS_TestRelay.MeterReadResult)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWS_TestRelay.PaymentHistoryResponse)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWS_TestRelay.StoredPaymentInformationResponse)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWS_TestRelay.PaymentNotificationResponse)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWS_TestRelay.Bank)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWS_TestRelay.AccountInformation))>  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWSTestRelay.StopServiceInformation)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWSTestRelay.PremiseTransferInformation)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWSTestRelay.TransferServiceInformation)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWSTestRelay.ServiceOrderResponse)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWSTestRelay.AddressValidationResponse)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWSTestRelay.PaymentNotificationResponse)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWSTestRelay.ContactResponse)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWSTestRelay.EqualPayQuoteResponse)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWSTestRelay.EqualPaySignupResponse)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWSTestRelay.DueDateExtension)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWSTestRelay.Bank)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWSTestRelay.Payment)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWSTestRelay.WARMResponse)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWSTestRelay.MeterReadResult)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWSTestRelay.PaymentHistoryResponse)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWSTestRelay.StoredPaymentInformationResponse)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWSTestRelay.PaymentLocationResponse)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWSTestRelay.AccountInformation))>  _
     Partial Public Class WebResponse
         Inherits Object
         Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
@@ -86,7 +86,7 @@ Namespace NWWS_TestRelay
      System.Runtime.Serialization.DataContractAttribute(Name:="StopServiceInformation", [Namespace]:="urn::IVRService"),  _
      System.SerializableAttribute()>  _
     Partial Public Class StopServiceInformation
-        Inherits NWWS_TestRelay.WebResponse
+        Inherits NWWSTestRelay.WebResponse
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private StopDateField As String
@@ -126,7 +126,7 @@ Namespace NWWS_TestRelay
      System.Runtime.Serialization.DataContractAttribute(Name:="PremiseTransferInformation", [Namespace]:="urn::IVRService"),  _
      System.SerializableAttribute()>  _
     Partial Public Class PremiseTransferInformation
-        Inherits NWWS_TestRelay.WebResponse
+        Inherits NWWSTestRelay.WebResponse
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private OrderTypeField As String
@@ -150,7 +150,7 @@ Namespace NWWS_TestRelay
      System.Runtime.Serialization.DataContractAttribute(Name:="TransferServiceInformation", [Namespace]:="urn::IVRService"),  _
      System.SerializableAttribute()>  _
     Partial Public Class TransferServiceInformation
-        Inherits NWWS_TestRelay.WebResponse
+        Inherits NWWSTestRelay.WebResponse
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private ConfirmationNumberField As String
@@ -238,7 +238,7 @@ Namespace NWWS_TestRelay
      System.Runtime.Serialization.DataContractAttribute(Name:="ServiceOrderResponse", [Namespace]:="urn::IVRService"),  _
      System.SerializableAttribute()>  _
     Partial Public Class ServiceOrderResponse
-        Inherits NWWS_TestRelay.WebResponse
+        Inherits NWWSTestRelay.WebResponse
         
         Private IsValidDateField As Boolean
         
@@ -309,7 +309,7 @@ Namespace NWWS_TestRelay
      System.Runtime.Serialization.DataContractAttribute(Name:="AddressValidationResponse", [Namespace]:="urn::IVRService"),  _
      System.SerializableAttribute()>  _
     Partial Public Class AddressValidationResponse
-        Inherits NWWS_TestRelay.WebResponse
+        Inherits NWWSTestRelay.WebResponse
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private PremiseNumberField As String
@@ -330,23 +330,39 @@ Namespace NWWS_TestRelay
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="PaymentLocationResponse", [Namespace]:="urn::IVRService"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="PaymentNotificationResponse", [Namespace]:="urn::IVRService"),  _
      System.SerializableAttribute()>  _
-    Partial Public Class PaymentLocationResponse
-        Inherits NWWS_TestRelay.WebResponse
+    Partial Public Class PaymentNotificationResponse
+        Inherits NWWSTestRelay.WebResponse
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private LocationsField() As NWWS_TestRelay.PaymentLocation
+        Private ReturnCodeField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ReturnTextField As String
         
         <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false)>  _
-        Public Property Locations() As NWWS_TestRelay.PaymentLocation()
+        Public Property ReturnCode() As String
             Get
-                Return Me.LocationsField
+                Return Me.ReturnCodeField
             End Get
             Set
-                If (Object.ReferenceEquals(Me.LocationsField, value) <> true) Then
-                    Me.LocationsField = value
-                    Me.RaisePropertyChanged("Locations")
+                If (Object.ReferenceEquals(Me.ReturnCodeField, value) <> true) Then
+                    Me.ReturnCodeField = value
+                    Me.RaisePropertyChanged("ReturnCode")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false)>  _
+        Public Property ReturnText() As String
+            Get
+                Return Me.ReturnTextField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ReturnTextField, value) <> true) Then
+                    Me.ReturnTextField = value
+                    Me.RaisePropertyChanged("ReturnText")
                 End If
             End Set
         End Property
@@ -357,7 +373,7 @@ Namespace NWWS_TestRelay
      System.Runtime.Serialization.DataContractAttribute(Name:="ContactResponse", [Namespace]:="urn::IVRService"),  _
      System.SerializableAttribute()>  _
     Partial Public Class ContactResponse
-        Inherits NWWS_TestRelay.WebResponse
+        Inherits NWWSTestRelay.WebResponse
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private ConfirmationNumberField As String
@@ -380,9 +396,9 @@ Namespace NWWS_TestRelay
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
      System.Runtime.Serialization.DataContractAttribute(Name:="EqualPayQuoteResponse", [Namespace]:="urn::IVRService"),  _
      System.SerializableAttribute(),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWS_TestRelay.EqualPaySignupResponse))>  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(NWWSTestRelay.EqualPaySignupResponse))>  _
     Partial Public Class EqualPayQuoteResponse
-        Inherits NWWS_TestRelay.WebResponse
+        Inherits NWWSTestRelay.WebResponse
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private AccountNumberField As String
@@ -483,7 +499,7 @@ Namespace NWWS_TestRelay
      System.Runtime.Serialization.DataContractAttribute(Name:="EqualPaySignupResponse", [Namespace]:="urn::IVRService"),  _
      System.SerializableAttribute()>  _
     Partial Public Class EqualPaySignupResponse
-        Inherits NWWS_TestRelay.EqualPayQuoteResponse
+        Inherits NWWSTestRelay.EqualPayQuoteResponse
     End Class
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
@@ -491,7 +507,7 @@ Namespace NWWS_TestRelay
      System.Runtime.Serialization.DataContractAttribute(Name:="DueDateExtension", [Namespace]:="urn::IVRService"),  _
      System.SerializableAttribute()>  _
     Partial Public Class DueDateExtension
-        Inherits NWWS_TestRelay.WebResponse
+        Inherits NWWSTestRelay.WebResponse
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private DueDateField As String
@@ -544,10 +560,50 @@ Namespace NWWS_TestRelay
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="Bank", [Namespace]:="urn::IVRService"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class Bank
+        Inherits NWWSTestRelay.WebResponse
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private RoutingNumberField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private BankNameField As String
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false)>  _
+        Public Property RoutingNumber() As String
+            Get
+                Return Me.RoutingNumberField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.RoutingNumberField, value) <> true) Then
+                    Me.RoutingNumberField = value
+                    Me.RaisePropertyChanged("RoutingNumber")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=1)>  _
+        Public Property BankName() As String
+            Get
+                Return Me.BankNameField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.BankNameField, value) <> true) Then
+                    Me.BankNameField = value
+                    Me.RaisePropertyChanged("BankName")
+                End If
+            End Set
+        End Property
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
      System.Runtime.Serialization.DataContractAttribute(Name:="Payment", [Namespace]:="urn::IVRService"),  _
      System.SerializableAttribute()>  _
     Partial Public Class Payment
-        Inherits NWWS_TestRelay.WebResponse
+        Inherits NWWSTestRelay.WebResponse
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private ConfirmationNumberField As String
@@ -571,7 +627,7 @@ Namespace NWWS_TestRelay
      System.Runtime.Serialization.DataContractAttribute(Name:="WARMResponse", [Namespace]:="urn::IVRService"),  _
      System.SerializableAttribute()>  _
     Partial Public Class WARMResponse
-        Inherits NWWS_TestRelay.WebResponse
+        Inherits NWWSTestRelay.WebResponse
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private ConfirmationNumberField As String
@@ -595,7 +651,7 @@ Namespace NWWS_TestRelay
      System.Runtime.Serialization.DataContractAttribute(Name:="MeterReadResult", [Namespace]:="urn::IVRService"),  _
      System.SerializableAttribute()>  _
     Partial Public Class MeterReadResult
-        Inherits NWWS_TestRelay.WebResponse
+        Inherits NWWSTestRelay.WebResponse
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private ResultIdField As String
@@ -635,13 +691,13 @@ Namespace NWWS_TestRelay
      System.Runtime.Serialization.DataContractAttribute(Name:="PaymentHistoryResponse", [Namespace]:="urn::IVRService"),  _
      System.SerializableAttribute()>  _
     Partial Public Class PaymentHistoryResponse
-        Inherits NWWS_TestRelay.WebResponse
+        Inherits NWWSTestRelay.WebResponse
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private PaymentHistoryField() As NWWS_TestRelay.PaymentHistory
+        Private PaymentHistoryField() As NWWSTestRelay.PaymentHistory
         
         <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false)>  _
-        Public Property PaymentHistory() As NWWS_TestRelay.PaymentHistory()
+        Public Property PaymentHistory() As NWWSTestRelay.PaymentHistory()
             Get
                 Return Me.PaymentHistoryField
             End Get
@@ -659,7 +715,7 @@ Namespace NWWS_TestRelay
      System.Runtime.Serialization.DataContractAttribute(Name:="StoredPaymentInformationResponse", [Namespace]:="urn::IVRService"),  _
      System.SerializableAttribute()>  _
     Partial Public Class StoredPaymentInformationResponse
-        Inherits NWWS_TestRelay.WebResponse
+        Inherits NWWSTestRelay.WebResponse
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private RoutingNumberField As String
@@ -696,79 +752,23 @@ Namespace NWWS_TestRelay
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="PaymentNotificationResponse", [Namespace]:="urn::IVRService"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="PaymentLocationResponse", [Namespace]:="urn::IVRService"),  _
      System.SerializableAttribute()>  _
-    Partial Public Class PaymentNotificationResponse
-        Inherits NWWS_TestRelay.WebResponse
+    Partial Public Class PaymentLocationResponse
+        Inherits NWWSTestRelay.WebResponse
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ReturnCodeField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ReturnTextField As String
+        Private LocationsField() As NWWSTestRelay.PaymentLocation
         
         <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false)>  _
-        Public Property ReturnCode() As String
+        Public Property Locations() As NWWSTestRelay.PaymentLocation()
             Get
-                Return Me.ReturnCodeField
+                Return Me.LocationsField
             End Get
             Set
-                If (Object.ReferenceEquals(Me.ReturnCodeField, value) <> true) Then
-                    Me.ReturnCodeField = value
-                    Me.RaisePropertyChanged("ReturnCode")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false)>  _
-        Public Property ReturnText() As String
-            Get
-                Return Me.ReturnTextField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.ReturnTextField, value) <> true) Then
-                    Me.ReturnTextField = value
-                    Me.RaisePropertyChanged("ReturnText")
-                End If
-            End Set
-        End Property
-    End Class
-    
-    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="Bank", [Namespace]:="urn::IVRService"),  _
-     System.SerializableAttribute()>  _
-    Partial Public Class Bank
-        Inherits NWWS_TestRelay.WebResponse
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private RoutingNumberField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private BankNameField As String
-        
-        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false)>  _
-        Public Property RoutingNumber() As String
-            Get
-                Return Me.RoutingNumberField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.RoutingNumberField, value) <> true) Then
-                    Me.RoutingNumberField = value
-                    Me.RaisePropertyChanged("RoutingNumber")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=1)>  _
-        Public Property BankName() As String
-            Get
-                Return Me.BankNameField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.BankNameField, value) <> true) Then
-                    Me.BankNameField = value
-                    Me.RaisePropertyChanged("BankName")
+                If (Object.ReferenceEquals(Me.LocationsField, value) <> true) Then
+                    Me.LocationsField = value
+                    Me.RaisePropertyChanged("Locations")
                 End If
             End Set
         End Property
@@ -779,7 +779,7 @@ Namespace NWWS_TestRelay
      System.Runtime.Serialization.DataContractAttribute(Name:="AccountInformation", [Namespace]:="urn::IVRService"),  _
      System.SerializableAttribute()>  _
     Partial Public Class AccountInformation
-        Inherits NWWS_TestRelay.WebResponse
+        Inherits NWWSTestRelay.WebResponse
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private TimingMessageField As String
@@ -1528,6 +1528,84 @@ Namespace NWWS_TestRelay
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="PaymentHistory", [Namespace]:="urn::IVRService"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class PaymentHistory
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private AccountNumberField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private PaymentDateField As String
+        
+        Private AmountField As Double
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false)>  _
+        Public Property AccountNumber() As String
+            Get
+                Return Me.AccountNumberField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.AccountNumberField, value) <> true) Then
+                    Me.AccountNumberField = value
+                    Me.RaisePropertyChanged("AccountNumber")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false)>  _
+        Public Property PaymentDate() As String
+            Get
+                Return Me.PaymentDateField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.PaymentDateField, value) <> true) Then
+                    Me.PaymentDateField = value
+                    Me.RaisePropertyChanged("PaymentDate")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(IsRequired:=true, Order:=2)>  _
+        Public Property Amount() As Double
+            Get
+                Return Me.AmountField
+            End Get
+            Set
+                If (Me.AmountField.Equals(value) <> true) Then
+                    Me.AmountField = value
+                    Me.RaisePropertyChanged("Amount")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
      System.Runtime.Serialization.DataContractAttribute(Name:="PaymentLocation", [Namespace]:="urn::IVRService"),  _
      System.SerializableAttribute()>  _
     Partial Public Class PaymentLocation
@@ -1827,131 +1905,49 @@ Namespace NWWS_TestRelay
         End Sub
     End Class
     
-    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="PaymentHistory", [Namespace]:="urn::IVRService"),  _
-     System.SerializableAttribute()>  _
-    Partial Public Class PaymentHistory
-        Inherits Object
-        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
-        
-        <System.NonSerializedAttribute()>  _
-        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private AccountNumberField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private PaymentDateField As String
-        
-        Private AmountField As Double
-        
-        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
-        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
-            Get
-                Return Me.extensionDataField
-            End Get
-            Set
-                Me.extensionDataField = value
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false)>  _
-        Public Property AccountNumber() As String
-            Get
-                Return Me.AccountNumberField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.AccountNumberField, value) <> true) Then
-                    Me.AccountNumberField = value
-                    Me.RaisePropertyChanged("AccountNumber")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false)>  _
-        Public Property PaymentDate() As String
-            Get
-                Return Me.PaymentDateField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.PaymentDateField, value) <> true) Then
-                    Me.PaymentDateField = value
-                    Me.RaisePropertyChanged("PaymentDate")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute(IsRequired:=true, Order:=2)>  _
-        Public Property Amount() As Double
-            Get
-                Return Me.AmountField
-            End Get
-            Set
-                If (Me.AmountField.Equals(value) <> true) Then
-                    Me.AmountField = value
-                    Me.RaisePropertyChanged("Amount")
-                End If
-            End Set
-        End Property
-        
-        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-        
-        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
-            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
-            If (Not (propertyChanged) Is Nothing) Then
-                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
-            End If
-        End Sub
-    End Class
-    
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
-     System.ServiceModel.ServiceContractAttribute([Namespace]:="http://www.activetelesource.com/testwebservices/", ConfigurationName:="NWWS_TestRelay.TestRelaySoap")>  _
+     System.ServiceModel.ServiceContractAttribute([Namespace]:="http://www.activetelesource.com/testwebservices/", ConfigurationName:="NWWSTestRelay.TestRelaySoap")>  _
     Public Interface TestRelaySoap
         
         'CODEGEN: Generating message contract since element name account from namespace http://www.activetelesource.com/testwebservices/ is not marked nillable
         <System.ServiceModel.OperationContractAttribute(Action:="http://www.activetelesource.com/testwebservices/GetAccountInformation", ReplyAction:="*")>  _
-        Function GetAccountInformation(ByVal request As NWWS_TestRelay.GetAccountInformationRequest) As NWWS_TestRelay.GetAccountInformationResponse
+        Function GetAccountInformation(ByVal request As NWWSTestRelay.GetAccountInformationRequest) As NWWSTestRelay.GetAccountInformationResponse
         
         'CODEGEN: Generating message contract since element name referenceID from namespace http://www.activetelesource.com/testwebservices/ is not marked nillable
         <System.ServiceModel.OperationContractAttribute(Action:="http://www.activetelesource.com/testwebservices/SubmitPayment", ReplyAction:="*")>  _
-        Function SubmitPayment(ByVal request As NWWS_TestRelay.SubmitPaymentRequest) As NWWS_TestRelay.SubmitPaymentResponse
+        Function SubmitPayment(ByVal request As NWWSTestRelay.SubmitPaymentRequest) As NWWSTestRelay.SubmitPaymentResponse
         
         'CODEGEN: Generating message contract since element name AccountID from namespace http://www.activetelesource.com/testwebservices/ is not marked nillable
         <System.ServiceModel.OperationContractAttribute(Action:="http://www.activetelesource.com/testwebservices/PaymentAllowed", ReplyAction:="*")>  _
-        Function PaymentAllowed(ByVal request As NWWS_TestRelay.PaymentAllowedRequest) As NWWS_TestRelay.PaymentAllowedResponse
+        Function PaymentAllowed(ByVal request As NWWSTestRelay.PaymentAllowedRequest) As NWWSTestRelay.PaymentAllowedResponse
         
         'CODEGEN: Generating message contract since element name AccountID from namespace http://www.activetelesource.com/testwebservices/ is not marked nillable
         <System.ServiceModel.OperationContractAttribute(Action:="http://www.activetelesource.com/testwebservices/UpdateAccountActivity", ReplyAction:="*")>  _
-        Function UpdateAccountActivity(ByVal request As NWWS_TestRelay.UpdateAccountActivityRequest) As NWWS_TestRelay.UpdateAccountActivityResponse
+        Function UpdateAccountActivity(ByVal request As NWWSTestRelay.UpdateAccountActivityRequest) As NWWSTestRelay.UpdateAccountActivityResponse
         
         'CODEGEN: Generating message contract since element name Source from namespace http://www.activetelesource.com/testwebservices/ is not marked nillable
         <System.ServiceModel.OperationContractAttribute(Action:="http://www.activetelesource.com/testwebservices/LogCardTrans", ReplyAction:="*")>  _
-        Function LogCardTrans(ByVal request As NWWS_TestRelay.LogCardTransRequest) As NWWS_TestRelay.LogCardTransResponse
+        Function LogCardTrans(ByVal request As NWWSTestRelay.LogCardTransRequest) As NWWSTestRelay.LogCardTransResponse
         
         'CODEGEN: Generating message contract since element name Source from namespace http://www.activetelesource.com/testwebservices/ is not marked nillable
         <System.ServiceModel.OperationContractAttribute(Action:="http://www.activetelesource.com/testwebservices/LogWebHistory", ReplyAction:="*")>  _
-        Function LogWebHistory(ByVal request As NWWS_TestRelay.LogWebHistoryRequest) As NWWS_TestRelay.LogWebHistoryResponse
+        Function LogWebHistory(ByVal request As NWWSTestRelay.LogWebHistoryRequest) As NWWSTestRelay.LogWebHistoryResponse
         
         'CODEGEN: Generating message contract since element name Web_HistoryID from namespace http://www.activetelesource.com/testwebservices/ is not marked nillable
         <System.ServiceModel.OperationContractAttribute(Action:="http://www.activetelesource.com/testwebservices/UpdateWebHistory", ReplyAction:="*")>  _
-        Function UpdateWebHistory(ByVal request As NWWS_TestRelay.UpdateWebHistoryRequest) As NWWS_TestRelay.UpdateWebHistoryResponse
+        Function UpdateWebHistory(ByVal request As NWWSTestRelay.UpdateWebHistoryRequest) As NWWSTestRelay.UpdateWebHistoryResponse
         
         'CODEGEN: Generating message contract since element name Source from namespace http://www.activetelesource.com/testwebservices/ is not marked nillable
         <System.ServiceModel.OperationContractAttribute(Action:="http://www.activetelesource.com/testwebservices/LogIVRHistory", ReplyAction:="*")>  _
-        Function LogIVRHistory(ByVal request As NWWS_TestRelay.LogIVRHistoryRequest) As NWWS_TestRelay.LogIVRHistoryResponse
+        Function LogIVRHistory(ByVal request As NWWSTestRelay.LogIVRHistoryRequest) As NWWSTestRelay.LogIVRHistoryResponse
         
         'CODEGEN: Generating message contract since element name Source from namespace http://www.activetelesource.com/testwebservices/ is not marked nillable
         <System.ServiceModel.OperationContractAttribute(Action:="http://www.activetelesource.com/testwebservices/UpdateCardTransIVRHistoryID", ReplyAction:="*")>  _
-        Function UpdateCardTransIVRHistoryID(ByVal request As NWWS_TestRelay.UpdateCardTransIVRHistoryIDRequest) As NWWS_TestRelay.UpdateCardTransIVRHistoryIDResponse
+        Function UpdateCardTransIVRHistoryID(ByVal request As NWWSTestRelay.UpdateCardTransIVRHistoryIDRequest) As NWWSTestRelay.UpdateCardTransIVRHistoryIDResponse
         
         'CODEGEN: Generating message contract since element name Source from namespace http://www.activetelesource.com/testwebservices/ is not marked nillable
         <System.ServiceModel.OperationContractAttribute(Action:="http://www.activetelesource.com/testwebservices/UpdateCardTransWebHistoryID", ReplyAction:="*")>  _
-        Function UpdateCardTransWebHistoryID(ByVal request As NWWS_TestRelay.UpdateCardTransWebHistoryIDRequest) As NWWS_TestRelay.UpdateCardTransWebHistoryIDResponse
-        
-        'CODEGEN: Generating message contract since element name Source from namespace http://www.activetelesource.com/testwebservices/ is not marked nillable
-        <System.ServiceModel.OperationContractAttribute(Action:="http://www.activetelesource.com/testwebservices/IsCardAllowed", ReplyAction:="*")>  _
-        Function IsCardAllowed(ByVal request As NWWS_TestRelay.IsCardAllowedRequest) As NWWS_TestRelay.IsCardAllowedResponse
+        Function UpdateCardTransWebHistoryID(ByVal request As NWWSTestRelay.UpdateCardTransWebHistoryIDRequest) As NWWSTestRelay.UpdateCardTransWebHistoryIDResponse
     End Interface
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
@@ -1961,13 +1957,13 @@ Namespace NWWS_TestRelay
     Partial Public Class GetAccountInformationRequest
         
         <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetAccountInformation", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.GetAccountInformationRequestBody
+        Public Body As NWWSTestRelay.GetAccountInformationRequestBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As NWWS_TestRelay.GetAccountInformationRequestBody)
+        Public Sub New(ByVal Body As NWWSTestRelay.GetAccountInformationRequestBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -2003,13 +1999,13 @@ Namespace NWWS_TestRelay
     Partial Public Class GetAccountInformationResponse
         
         <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetAccountInformationResponse", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.GetAccountInformationResponseBody
+        Public Body As NWWSTestRelay.GetAccountInformationResponseBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As NWWS_TestRelay.GetAccountInformationResponseBody)
+        Public Sub New(ByVal Body As NWWSTestRelay.GetAccountInformationResponseBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -2022,13 +2018,13 @@ Namespace NWWS_TestRelay
     Partial Public Class GetAccountInformationResponseBody
         
         <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
-        Public GetAccountInformationResult As NWWS_TestRelay.AccountInformation
+        Public GetAccountInformationResult As NWWSTestRelay.AccountInformation
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal GetAccountInformationResult As NWWS_TestRelay.AccountInformation)
+        Public Sub New(ByVal GetAccountInformationResult As NWWSTestRelay.AccountInformation)
             MyBase.New
             Me.GetAccountInformationResult = GetAccountInformationResult
         End Sub
@@ -2041,13 +2037,13 @@ Namespace NWWS_TestRelay
     Partial Public Class SubmitPaymentRequest
         
         <System.ServiceModel.MessageBodyMemberAttribute(Name:="SubmitPayment", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.SubmitPaymentRequestBody
+        Public Body As NWWSTestRelay.SubmitPaymentRequestBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As NWWS_TestRelay.SubmitPaymentRequestBody)
+        Public Sub New(ByVal Body As NWWSTestRelay.SubmitPaymentRequestBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -2095,13 +2091,13 @@ Namespace NWWS_TestRelay
     Partial Public Class SubmitPaymentResponse
         
         <System.ServiceModel.MessageBodyMemberAttribute(Name:="SubmitPaymentResponse", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.SubmitPaymentResponseBody
+        Public Body As NWWSTestRelay.SubmitPaymentResponseBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As NWWS_TestRelay.SubmitPaymentResponseBody)
+        Public Sub New(ByVal Body As NWWSTestRelay.SubmitPaymentResponseBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -2114,13 +2110,13 @@ Namespace NWWS_TestRelay
     Partial Public Class SubmitPaymentResponseBody
         
         <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
-        Public SubmitPaymentResult As NWWS_TestRelay.PaymentNotificationResponse
+        Public SubmitPaymentResult As NWWSTestRelay.PaymentNotificationResponse
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal SubmitPaymentResult As NWWS_TestRelay.PaymentNotificationResponse)
+        Public Sub New(ByVal SubmitPaymentResult As NWWSTestRelay.PaymentNotificationResponse)
             MyBase.New
             Me.SubmitPaymentResult = SubmitPaymentResult
         End Sub
@@ -2133,13 +2129,13 @@ Namespace NWWS_TestRelay
     Partial Public Class PaymentAllowedRequest
         
         <System.ServiceModel.MessageBodyMemberAttribute(Name:="PaymentAllowed", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.PaymentAllowedRequestBody
+        Public Body As NWWSTestRelay.PaymentAllowedRequestBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As NWWS_TestRelay.PaymentAllowedRequestBody)
+        Public Sub New(ByVal Body As NWWSTestRelay.PaymentAllowedRequestBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -2183,13 +2179,13 @@ Namespace NWWS_TestRelay
     Partial Public Class PaymentAllowedResponse
         
         <System.ServiceModel.MessageBodyMemberAttribute(Name:="PaymentAllowedResponse", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.PaymentAllowedResponseBody
+        Public Body As NWWSTestRelay.PaymentAllowedResponseBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As NWWS_TestRelay.PaymentAllowedResponseBody)
+        Public Sub New(ByVal Body As NWWSTestRelay.PaymentAllowedResponseBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -2221,13 +2217,13 @@ Namespace NWWS_TestRelay
     Partial Public Class UpdateAccountActivityRequest
         
         <System.ServiceModel.MessageBodyMemberAttribute(Name:="UpdateAccountActivity", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.UpdateAccountActivityRequestBody
+        Public Body As NWWSTestRelay.UpdateAccountActivityRequestBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As NWWS_TestRelay.UpdateAccountActivityRequestBody)
+        Public Sub New(ByVal Body As NWWSTestRelay.UpdateAccountActivityRequestBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -2271,13 +2267,13 @@ Namespace NWWS_TestRelay
     Partial Public Class UpdateAccountActivityResponse
         
         <System.ServiceModel.MessageBodyMemberAttribute(Name:="UpdateAccountActivityResponse", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.UpdateAccountActivityResponseBody
+        Public Body As NWWSTestRelay.UpdateAccountActivityResponseBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As NWWS_TestRelay.UpdateAccountActivityResponseBody)
+        Public Sub New(ByVal Body As NWWSTestRelay.UpdateAccountActivityResponseBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -2309,13 +2305,13 @@ Namespace NWWS_TestRelay
     Partial Public Class LogCardTransRequest
         
         <System.ServiceModel.MessageBodyMemberAttribute(Name:="LogCardTrans", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.LogCardTransRequestBody
+        Public Body As NWWSTestRelay.LogCardTransRequestBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As NWWS_TestRelay.LogCardTransRequestBody)
+        Public Sub New(ByVal Body As NWWSTestRelay.LogCardTransRequestBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -2453,13 +2449,13 @@ Namespace NWWS_TestRelay
     Partial Public Class LogCardTransResponse
         
         <System.ServiceModel.MessageBodyMemberAttribute(Name:="LogCardTransResponse", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.LogCardTransResponseBody
+        Public Body As NWWSTestRelay.LogCardTransResponseBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As NWWS_TestRelay.LogCardTransResponseBody)
+        Public Sub New(ByVal Body As NWWSTestRelay.LogCardTransResponseBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -2491,13 +2487,13 @@ Namespace NWWS_TestRelay
     Partial Public Class LogWebHistoryRequest
         
         <System.ServiceModel.MessageBodyMemberAttribute(Name:="LogWebHistory", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.LogWebHistoryRequestBody
+        Public Body As NWWSTestRelay.LogWebHistoryRequestBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As NWWS_TestRelay.LogWebHistoryRequestBody)
+        Public Sub New(ByVal Body As NWWSTestRelay.LogWebHistoryRequestBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -2565,13 +2561,13 @@ Namespace NWWS_TestRelay
     Partial Public Class LogWebHistoryResponse
         
         <System.ServiceModel.MessageBodyMemberAttribute(Name:="LogWebHistoryResponse", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.LogWebHistoryResponseBody
+        Public Body As NWWSTestRelay.LogWebHistoryResponseBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As NWWS_TestRelay.LogWebHistoryResponseBody)
+        Public Sub New(ByVal Body As NWWSTestRelay.LogWebHistoryResponseBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -2603,13 +2599,13 @@ Namespace NWWS_TestRelay
     Partial Public Class UpdateWebHistoryRequest
         
         <System.ServiceModel.MessageBodyMemberAttribute(Name:="UpdateWebHistory", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.UpdateWebHistoryRequestBody
+        Public Body As NWWSTestRelay.UpdateWebHistoryRequestBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As NWWS_TestRelay.UpdateWebHistoryRequestBody)
+        Public Sub New(ByVal Body As NWWSTestRelay.UpdateWebHistoryRequestBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -2657,13 +2653,13 @@ Namespace NWWS_TestRelay
     Partial Public Class UpdateWebHistoryResponse
         
         <System.ServiceModel.MessageBodyMemberAttribute(Name:="UpdateWebHistoryResponse", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.UpdateWebHistoryResponseBody
+        Public Body As NWWSTestRelay.UpdateWebHistoryResponseBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As NWWS_TestRelay.UpdateWebHistoryResponseBody)
+        Public Sub New(ByVal Body As NWWSTestRelay.UpdateWebHistoryResponseBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -2695,13 +2691,13 @@ Namespace NWWS_TestRelay
     Partial Public Class LogIVRHistoryRequest
         
         <System.ServiceModel.MessageBodyMemberAttribute(Name:="LogIVRHistory", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.LogIVRHistoryRequestBody
+        Public Body As NWWSTestRelay.LogIVRHistoryRequestBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As NWWS_TestRelay.LogIVRHistoryRequestBody)
+        Public Sub New(ByVal Body As NWWSTestRelay.LogIVRHistoryRequestBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -2785,13 +2781,13 @@ Namespace NWWS_TestRelay
     Partial Public Class LogIVRHistoryResponse
         
         <System.ServiceModel.MessageBodyMemberAttribute(Name:="LogIVRHistoryResponse", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.LogIVRHistoryResponseBody
+        Public Body As NWWSTestRelay.LogIVRHistoryResponseBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As NWWS_TestRelay.LogIVRHistoryResponseBody)
+        Public Sub New(ByVal Body As NWWSTestRelay.LogIVRHistoryResponseBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -2823,13 +2819,13 @@ Namespace NWWS_TestRelay
     Partial Public Class UpdateCardTransIVRHistoryIDRequest
         
         <System.ServiceModel.MessageBodyMemberAttribute(Name:="UpdateCardTransIVRHistoryID", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.UpdateCardTransIVRHistoryIDRequestBody
+        Public Body As NWWSTestRelay.UpdateCardTransIVRHistoryIDRequestBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As NWWS_TestRelay.UpdateCardTransIVRHistoryIDRequestBody)
+        Public Sub New(ByVal Body As NWWSTestRelay.UpdateCardTransIVRHistoryIDRequestBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -2869,13 +2865,13 @@ Namespace NWWS_TestRelay
     Partial Public Class UpdateCardTransIVRHistoryIDResponse
         
         <System.ServiceModel.MessageBodyMemberAttribute(Name:="UpdateCardTransIVRHistoryIDResponse", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.UpdateCardTransIVRHistoryIDResponseBody
+        Public Body As NWWSTestRelay.UpdateCardTransIVRHistoryIDResponseBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As NWWS_TestRelay.UpdateCardTransIVRHistoryIDResponseBody)
+        Public Sub New(ByVal Body As NWWSTestRelay.UpdateCardTransIVRHistoryIDResponseBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -2907,13 +2903,13 @@ Namespace NWWS_TestRelay
     Partial Public Class UpdateCardTransWebHistoryIDRequest
         
         <System.ServiceModel.MessageBodyMemberAttribute(Name:="UpdateCardTransWebHistoryID", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.UpdateCardTransWebHistoryIDRequestBody
+        Public Body As NWWSTestRelay.UpdateCardTransWebHistoryIDRequestBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As NWWS_TestRelay.UpdateCardTransWebHistoryIDRequestBody)
+        Public Sub New(ByVal Body As NWWSTestRelay.UpdateCardTransWebHistoryIDRequestBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -2953,13 +2949,13 @@ Namespace NWWS_TestRelay
     Partial Public Class UpdateCardTransWebHistoryIDResponse
         
         <System.ServiceModel.MessageBodyMemberAttribute(Name:="UpdateCardTransWebHistoryIDResponse", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.UpdateCardTransWebHistoryIDResponseBody
+        Public Body As NWWSTestRelay.UpdateCardTransWebHistoryIDResponseBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As NWWS_TestRelay.UpdateCardTransWebHistoryIDResponseBody)
+        Public Sub New(ByVal Body As NWWSTestRelay.UpdateCardTransWebHistoryIDResponseBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -2984,96 +2980,16 @@ Namespace NWWS_TestRelay
         End Sub
     End Class
     
-    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
-     System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
-     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
-    Partial Public Class IsCardAllowedRequest
-        
-        <System.ServiceModel.MessageBodyMemberAttribute(Name:="IsCardAllowed", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.IsCardAllowedRequestBody
-        
-        Public Sub New()
-            MyBase.New
-        End Sub
-        
-        Public Sub New(ByVal Body As NWWS_TestRelay.IsCardAllowedRequestBody)
-            MyBase.New
-            Me.Body = Body
-        End Sub
-    End Class
-    
-    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
-     System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
-     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://www.activetelesource.com/testwebservices/")>  _
-    Partial Public Class IsCardAllowedRequestBody
-        
-        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
-        Public Source As String
-        
-        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=1)>  _
-        Public Account As String
-        
-        Public Sub New()
-            MyBase.New
-        End Sub
-        
-        Public Sub New(ByVal Source As String, ByVal Account As String)
-            MyBase.New
-            Me.Source = Source
-            Me.Account = Account
-        End Sub
-    End Class
-    
-    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
-     System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
-     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
-    Partial Public Class IsCardAllowedResponse
-        
-        <System.ServiceModel.MessageBodyMemberAttribute(Name:="IsCardAllowedResponse", [Namespace]:="http://www.activetelesource.com/testwebservices/", Order:=0)>  _
-        Public Body As NWWS_TestRelay.IsCardAllowedResponseBody
-        
-        Public Sub New()
-            MyBase.New
-        End Sub
-        
-        Public Sub New(ByVal Body As NWWS_TestRelay.IsCardAllowedResponseBody)
-            MyBase.New
-            Me.Body = Body
-        End Sub
-    End Class
-    
-    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
-     System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
-     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://www.activetelesource.com/testwebservices/")>  _
-    Partial Public Class IsCardAllowedResponseBody
-        
-        <System.Runtime.Serialization.DataMemberAttribute(Order:=0)>  _
-        Public IsCardAllowedResult As Boolean
-        
-        Public Sub New()
-            MyBase.New
-        End Sub
-        
-        Public Sub New(ByVal IsCardAllowedResult As Boolean)
-            MyBase.New
-            Me.IsCardAllowedResult = IsCardAllowedResult
-        End Sub
-    End Class
-    
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
     Public Interface TestRelaySoapChannel
-        Inherits NWWS_TestRelay.TestRelaySoap, System.ServiceModel.IClientChannel
+        Inherits NWWSTestRelay.TestRelaySoap, System.ServiceModel.IClientChannel
     End Interface
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
     Partial Public Class TestRelaySoapClient
-        Inherits System.ServiceModel.ClientBase(Of NWWS_TestRelay.TestRelaySoap)
-        Implements NWWS_TestRelay.TestRelaySoap
+        Inherits System.ServiceModel.ClientBase(Of NWWSTestRelay.TestRelaySoap)
+        Implements NWWSTestRelay.TestRelaySoap
         
         Public Sub New()
             MyBase.New
@@ -3096,70 +3012,70 @@ Namespace NWWS_TestRelay
         End Sub
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function NWWS_TestRelay_TestRelaySoap_GetAccountInformation(ByVal request As NWWS_TestRelay.GetAccountInformationRequest) As NWWS_TestRelay.GetAccountInformationResponse Implements NWWS_TestRelay.TestRelaySoap.GetAccountInformation
+        Function NWWSTestRelay_TestRelaySoap_GetAccountInformation(ByVal request As NWWSTestRelay.GetAccountInformationRequest) As NWWSTestRelay.GetAccountInformationResponse Implements NWWSTestRelay.TestRelaySoap.GetAccountInformation
             Return MyBase.Channel.GetAccountInformation(request)
         End Function
         
-        Public Function GetAccountInformation(ByVal account As String, ByVal source As String) As NWWS_TestRelay.AccountInformation
-            Dim inValue As NWWS_TestRelay.GetAccountInformationRequest = New NWWS_TestRelay.GetAccountInformationRequest()
-            inValue.Body = New NWWS_TestRelay.GetAccountInformationRequestBody()
+        Public Function GetAccountInformation(ByVal account As String, ByVal source As String) As NWWSTestRelay.AccountInformation
+            Dim inValue As NWWSTestRelay.GetAccountInformationRequest = New NWWSTestRelay.GetAccountInformationRequest()
+            inValue.Body = New NWWSTestRelay.GetAccountInformationRequestBody()
             inValue.Body.account = account
             inValue.Body.source = source
-            Dim retVal As NWWS_TestRelay.GetAccountInformationResponse = CType(Me,NWWS_TestRelay.TestRelaySoap).GetAccountInformation(inValue)
+            Dim retVal As NWWSTestRelay.GetAccountInformationResponse = CType(Me,NWWSTestRelay.TestRelaySoap).GetAccountInformation(inValue)
             Return retVal.Body.GetAccountInformationResult
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function NWWS_TestRelay_TestRelaySoap_SubmitPayment(ByVal request As NWWS_TestRelay.SubmitPaymentRequest) As NWWS_TestRelay.SubmitPaymentResponse Implements NWWS_TestRelay.TestRelaySoap.SubmitPayment
+        Function NWWSTestRelay_TestRelaySoap_SubmitPayment(ByVal request As NWWSTestRelay.SubmitPaymentRequest) As NWWSTestRelay.SubmitPaymentResponse Implements NWWSTestRelay.TestRelaySoap.SubmitPayment
             Return MyBase.Channel.SubmitPayment(request)
         End Function
         
-        Public Function SubmitPayment(ByVal referenceID As String, ByVal account As String, ByVal amount As String, ByVal source As String, ByVal Test As Boolean) As NWWS_TestRelay.PaymentNotificationResponse
-            Dim inValue As NWWS_TestRelay.SubmitPaymentRequest = New NWWS_TestRelay.SubmitPaymentRequest()
-            inValue.Body = New NWWS_TestRelay.SubmitPaymentRequestBody()
+        Public Function SubmitPayment(ByVal referenceID As String, ByVal account As String, ByVal amount As String, ByVal source As String, ByVal Test As Boolean) As NWWSTestRelay.PaymentNotificationResponse
+            Dim inValue As NWWSTestRelay.SubmitPaymentRequest = New NWWSTestRelay.SubmitPaymentRequest()
+            inValue.Body = New NWWSTestRelay.SubmitPaymentRequestBody()
             inValue.Body.referenceID = referenceID
             inValue.Body.account = account
             inValue.Body.amount = amount
             inValue.Body.source = source
             inValue.Body.Test = Test
-            Dim retVal As NWWS_TestRelay.SubmitPaymentResponse = CType(Me,NWWS_TestRelay.TestRelaySoap).SubmitPayment(inValue)
+            Dim retVal As NWWSTestRelay.SubmitPaymentResponse = CType(Me,NWWSTestRelay.TestRelaySoap).SubmitPayment(inValue)
             Return retVal.Body.SubmitPaymentResult
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function NWWS_TestRelay_TestRelaySoap_PaymentAllowed(ByVal request As NWWS_TestRelay.PaymentAllowedRequest) As NWWS_TestRelay.PaymentAllowedResponse Implements NWWS_TestRelay.TestRelaySoap.PaymentAllowed
+        Function NWWSTestRelay_TestRelaySoap_PaymentAllowed(ByVal request As NWWSTestRelay.PaymentAllowedRequest) As NWWSTestRelay.PaymentAllowedResponse Implements NWWSTestRelay.TestRelaySoap.PaymentAllowed
             Return MyBase.Channel.PaymentAllowed(request)
         End Function
         
         Public Function PaymentAllowed(ByVal AccountID As String, ByVal YYMM As String, ByVal Amount As Decimal, ByVal Source As String) As Boolean
-            Dim inValue As NWWS_TestRelay.PaymentAllowedRequest = New NWWS_TestRelay.PaymentAllowedRequest()
-            inValue.Body = New NWWS_TestRelay.PaymentAllowedRequestBody()
+            Dim inValue As NWWSTestRelay.PaymentAllowedRequest = New NWWSTestRelay.PaymentAllowedRequest()
+            inValue.Body = New NWWSTestRelay.PaymentAllowedRequestBody()
             inValue.Body.AccountID = AccountID
             inValue.Body.YYMM = YYMM
             inValue.Body.Amount = Amount
             inValue.Body.Source = Source
-            Dim retVal As NWWS_TestRelay.PaymentAllowedResponse = CType(Me,NWWS_TestRelay.TestRelaySoap).PaymentAllowed(inValue)
+            Dim retVal As NWWSTestRelay.PaymentAllowedResponse = CType(Me,NWWSTestRelay.TestRelaySoap).PaymentAllowed(inValue)
             Return retVal.Body.PaymentAllowedResult
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function NWWS_TestRelay_TestRelaySoap_UpdateAccountActivity(ByVal request As NWWS_TestRelay.UpdateAccountActivityRequest) As NWWS_TestRelay.UpdateAccountActivityResponse Implements NWWS_TestRelay.TestRelaySoap.UpdateAccountActivity
+        Function NWWSTestRelay_TestRelaySoap_UpdateAccountActivity(ByVal request As NWWSTestRelay.UpdateAccountActivityRequest) As NWWSTestRelay.UpdateAccountActivityResponse Implements NWWSTestRelay.TestRelaySoap.UpdateAccountActivity
             Return MyBase.Channel.UpdateAccountActivity(request)
         End Function
         
         Public Function UpdateAccountActivity(ByVal AccountID As String, ByVal YYMM As String, ByVal Amount As String, ByVal Source As String) As Boolean
-            Dim inValue As NWWS_TestRelay.UpdateAccountActivityRequest = New NWWS_TestRelay.UpdateAccountActivityRequest()
-            inValue.Body = New NWWS_TestRelay.UpdateAccountActivityRequestBody()
+            Dim inValue As NWWSTestRelay.UpdateAccountActivityRequest = New NWWSTestRelay.UpdateAccountActivityRequest()
+            inValue.Body = New NWWSTestRelay.UpdateAccountActivityRequestBody()
             inValue.Body.AccountID = AccountID
             inValue.Body.YYMM = YYMM
             inValue.Body.Amount = Amount
             inValue.Body.Source = Source
-            Dim retVal As NWWS_TestRelay.UpdateAccountActivityResponse = CType(Me,NWWS_TestRelay.TestRelaySoap).UpdateAccountActivity(inValue)
+            Dim retVal As NWWSTestRelay.UpdateAccountActivityResponse = CType(Me,NWWSTestRelay.TestRelaySoap).UpdateAccountActivity(inValue)
             Return retVal.Body.UpdateAccountActivityResult
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function NWWS_TestRelay_TestRelaySoap_LogCardTrans(ByVal request As NWWS_TestRelay.LogCardTransRequest) As NWWS_TestRelay.LogCardTransResponse Implements NWWS_TestRelay.TestRelaySoap.LogCardTrans
+        Function NWWSTestRelay_TestRelaySoap_LogCardTrans(ByVal request As NWWSTestRelay.LogCardTransRequest) As NWWSTestRelay.LogCardTransResponse Implements NWWSTestRelay.TestRelaySoap.LogCardTrans
             Return MyBase.Channel.LogCardTrans(request)
         End Function
         
@@ -3186,8 +3102,8 @@ Namespace NWWS_TestRelay
                     ByVal Reply_AVSCode As String,  _
                     ByVal Request_EventLog As String,  _
                     ByVal Failure As Integer) As Long
-            Dim inValue As NWWS_TestRelay.LogCardTransRequest = New NWWS_TestRelay.LogCardTransRequest()
-            inValue.Body = New NWWS_TestRelay.LogCardTransRequestBody()
+            Dim inValue As NWWSTestRelay.LogCardTransRequest = New NWWSTestRelay.LogCardTransRequest()
+            inValue.Body = New NWWSTestRelay.LogCardTransRequestBody()
             inValue.Body.Source = Source
             inValue.Body.IVR_HistoryID = IVR_HistoryID
             inValue.Body.Web_HistoryID = Web_HistoryID
@@ -3210,18 +3126,18 @@ Namespace NWWS_TestRelay
             inValue.Body.Reply_AVSCode = Reply_AVSCode
             inValue.Body.Request_EventLog = Request_EventLog
             inValue.Body.Failure = Failure
-            Dim retVal As NWWS_TestRelay.LogCardTransResponse = CType(Me,NWWS_TestRelay.TestRelaySoap).LogCardTrans(inValue)
+            Dim retVal As NWWSTestRelay.LogCardTransResponse = CType(Me,NWWSTestRelay.TestRelaySoap).LogCardTrans(inValue)
             Return retVal.Body.LogCardTransResult
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function NWWS_TestRelay_TestRelaySoap_LogWebHistory(ByVal request As NWWS_TestRelay.LogWebHistoryRequest) As NWWS_TestRelay.LogWebHistoryResponse Implements NWWS_TestRelay.TestRelaySoap.LogWebHistory
+        Function NWWSTestRelay_TestRelaySoap_LogWebHistory(ByVal request As NWWSTestRelay.LogWebHistoryRequest) As NWWSTestRelay.LogWebHistoryResponse Implements NWWSTestRelay.TestRelaySoap.LogWebHistory
             Return MyBase.Channel.LogWebHistory(request)
         End Function
         
         Public Function LogWebHistory(ByVal Source As String, ByVal SessionID As String, ByVal SessionIP As String, ByVal SessionStartDateTime As Date, ByVal SessionEndDateTime As Date, ByVal Web_EventLog As String, ByVal CustomerID As Long, ByVal CustomerAccountID As String, ByVal CardTransID As Long, ByVal IsError As Integer) As Long
-            Dim inValue As NWWS_TestRelay.LogWebHistoryRequest = New NWWS_TestRelay.LogWebHistoryRequest()
-            inValue.Body = New NWWS_TestRelay.LogWebHistoryRequestBody()
+            Dim inValue As NWWSTestRelay.LogWebHistoryRequest = New NWWSTestRelay.LogWebHistoryRequest()
+            inValue.Body = New NWWSTestRelay.LogWebHistoryRequestBody()
             inValue.Body.Source = Source
             inValue.Body.SessionID = SessionID
             inValue.Body.SessionIP = SessionIP
@@ -3232,35 +3148,35 @@ Namespace NWWS_TestRelay
             inValue.Body.CustomerAccountID = CustomerAccountID
             inValue.Body.CardTransID = CardTransID
             inValue.Body.IsError = IsError
-            Dim retVal As NWWS_TestRelay.LogWebHistoryResponse = CType(Me,NWWS_TestRelay.TestRelaySoap).LogWebHistory(inValue)
+            Dim retVal As NWWSTestRelay.LogWebHistoryResponse = CType(Me,NWWSTestRelay.TestRelaySoap).LogWebHistory(inValue)
             Return retVal.Body.LogWebHistoryResult
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function NWWS_TestRelay_TestRelaySoap_UpdateWebHistory(ByVal request As NWWS_TestRelay.UpdateWebHistoryRequest) As NWWS_TestRelay.UpdateWebHistoryResponse Implements NWWS_TestRelay.TestRelaySoap.UpdateWebHistory
+        Function NWWSTestRelay_TestRelaySoap_UpdateWebHistory(ByVal request As NWWSTestRelay.UpdateWebHistoryRequest) As NWWSTestRelay.UpdateWebHistoryResponse Implements NWWSTestRelay.TestRelaySoap.UpdateWebHistory
             Return MyBase.Channel.UpdateWebHistory(request)
         End Function
         
         Public Function UpdateWebHistory(ByVal Web_HistoryID As String, ByVal SessionEndDateTime As Date, ByVal Web_EventLog As String, ByVal CardTransID As Long, ByVal IsError As Integer) As Boolean
-            Dim inValue As NWWS_TestRelay.UpdateWebHistoryRequest = New NWWS_TestRelay.UpdateWebHistoryRequest()
-            inValue.Body = New NWWS_TestRelay.UpdateWebHistoryRequestBody()
+            Dim inValue As NWWSTestRelay.UpdateWebHistoryRequest = New NWWSTestRelay.UpdateWebHistoryRequest()
+            inValue.Body = New NWWSTestRelay.UpdateWebHistoryRequestBody()
             inValue.Body.Web_HistoryID = Web_HistoryID
             inValue.Body.SessionEndDateTime = SessionEndDateTime
             inValue.Body.Web_EventLog = Web_EventLog
             inValue.Body.CardTransID = CardTransID
             inValue.Body.IsError = IsError
-            Dim retVal As NWWS_TestRelay.UpdateWebHistoryResponse = CType(Me,NWWS_TestRelay.TestRelaySoap).UpdateWebHistory(inValue)
+            Dim retVal As NWWSTestRelay.UpdateWebHistoryResponse = CType(Me,NWWSTestRelay.TestRelaySoap).UpdateWebHistory(inValue)
             Return retVal.Body.UpdateWebHistoryResult
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function NWWS_TestRelay_TestRelaySoap_LogIVRHistory(ByVal request As NWWS_TestRelay.LogIVRHistoryRequest) As NWWS_TestRelay.LogIVRHistoryResponse Implements NWWS_TestRelay.TestRelaySoap.LogIVRHistory
+        Function NWWSTestRelay_TestRelaySoap_LogIVRHistory(ByVal request As NWWSTestRelay.LogIVRHistoryRequest) As NWWSTestRelay.LogIVRHistoryResponse Implements NWWSTestRelay.TestRelaySoap.LogIVRHistory
             Return MyBase.Channel.LogIVRHistory(request)
         End Function
         
         Public Function LogIVRHistory(ByVal Source As String, ByVal CallID As String, ByVal CallIDKey As String, ByVal ConnectedDateTime As Date, ByVal TerminatedDateTime As Date, ByVal CallDurationSeconds As Long, ByVal DNIS As String, ByVal RemoteNumber As String, ByVal RemoteName As String, ByVal IVR_EventLog As String, ByVal CustomerID As Long, ByVal CustomerAccountID As String, ByVal CallTransferred As Integer, ByVal CardTransId As Long) As Long
-            Dim inValue As NWWS_TestRelay.LogIVRHistoryRequest = New NWWS_TestRelay.LogIVRHistoryRequest()
-            inValue.Body = New NWWS_TestRelay.LogIVRHistoryRequestBody()
+            Dim inValue As NWWSTestRelay.LogIVRHistoryRequest = New NWWSTestRelay.LogIVRHistoryRequest()
+            inValue.Body = New NWWSTestRelay.LogIVRHistoryRequestBody()
             inValue.Body.Source = Source
             inValue.Body.CallID = CallID
             inValue.Body.CallIDKey = CallIDKey
@@ -3275,52 +3191,38 @@ Namespace NWWS_TestRelay
             inValue.Body.CustomerAccountID = CustomerAccountID
             inValue.Body.CallTransferred = CallTransferred
             inValue.Body.CardTransId = CardTransId
-            Dim retVal As NWWS_TestRelay.LogIVRHistoryResponse = CType(Me,NWWS_TestRelay.TestRelaySoap).LogIVRHistory(inValue)
+            Dim retVal As NWWSTestRelay.LogIVRHistoryResponse = CType(Me,NWWSTestRelay.TestRelaySoap).LogIVRHistory(inValue)
             Return retVal.Body.LogIVRHistoryResult
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function NWWS_TestRelay_TestRelaySoap_UpdateCardTransIVRHistoryID(ByVal request As NWWS_TestRelay.UpdateCardTransIVRHistoryIDRequest) As NWWS_TestRelay.UpdateCardTransIVRHistoryIDResponse Implements NWWS_TestRelay.TestRelaySoap.UpdateCardTransIVRHistoryID
+        Function NWWSTestRelay_TestRelaySoap_UpdateCardTransIVRHistoryID(ByVal request As NWWSTestRelay.UpdateCardTransIVRHistoryIDRequest) As NWWSTestRelay.UpdateCardTransIVRHistoryIDResponse Implements NWWSTestRelay.TestRelaySoap.UpdateCardTransIVRHistoryID
             Return MyBase.Channel.UpdateCardTransIVRHistoryID(request)
         End Function
         
         Public Function UpdateCardTransIVRHistoryID(ByVal Source As String, ByVal CardTransID As Long, ByVal IVRHistoryID As Long) As Boolean
-            Dim inValue As NWWS_TestRelay.UpdateCardTransIVRHistoryIDRequest = New NWWS_TestRelay.UpdateCardTransIVRHistoryIDRequest()
-            inValue.Body = New NWWS_TestRelay.UpdateCardTransIVRHistoryIDRequestBody()
+            Dim inValue As NWWSTestRelay.UpdateCardTransIVRHistoryIDRequest = New NWWSTestRelay.UpdateCardTransIVRHistoryIDRequest()
+            inValue.Body = New NWWSTestRelay.UpdateCardTransIVRHistoryIDRequestBody()
             inValue.Body.Source = Source
             inValue.Body.CardTransID = CardTransID
             inValue.Body.IVRHistoryID = IVRHistoryID
-            Dim retVal As NWWS_TestRelay.UpdateCardTransIVRHistoryIDResponse = CType(Me,NWWS_TestRelay.TestRelaySoap).UpdateCardTransIVRHistoryID(inValue)
+            Dim retVal As NWWSTestRelay.UpdateCardTransIVRHistoryIDResponse = CType(Me,NWWSTestRelay.TestRelaySoap).UpdateCardTransIVRHistoryID(inValue)
             Return retVal.Body.UpdateCardTransIVRHistoryIDResult
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function NWWS_TestRelay_TestRelaySoap_UpdateCardTransWebHistoryID(ByVal request As NWWS_TestRelay.UpdateCardTransWebHistoryIDRequest) As NWWS_TestRelay.UpdateCardTransWebHistoryIDResponse Implements NWWS_TestRelay.TestRelaySoap.UpdateCardTransWebHistoryID
+        Function NWWSTestRelay_TestRelaySoap_UpdateCardTransWebHistoryID(ByVal request As NWWSTestRelay.UpdateCardTransWebHistoryIDRequest) As NWWSTestRelay.UpdateCardTransWebHistoryIDResponse Implements NWWSTestRelay.TestRelaySoap.UpdateCardTransWebHistoryID
             Return MyBase.Channel.UpdateCardTransWebHistoryID(request)
         End Function
         
         Public Function UpdateCardTransWebHistoryID(ByVal Source As String, ByVal CardTransID As Long, ByVal WebHistoryID As Long) As Boolean
-            Dim inValue As NWWS_TestRelay.UpdateCardTransWebHistoryIDRequest = New NWWS_TestRelay.UpdateCardTransWebHistoryIDRequest()
-            inValue.Body = New NWWS_TestRelay.UpdateCardTransWebHistoryIDRequestBody()
+            Dim inValue As NWWSTestRelay.UpdateCardTransWebHistoryIDRequest = New NWWSTestRelay.UpdateCardTransWebHistoryIDRequest()
+            inValue.Body = New NWWSTestRelay.UpdateCardTransWebHistoryIDRequestBody()
             inValue.Body.Source = Source
             inValue.Body.CardTransID = CardTransID
             inValue.Body.WebHistoryID = WebHistoryID
-            Dim retVal As NWWS_TestRelay.UpdateCardTransWebHistoryIDResponse = CType(Me,NWWS_TestRelay.TestRelaySoap).UpdateCardTransWebHistoryID(inValue)
+            Dim retVal As NWWSTestRelay.UpdateCardTransWebHistoryIDResponse = CType(Me,NWWSTestRelay.TestRelaySoap).UpdateCardTransWebHistoryID(inValue)
             Return retVal.Body.UpdateCardTransWebHistoryIDResult
-        End Function
-        
-        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function NWWS_TestRelay_TestRelaySoap_IsCardAllowed(ByVal request As NWWS_TestRelay.IsCardAllowedRequest) As NWWS_TestRelay.IsCardAllowedResponse Implements NWWS_TestRelay.TestRelaySoap.IsCardAllowed
-            Return MyBase.Channel.IsCardAllowed(request)
-        End Function
-        
-        Public Function IsCardAllowed(ByVal Source As String, ByVal Account As String) As Boolean
-            Dim inValue As NWWS_TestRelay.IsCardAllowedRequest = New NWWS_TestRelay.IsCardAllowedRequest()
-            inValue.Body = New NWWS_TestRelay.IsCardAllowedRequestBody()
-            inValue.Body.Source = Source
-            inValue.Body.Account = Account
-            Dim retVal As NWWS_TestRelay.IsCardAllowedResponse = CType(Me,NWWS_TestRelay.TestRelaySoap).IsCardAllowed(inValue)
-            Return retVal.Body.IsCardAllowedResult
         End Function
     End Class
 End Namespace

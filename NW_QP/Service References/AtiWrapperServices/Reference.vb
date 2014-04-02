@@ -18,10 +18,10 @@ Namespace AtiWrapperServices
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="WrapperResult", [Namespace]:="http://schemas.datacontract.org/2004/07/AtiWrapperServices"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="WrapperResult", [Namespace]:="http://schemas.datacontract.org/2004/07/WrapperService"),  _
      System.SerializableAttribute(),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(AtiWrapperServices.ServiceMode)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(AtiWrapperServices.WrapperResult.ATIWrapperServiceStatusEnum))>  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(AtiWrapperServices.WrapperResult.ATIWrapperServiceStatusEnum)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(AtiWrapperServices.ServiceMode))>  _
     Partial Public Class WrapperResult
         Inherits Object
         Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
@@ -97,7 +97,7 @@ Namespace AtiWrapperServices
         End Sub
         
         <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-         System.Runtime.Serialization.DataContractAttribute(Name:="WrapperResult.ATIWrapperServiceStatusEnum", [Namespace]:="http://schemas.datacontract.org/2004/07/AtiWrapperServices")>  _
+         System.Runtime.Serialization.DataContractAttribute(Name:="WrapperResult.ATIWrapperServiceStatusEnum", [Namespace]:="http://schemas.datacontract.org/2004/07/WrapperService")>  _
         Public Enum ATIWrapperServiceStatusEnum As Integer
             
             <System.Runtime.Serialization.EnumMemberAttribute()>  _
@@ -115,8 +115,7 @@ Namespace AtiWrapperServices
     End Class
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="ServiceMode", [Namespace]:="http://schemas.datacontract.org/2004/07/AtiWrapperServices.AtiWrapperServicesEnum"& _ 
-        "s")>  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="ServiceMode", [Namespace]:="http://schemas.datacontract.org/2004/07/WrapperService")>  _
     Public Enum ServiceMode As Integer
         
         <System.Runtime.Serialization.EnumMemberAttribute()>  _
@@ -130,34 +129,39 @@ Namespace AtiWrapperServices
     End Enum
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
-     System.ServiceModel.ServiceContractAttribute(ConfigurationName:="AtiWrapperServices.IAtiWrapperServices")>  _
-    Public Interface IAtiWrapperServices
+     System.ServiceModel.ServiceContractAttribute(ConfigurationName:="AtiWrapperServices.IWrapperService")>  _
+    Public Interface IWrapperService
         
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IAtiWrapperServices/WrapperServiceByCustomerName", ReplyAction:="http://tempuri.org/IAtiWrapperServices/WrapperServiceByCustomerNameResponse")>  _
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IWrapperService/TestService", ReplyAction:="http://tempuri.org/IWrapperService/TestServiceResponse")>  _
+        Function TestService(ByVal customerId As Integer, ByVal name As String, ByVal parameters As String) As AtiWrapperServices.WrapperResult
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IWrapperService/ProductionService", ReplyAction:="http://tempuri.org/IWrapperService/ProductionServiceResponse")>  _
+        Function ProductionService(ByVal customerId As Integer, ByVal name As String, ByVal parameters As String) As AtiWrapperServices.WrapperResult
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IWrapperService/WrapperServiceByCustomerName", ReplyAction:="http://tempuri.org/IWrapperService/WrapperServiceByCustomerNameResponse")>  _
         Function WrapperServiceByCustomerName(ByVal customerName As String, ByVal serviceName As String, ByVal serviceParameters As String) As AtiWrapperServices.WrapperResult
         
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IAtiWrapperServices/WrapperServiceByCustomerNumber", ReplyAction:="http://tempuri.org/IAtiWrapperServices/WrapperServiceByCustomerNumberResponse")>  _
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IWrapperService/WrapperServiceByCustomerNumber", ReplyAction:="http://tempuri.org/IWrapperService/WrapperServiceByCustomerNumberResponse")>  _
         Function WrapperServiceByCustomerNumber(ByVal customerNumber As Integer, ByVal serviceName As String, ByVal serviceParameters As String) As AtiWrapperServices.WrapperResult
         
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IAtiWrapperServices/WrapperServiceByCustomerNameAndServiceMode"& _ 
-            "", ReplyAction:="http://tempuri.org/IAtiWrapperServices/WrapperServiceByCustomerNameAndServiceMode"& _ 
-            "Response")>  _
-        Function WrapperServiceByCustomerNameAndServiceMode(ByVal customerName As String, ByVal serviceMode As AtiWrapperServices.ServiceMode, ByVal serviceName As String, ByVal serviceParameters As String) As AtiWrapperServices.WrapperResult
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IWrapperService/WrapperServiceByCustomerNameAndServiceMode", ReplyAction:="http://tempuri.org/IWrapperService/WrapperServiceByCustomerNameAndServiceModeResp"& _ 
+            "onse")>  _
+        Function WrapperServiceByCustomerNameAndServiceMode(ByVal CustomerName As String, ByVal serviceMode As AtiWrapperServices.ServiceMode, ByVal serviceName As String, ByVal serviceParameters As String) As AtiWrapperServices.WrapperResult
         
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IAtiWrapperServices/AddNewServiceProxy", ReplyAction:="http://tempuri.org/IAtiWrapperServices/AddNewServiceProxyResponse")>  _
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IWrapperService/AddNewServiceProxy", ReplyAction:="http://tempuri.org/IWrapperService/AddNewServiceProxyResponse")>  _
         Sub AddNewServiceProxy(ByVal customerId As Integer, ByVal serviceMethodName As String)
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
-    Public Interface IAtiWrapperServicesChannel
-        Inherits AtiWrapperServices.IAtiWrapperServices, System.ServiceModel.IClientChannel
+    Public Interface IWrapperServiceChannel
+        Inherits AtiWrapperServices.IWrapperService, System.ServiceModel.IClientChannel
     End Interface
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
-    Partial Public Class AtiWrapperServicesClient
-        Inherits System.ServiceModel.ClientBase(Of AtiWrapperServices.IAtiWrapperServices)
-        Implements AtiWrapperServices.IAtiWrapperServices
+    Partial Public Class WrapperServiceClient
+        Inherits System.ServiceModel.ClientBase(Of AtiWrapperServices.IWrapperService)
+        Implements AtiWrapperServices.IWrapperService
         
         Public Sub New()
             MyBase.New
@@ -179,19 +183,27 @@ Namespace AtiWrapperServices
             MyBase.New(binding, remoteAddress)
         End Sub
         
-        Public Function WrapperServiceByCustomerName(ByVal customerName As String, ByVal serviceName As String, ByVal serviceParameters As String) As AtiWrapperServices.WrapperResult Implements AtiWrapperServices.IAtiWrapperServices.WrapperServiceByCustomerName
+        Public Function TestService(ByVal customerId As Integer, ByVal name As String, ByVal parameters As String) As AtiWrapperServices.WrapperResult Implements AtiWrapperServices.IWrapperService.TestService
+            Return MyBase.Channel.TestService(customerId, name, parameters)
+        End Function
+        
+        Public Function ProductionService(ByVal customerId As Integer, ByVal name As String, ByVal parameters As String) As AtiWrapperServices.WrapperResult Implements AtiWrapperServices.IWrapperService.ProductionService
+            Return MyBase.Channel.ProductionService(customerId, name, parameters)
+        End Function
+        
+        Public Function WrapperServiceByCustomerName(ByVal customerName As String, ByVal serviceName As String, ByVal serviceParameters As String) As AtiWrapperServices.WrapperResult Implements AtiWrapperServices.IWrapperService.WrapperServiceByCustomerName
             Return MyBase.Channel.WrapperServiceByCustomerName(customerName, serviceName, serviceParameters)
         End Function
         
-        Public Function WrapperServiceByCustomerNumber(ByVal customerNumber As Integer, ByVal serviceName As String, ByVal serviceParameters As String) As AtiWrapperServices.WrapperResult Implements AtiWrapperServices.IAtiWrapperServices.WrapperServiceByCustomerNumber
+        Public Function WrapperServiceByCustomerNumber(ByVal customerNumber As Integer, ByVal serviceName As String, ByVal serviceParameters As String) As AtiWrapperServices.WrapperResult Implements AtiWrapperServices.IWrapperService.WrapperServiceByCustomerNumber
             Return MyBase.Channel.WrapperServiceByCustomerNumber(customerNumber, serviceName, serviceParameters)
         End Function
         
-        Public Function WrapperServiceByCustomerNameAndServiceMode(ByVal customerName As String, ByVal serviceMode As AtiWrapperServices.ServiceMode, ByVal serviceName As String, ByVal serviceParameters As String) As AtiWrapperServices.WrapperResult Implements AtiWrapperServices.IAtiWrapperServices.WrapperServiceByCustomerNameAndServiceMode
-            Return MyBase.Channel.WrapperServiceByCustomerNameAndServiceMode(customerName, serviceMode, serviceName, serviceParameters)
+        Public Function WrapperServiceByCustomerNameAndServiceMode(ByVal CustomerName As String, ByVal serviceMode As AtiWrapperServices.ServiceMode, ByVal serviceName As String, ByVal serviceParameters As String) As AtiWrapperServices.WrapperResult Implements AtiWrapperServices.IWrapperService.WrapperServiceByCustomerNameAndServiceMode
+            Return MyBase.Channel.WrapperServiceByCustomerNameAndServiceMode(CustomerName, serviceMode, serviceName, serviceParameters)
         End Function
         
-        Public Sub AddNewServiceProxy(ByVal customerId As Integer, ByVal serviceMethodName As String) Implements AtiWrapperServices.IAtiWrapperServices.AddNewServiceProxy
+        Public Sub AddNewServiceProxy(ByVal customerId As Integer, ByVal serviceMethodName As String) Implements AtiWrapperServices.IWrapperService.AddNewServiceProxy
             MyBase.Channel.AddNewServiceProxy(customerId, serviceMethodName)
         End Sub
     End Class

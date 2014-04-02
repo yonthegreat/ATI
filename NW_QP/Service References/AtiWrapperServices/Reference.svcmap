@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0333cd7d-d1a3-4806-83dc-ff6c8897e9c8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a3d92bbe-8248-4d67-849c-f7d770a66223" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -18,15 +18,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:54015/AtiWrapperServices.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://mtdog:81/WrapperService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="AtiWrapperServices.wsdl" MetadataType="Wsdl" ID="d0c822f1-4114-432f-8650-351d72d1eddf" SourceId="1" SourceUrl="http://localhost:54015/AtiWrapperServices.svc?wsdl" />
-    <MetadataFile FileName="AtiWrapperServices.xsd" MetadataType="Schema" ID="ba7f8bb0-24dc-444a-b543-2c136d1f9c38" SourceId="1" SourceUrl="http://localhost:54015/AtiWrapperServices.svc?xsd=xsd3" />
-    <MetadataFile FileName="AtiWrapperServices1.xsd" MetadataType="Schema" ID="3b265e7d-0f42-4c92-9893-be76a32540ec" SourceId="1" SourceUrl="http://localhost:54015/AtiWrapperServices.svc?xsd=xsd2" />
-    <MetadataFile FileName="AtiWrapperServices2.xsd" MetadataType="Schema" ID="6a17f947-0cf4-4146-aea4-c76d35fef69d" SourceId="1" SourceUrl="http://localhost:54015/AtiWrapperServices.svc?xsd=xsd1" />
-    <MetadataFile FileName="AtiWrapperServices3.xsd" MetadataType="Schema" ID="dadd9364-f4f5-4317-a138-b4cc7cf05821" SourceId="1" SourceUrl="http://localhost:54015/AtiWrapperServices.svc?xsd=xsd0" />
-    <MetadataFile FileName="AtiWrapperServices.disco" MetadataType="Disco" ID="c358c4f4-a5ae-4fc8-a4ac-996e0d9307fe" SourceId="1" SourceUrl="http://localhost:54015/AtiWrapperServices.svc?disco" />
+    <MetadataFile FileName="WrapperService.xsd" MetadataType="Schema" ID="459ae297-6789-454a-b3ab-64ba8b88e070" SourceId="1" SourceUrl="http://mtdog:81/WrapperService.svc?xsd=xsd1" />
+    <MetadataFile FileName="WrapperService1.xsd" MetadataType="Schema" ID="d2b22213-4a4e-4937-83bd-be77a5ee7249" SourceId="1" SourceUrl="http://mtdog:81/WrapperService.svc?xsd=xsd2" />
+    <MetadataFile FileName="WrapperService2.xsd" MetadataType="Schema" ID="f32c221e-d3b1-4793-b1bd-c151ccd594a9" SourceId="1" SourceUrl="http://mtdog:81/WrapperService.svc?xsd=xsd0" />
+    <MetadataFile FileName="WrapperService.disco" MetadataType="Disco" ID="114486e5-bd26-4968-8a6a-25ee6651fcc9" SourceId="1" SourceUrl="http://mtdog:81/WrapperService.svc?disco" />
+    <MetadataFile FileName="WrapperService.wsdl" MetadataType="Wsdl" ID="5ec3f1a6-98f5-4d9d-8365-efb1de5bb5ad" SourceId="1" SourceUrl="http://mtdog:81/WrapperService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

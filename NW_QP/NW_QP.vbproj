@@ -212,58 +212,20 @@
     <None Include="My Project\DataSources\System.Data.DataSet.datasource" />
     <None Include="My Project\DataSources\System.Xml.XmlNode.datasource" />
     <None Include="Service References\App_In_Maintenance\Utility.wsdl" />
-    <None Include="Service References\AtiWrapperServices\AtiWrapperServices.wsdl" />
-    <None Include="Service References\AtiWrapperServices\AtiWrapperServices.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AtiWrapperServices\AtiWrapperServices1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AtiWrapperServices\AtiWrapperServices2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AtiWrapperServices\AtiWrapperServices3.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Service References\AtiWrapperServices\NW_QP.AtiWrapperServices.WrapperResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\IPSToolsWS\Tools1.wsdl" />
-    <None Include="Service References\NWWS_Relay\NW_QP.NWWS_Relay.AccountInformation.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
+    <None Include="Service References\AtiWrapperServices\WrapperService.wsdl" />
+    <None Include="Service References\AtiWrapperServices\WrapperService.xsd">
+      <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NWWS_Relay\NW_QP.NWWS_Relay.PaymentNotificationResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
+    <None Include="Service References\AtiWrapperServices\WrapperService1.xsd">
+      <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NWWS_Relay\configuration91.svcinfo" />
-    <None Include="Service References\NWWS_Relay\configuration.svcinfo" />
-    <None Include="Service References\NWWS_Relay\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.vb</LastGenOutput>
+    <None Include="Service References\AtiWrapperServices\WrapperService2.xsd">
+      <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NWWS_Relay\Relay1.wsdl" />
-    <None Include="Service References\NWWS_TestRelay\NW_QP.NWWS_TestRelay.AccountInformation.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\NWWS_TestRelay\NW_QP.NWWS_TestRelay.PaymentNotificationResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\NWWS_TestRelay\configuration91.svcinfo" />
-    <None Include="Service References\NWWS_TestRelay\configuration.svcinfo" />
-    <None Include="Service References\NWWS_TestRelay\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.vb</LastGenOutput>
-    </None>
-    <None Include="Service References\IPSToolsWS\configuration91.svcinfo" />
-    <None Include="Service References\IPSToolsWS\configuration.svcinfo" />
-    <None Include="Service References\IPSToolsWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.vb</LastGenOutput>
-    </None>
-    <None Include="Service References\NWWS_TestRelay\TestRelay1.wsdl" />
-    <None Include="Service References\IPSToolsWS\Tools1.disco" />
-    <None Include="Service References\NWWS_TestRelay\TestRelay1.disco" />
-    <None Include="Service References\NWWS_Relay\Relay1.disco" />
+    <None Include="Service References\IPSToolsWS\Tools.wsdl" />
     <None Include="Service References\App_In_Maintenance\Utility.disco" />
     <None Include="Service References\App_In_Maintenance\configuration91.svcinfo" />
     <None Include="Service References\App_In_Maintenance\configuration.svcinfo" />
@@ -271,14 +233,49 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
-    <None Include="Service References\AtiWrapperServices\AtiWrapperServices.disco" />
+    <None Include="Service References\AtiWrapperServices\WrapperService.disco" />
     <None Include="Service References\AtiWrapperServices\configuration91.svcinfo" />
     <None Include="Service References\AtiWrapperServices\configuration.svcinfo" />
     <None Include="Service References\AtiWrapperServices\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
+    <None Include="Service References\IPSToolsWS\Tools.disco" />
+    <None Include="Service References\IPSToolsWS\configuration91.svcinfo" />
+    <None Include="Service References\IPSToolsWS\configuration.svcinfo" />
+    <None Include="Service References\IPSToolsWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="Service References\NWWSRelay\NW_QP.NWWSRelay.AccountInformation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\NWWSRelay\NW_QP.NWWSRelay.PaymentNotificationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\NWWSRelay\Relay.disco" />
+    <None Include="Service References\NWWSRelay\configuration91.svcinfo" />
+    <None Include="Service References\NWWSRelay\configuration.svcinfo" />
+    <None Include="Service References\NWWSRelay\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="Service References\NWWSTestRelay\NW_QP.NWWSTestRelay.AccountInformation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\NWWSTestRelay\NW_QP.NWWSTestRelay.PaymentNotificationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\NWWSTestRelay\TestRelay.disco" />
+    <None Include="Service References\NWWSTestRelay\configuration91.svcinfo" />
+    <None Include="Service References\NWWSTestRelay\configuration.svcinfo" />
+    <None Include="Service References\NWWSTestRelay\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
     <Content Include="SubmissionIssue.aspx" />
+    <None Include="Service References\NWWSRelay\Relay.wsdl" />
+    <None Include="Service References\NWWSTestRelay\TestRelay.wsdl" />
     <None Include="Web References\IPSCyberWS\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
@@ -392,12 +389,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\NWWS_Relay\Reference.vb">
+    <Compile Include="Service References\NWWSRelay\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\NWWS_TestRelay\Reference.vb">
+    <Compile Include="Service References\NWWSTestRelay\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -449,8 +446,8 @@
     <WCFMetadataStorage Include="Service References\App_In_Maintenance\" />
     <WCFMetadataStorage Include="Service References\AtiWrapperServices\" />
     <WCFMetadataStorage Include="Service References\IPSToolsWS\" />
-    <WCFMetadataStorage Include="Service References\NWWS_Relay\" />
-    <WCFMetadataStorage Include="Service References\NWWS_TestRelay\" />
+    <WCFMetadataStorage Include="Service References\NWWSRelay\" />
+    <WCFMetadataStorage Include="Service References\NWWSTestRelay\" />
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="vZlBzSQo7/k6zW/wtoIidpOE7YA=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="fP5SqUglvgUYQWqR/zrBuxwjjK4=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="ToolsSoap">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="ToolsSoap" contract="IPSToolsWS.ToolsSoap" bindingType="basicHttpBinding" address="http://mtdog:84/Tools.asmx" bindingConfiguration="ToolsSoap">
+    <endpoint name="ToolsSoap" contract="IPSToolsWS.ToolsSoap" bindingType="basicHttpBinding" address="http://mtdog/IPSToolsWS4/Tools.asmx" bindingConfiguration="ToolsSoap">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://mtdog:84/Tools.asmx</serializedValue>
+          <serializedValue>http://mtdog/IPSToolsWS4/Tools.asmx</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

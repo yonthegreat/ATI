@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.activetelesource.com/testwebservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="urn::IVRService" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.activetelesource.com/testwebservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.activetelesource.com/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="urn::IVRService" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.activetelesource.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
-    <s:schema elementFormDefault="qualified" targetNamespace="http://www.activetelesource.com/testwebservices/">
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.activetelesource.com/webservices/">
       <s:import namespace="urn::IVRService" />
       <s:element name="GetAccountInformation">
         <s:complexType>
@@ -205,21 +205,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="IsCardAllowed">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="IsCardAllowedResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="IsCardAllowedResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
     </s:schema>
     <s:schema elementFormDefault="qualified" targetNamespace="urn::IVRService">
       <s:complexType name="AccountInformation">
@@ -281,6 +266,47 @@
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="ResponseCode" type="s:string" />
         </s:sequence>
+      </s:complexType>
+      <s:complexType name="MeterReadResult">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:WebResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ResultId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="PaymentHistoryResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:WebResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentHistory" type="s1:ArrayOfPaymentHistory" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfPaymentHistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PaymentHistory" nillable="true" type="s1:PaymentHistory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PaymentHistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="StoredPaymentInformationResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:WebResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="RoutingNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CheckingAccountNumber" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
       </s:complexType>
       <s:complexType name="StopServiceInformation">
         <s:complexContent mixed="false">
@@ -379,23 +405,14 @@
           </s:extension>
         </s:complexContent>
       </s:complexType>
-      <s:complexType name="EqualPayQuoteResponse">
+      <s:complexType name="PaymentNotificationResponse">
         <s:complexContent mixed="false">
           <s:extension base="s1:WebResponse">
             <s:sequence>
-              <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
-              <s:element minOccurs="1" maxOccurs="1" name="PlanAmount" type="s:double" />
-              <s:element minOccurs="1" maxOccurs="1" name="AccountBalance" type="s:double" />
-              <s:element minOccurs="0" maxOccurs="1" name="NextDueDate" type="s:string" />
-              <s:element minOccurs="1" maxOccurs="1" name="IsOver30Days" type="s:boolean" />
-              <s:element minOccurs="0" maxOccurs="1" name="ConfirmationCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ReturnCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ReturnText" type="s:string" />
             </s:sequence>
           </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="EqualPaySignupResponse">
-        <s:complexContent mixed="false">
-          <s:extension base="s1:EqualPayQuoteResponse" />
         </s:complexContent>
       </s:complexType>
       <s:complexType name="DueDateExtension">
@@ -405,6 +422,16 @@
               <s:element minOccurs="0" maxOccurs="1" name="DueDate" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Bank">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:WebResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="RoutingNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -427,65 +454,23 @@
           </s:extension>
         </s:complexContent>
       </s:complexType>
-      <s:complexType name="MeterReadResult">
+      <s:complexType name="EqualPayQuoteResponse">
         <s:complexContent mixed="false">
           <s:extension base="s1:WebResponse">
             <s:sequence>
-              <s:element minOccurs="0" maxOccurs="1" name="ResultId" type="s:string" />
-              <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PlanAmount" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="AccountBalance" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="NextDueDate" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsOver30Days" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="ConfirmationCode" type="s:string" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
       </s:complexType>
-      <s:complexType name="PaymentHistoryResponse">
+      <s:complexType name="EqualPaySignupResponse">
         <s:complexContent mixed="false">
-          <s:extension base="s1:WebResponse">
-            <s:sequence>
-              <s:element minOccurs="0" maxOccurs="1" name="PaymentHistory" type="s1:ArrayOfPaymentHistory" />
-            </s:sequence>
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="ArrayOfPaymentHistory">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="PaymentHistory" nillable="true" type="s1:PaymentHistory" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="PaymentHistory">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="PaymentDate" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="StoredPaymentInformationResponse">
-        <s:complexContent mixed="false">
-          <s:extension base="s1:WebResponse">
-            <s:sequence>
-              <s:element minOccurs="0" maxOccurs="1" name="RoutingNumber" type="s:string" />
-              <s:element minOccurs="0" maxOccurs="1" name="CheckingAccountNumber" type="s:string" />
-            </s:sequence>
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="PaymentNotificationResponse">
-        <s:complexContent mixed="false">
-          <s:extension base="s1:WebResponse">
-            <s:sequence>
-              <s:element minOccurs="0" maxOccurs="1" name="ReturnCode" type="s:string" />
-              <s:element minOccurs="0" maxOccurs="1" name="ReturnText" type="s:string" />
-            </s:sequence>
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="Bank">
-        <s:complexContent mixed="false">
-          <s:extension base="s1:WebResponse">
-            <s:sequence>
-              <s:element minOccurs="0" maxOccurs="1" name="RoutingNumber" type="s:string" />
-              <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
-            </s:sequence>
-          </s:extension>
+          <s:extension base="s1:EqualPayQuoteResponse" />
         </s:complexContent>
       </s:complexType>
     </s:schema>
@@ -550,13 +535,7 @@
   <wsdl:message name="UpdateCardTransWebHistoryIDSoapOut">
     <wsdl:part name="parameters" element="tns:UpdateCardTransWebHistoryIDResponse" />
   </wsdl:message>
-  <wsdl:message name="IsCardAllowedSoapIn">
-    <wsdl:part name="parameters" element="tns:IsCardAllowed" />
-  </wsdl:message>
-  <wsdl:message name="IsCardAllowedSoapOut">
-    <wsdl:part name="parameters" element="tns:IsCardAllowedResponse" />
-  </wsdl:message>
-  <wsdl:portType name="TestRelaySoap">
+  <wsdl:portType name="RelaySoap">
     <wsdl:operation name="GetAccountInformation">
       <wsdl:input message="tns:GetAccountInformationSoapIn" />
       <wsdl:output message="tns:GetAccountInformationSoapOut" />
@@ -597,15 +576,11 @@
       <wsdl:input message="tns:UpdateCardTransWebHistoryIDSoapIn" />
       <wsdl:output message="tns:UpdateCardTransWebHistoryIDSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="IsCardAllowed">
-      <wsdl:input message="tns:IsCardAllowedSoapIn" />
-      <wsdl:output message="tns:IsCardAllowedSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="TestRelaySoap" type="tns:TestRelaySoap">
+  <wsdl:binding name="RelaySoap" type="tns:RelaySoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetAccountInformation">
-      <soap:operation soapAction="http://www.activetelesource.com/testwebservices/GetAccountInformation" style="document" />
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/GetAccountInformation" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -614,7 +589,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SubmitPayment">
-      <soap:operation soapAction="http://www.activetelesource.com/testwebservices/SubmitPayment" style="document" />
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/SubmitPayment" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -623,7 +598,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="PaymentAllowed">
-      <soap:operation soapAction="http://www.activetelesource.com/testwebservices/PaymentAllowed" style="document" />
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/PaymentAllowed" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -632,7 +607,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateAccountActivity">
-      <soap:operation soapAction="http://www.activetelesource.com/testwebservices/UpdateAccountActivity" style="document" />
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/UpdateAccountActivity" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -641,7 +616,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="LogCardTrans">
-      <soap:operation soapAction="http://www.activetelesource.com/testwebservices/LogCardTrans" style="document" />
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/LogCardTrans" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -650,7 +625,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="LogWebHistory">
-      <soap:operation soapAction="http://www.activetelesource.com/testwebservices/LogWebHistory" style="document" />
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/LogWebHistory" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -659,7 +634,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateWebHistory">
-      <soap:operation soapAction="http://www.activetelesource.com/testwebservices/UpdateWebHistory" style="document" />
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/UpdateWebHistory" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -668,7 +643,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="LogIVRHistory">
-      <soap:operation soapAction="http://www.activetelesource.com/testwebservices/LogIVRHistory" style="document" />
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/LogIVRHistory" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -677,7 +652,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateCardTransIVRHistoryID">
-      <soap:operation soapAction="http://www.activetelesource.com/testwebservices/UpdateCardTransIVRHistoryID" style="document" />
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/UpdateCardTransIVRHistoryID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -686,16 +661,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateCardTransWebHistoryID">
-      <soap:operation soapAction="http://www.activetelesource.com/testwebservices/UpdateCardTransWebHistoryID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IsCardAllowed">
-      <soap:operation soapAction="http://www.activetelesource.com/testwebservices/IsCardAllowed" style="document" />
+      <soap:operation soapAction="http://www.activetelesource.com/webservices/UpdateCardTransWebHistoryID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -704,10 +670,10 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="TestRelaySoap12" type="tns:TestRelaySoap">
+  <wsdl:binding name="RelaySoap12" type="tns:RelaySoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetAccountInformation">
-      <soap12:operation soapAction="http://www.activetelesource.com/testwebservices/GetAccountInformation" style="document" />
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/GetAccountInformation" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -716,7 +682,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SubmitPayment">
-      <soap12:operation soapAction="http://www.activetelesource.com/testwebservices/SubmitPayment" style="document" />
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/SubmitPayment" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -725,7 +691,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="PaymentAllowed">
-      <soap12:operation soapAction="http://www.activetelesource.com/testwebservices/PaymentAllowed" style="document" />
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/PaymentAllowed" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -734,7 +700,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateAccountActivity">
-      <soap12:operation soapAction="http://www.activetelesource.com/testwebservices/UpdateAccountActivity" style="document" />
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/UpdateAccountActivity" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -743,7 +709,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="LogCardTrans">
-      <soap12:operation soapAction="http://www.activetelesource.com/testwebservices/LogCardTrans" style="document" />
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/LogCardTrans" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -752,7 +718,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="LogWebHistory">
-      <soap12:operation soapAction="http://www.activetelesource.com/testwebservices/LogWebHistory" style="document" />
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/LogWebHistory" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -761,7 +727,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateWebHistory">
-      <soap12:operation soapAction="http://www.activetelesource.com/testwebservices/UpdateWebHistory" style="document" />
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/UpdateWebHistory" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -770,7 +736,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="LogIVRHistory">
-      <soap12:operation soapAction="http://www.activetelesource.com/testwebservices/LogIVRHistory" style="document" />
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/LogIVRHistory" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -779,7 +745,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateCardTransIVRHistoryID">
-      <soap12:operation soapAction="http://www.activetelesource.com/testwebservices/UpdateCardTransIVRHistoryID" style="document" />
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/UpdateCardTransIVRHistoryID" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -788,16 +754,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateCardTransWebHistoryID">
-      <soap12:operation soapAction="http://www.activetelesource.com/testwebservices/UpdateCardTransWebHistoryID" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IsCardAllowed">
-      <soap12:operation soapAction="http://www.activetelesource.com/testwebservices/IsCardAllowed" style="document" />
+      <soap12:operation soapAction="http://www.activetelesource.com/webservices/UpdateCardTransWebHistoryID" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -806,12 +763,12 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="TestRelay">
-    <wsdl:port name="TestRelaySoap" binding="tns:TestRelaySoap">
-      <soap:address location="http://mtdog:85/TestRelay.asmx" />
+  <wsdl:service name="Relay">
+    <wsdl:port name="RelaySoap" binding="tns:RelaySoap">
+      <soap:address location="http://mtdog/NWWS/Relay.asmx" />
     </wsdl:port>
-    <wsdl:port name="TestRelaySoap12" binding="tns:TestRelaySoap12">
-      <soap12:address location="http://mtdog:85/TestRelay.asmx" />
+    <wsdl:port name="RelaySoap12" binding="tns:RelaySoap12">
+      <soap12:address location="http://mtdog/NWWS/Relay.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

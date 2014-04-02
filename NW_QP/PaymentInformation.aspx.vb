@@ -14,8 +14,8 @@ Public Class PaymentInformation
     Private Const SERVICE_ZIP_CODE As String = "CCqGSIb3DQMHMBMGA1UdJQQMMAoGCCsGAQUFBwMBMIH9BgorBgEEAYI3DQICMYHu"
 
     Protected AccountInfo As Object
-    Protected prodAccount As NWWS_Relay.AccountInformation
-    Protected testAccount As NWWS_TestRelay.AccountInformation
+    Protected prodAccount As NWWSRelay.AccountInformation
+    Protected testAccount As NWWSTestRelay.AccountInformation
     'Protected AccountInfo As LegacyNwnIvrWebService.AccountInformation
     'needed for display just in case account info does not populate for some reason.
     Protected TotalBalanceDueDisplayValue As String
@@ -241,62 +241,63 @@ Public Class PaymentInformation
                     End If
 
                     If Regex.IsMatch(AccountNumber.Value, "^\d+$") Then
-                        Using wrapperService As New AtiWrapperServices.AtiWrapperServicesClient()
+                        'TODO Need to change this to new name when using new AtiWrapperServices
+                        Using wrapperService As New AtiWrapperServices.WrapperServiceClient()
                             testMode = Convert.ToBoolean(ConfigurationManager.AppSettings.Get("QUICK_PAY_TEST_MODE").Trim())
                             Dim customerNumber As Integer = Convert.ToInt32(ConfigurationManager.AppSettings.Get("QUICK_PAY_CUSTOMER".Trim()), 10)
                             Dim result As AtiWrapperServices.WrapperResult
                             Dim wrapperCallName As String = ConfigurationManager.AppSettings.Get("QUICK_PAY_CALL_NAME")
 
                             result = wrapperService.WrapperServiceByCustomerNumber(customerNumber, wrapperCallName, String.Format("<accountNumber>{0}</accountNumber>", AccountNumber.Value.ToString()))
-                            
-                    If (result.ResultStatus <> AtiWrapperServices.WrapperResult.ATIWrapperServiceStatusEnum.Success) Then
-                        With Session
 
-                            Tools.AddWebHistoryItem(.Item("WEB_EVENTLOG"), ACTUAL_PAGE & ": [G4] Unable to access IsCreditCardAllowed.")
+                            If (result.ResultStatus <> AtiWrapperServices.WrapperResult.ATIWrapperServiceStatusEnum.Success) Then
+                                With Session
 
-                            If Val(Session.Item("WEB_HISTORY_ID")) = 0 Then
+                                    Tools.AddWebHistoryItem(.Item("WEB_EVENTLOG"), ACTUAL_PAGE & ": [G4] Unable to access IsCreditCardAllowed.")
 
-                                Session.Item("WEB_HISTORY_ID") = Tools.LogWebHistory(.Item("WEB_HISTORY_TABLE"), 0, .Item("SESSION_ID"), .Item("USER_HOST_ADDRESS"), .Item("START_DATETIME"), _
-                                                                                     .Item("LAST_ACTIVITY_DATETIME"), "n/a", "", .Item("CLIENTID"), .Item("ACCOUNT_NUMBER"), 0, 0, True, _
-                                                                                     "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", _
-                                                                                     "", "", "", "", "1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01", _
-                                                                                     "", "", "", "", 0, 0, 0, 0, _
-                                                                                     "", "", "", "", 0, 0, 0, 0, _
-                                                                                     "", "", "", "", 0, 0, 0, 0, _
-                                                                                     "", "", "", "", False, False, False, False)
+                                    If Val(Session.Item("WEB_HISTORY_ID")) = 0 Then
+
+                                        Session.Item("WEB_HISTORY_ID") = Tools.LogWebHistory(.Item("WEB_HISTORY_TABLE"), 0, .Item("SESSION_ID"), .Item("USER_HOST_ADDRESS"), .Item("START_DATETIME"), _
+                                                                                             .Item("LAST_ACTIVITY_DATETIME"), "n/a", "", .Item("CLIENTID"), .Item("ACCOUNT_NUMBER"), 0, 0, True, _
+                                                                                             "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", _
+                                                                                             "", "", "", "", "1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01", _
+                                                                                             "", "", "", "", 0, 0, 0, 0, _
+                                                                                             "", "", "", "", 0, 0, 0, 0, _
+                                                                                             "", "", "", "", 0, 0, 0, 0, _
+                                                                                             "", "", "", "", False, False, False, False)
+                                    End If
+
+                                    Tools.UpdateWebHistoryEventLog(.Item("WEB_HISTORY_TABLE"), .Item("WEB_HISTORY_ID"), .Item("WEB_EVENTLOG"), .Item("LAST_ACTIVITY_DATETIME"), _
+                                                                   .Item("ACCOUNT_NUMBER"), 0, 0, True)
+
+                                    AppTextLog.WriteLogEntry(.Item("LOG_DRIVE"), ACTUAL_PAGE, _
+                                                                        "[G4] Unable to access IsCreditCardAllowed. " & _
+                                                                        "CurrentStage = " & .Item("CURRENT_STAGE") & _
+                                                                        ", NavigatingFrom = " & .Item("NAVIGATING_FROM") & _
+                                                                        ", Authenticated = " & .Item("AUTHENTICATED") & _
+                                                                        ", WebHistoryID = " & .Item("WEB_HISTORY_ID") & _
+                                                                        ", Account = " & .Item("ACCOUNT_NUMBER") & _
+                                                                        ", CardTransID = " & .Item("CARD_TRANS_ID") & _
+                                                                        ", AuthStatus = " & .Item("AUTHORIZATION_STATUS") & _
+                                                                        ", CyberError = " & .Item("CYBER_ERROR"), True, Session.Item("TEST") & "" = "TEST")
+
+
+                                End With
+                                Dim errorMessages As New List(Of [String])
+                                errorMessages.Add("Unable to access IsCreditCardAllowed")
+                                Session.Add("ErrorMessages", errorMessages)
+                                Response.Redirect("SubmissionIssue.aspx")
+                            Else
+                                Dim doc As XDocument = XDocument.Parse(result.Result)
+                                Dim answer As Boolean = Convert.ToBoolean(doc.Root.Value)
+                                If (answer = False) Then
+                                    Dim errorMessages As New List(Of [String])
+                                    errorMessages.Add("Credit Card not allowed for this account")
+                                    Session.Add("ErrorMessages", errorMessages)
+                                    Response.Redirect("SubmissionIssue.aspx")
+                                End If
+
                             End If
-
-                            Tools.UpdateWebHistoryEventLog(.Item("WEB_HISTORY_TABLE"), .Item("WEB_HISTORY_ID"), .Item("WEB_EVENTLOG"), .Item("LAST_ACTIVITY_DATETIME"), _
-                                                           .Item("ACCOUNT_NUMBER"), 0, 0, True)
-
-                            AppTextLog.WriteLogEntry(.Item("LOG_DRIVE"), ACTUAL_PAGE, _
-                                                                "[G4] Unable to access IsCreditCardAllowed. " & _
-                                                                "CurrentStage = " & .Item("CURRENT_STAGE") & _
-                                                                ", NavigatingFrom = " & .Item("NAVIGATING_FROM") & _
-                                                                ", Authenticated = " & .Item("AUTHENTICATED") & _
-                                                                ", WebHistoryID = " & .Item("WEB_HISTORY_ID") & _
-                                                                ", Account = " & .Item("ACCOUNT_NUMBER") & _
-                                                                ", CardTransID = " & .Item("CARD_TRANS_ID") & _
-                                                                ", AuthStatus = " & .Item("AUTHORIZATION_STATUS") & _
-                                                                ", CyberError = " & .Item("CYBER_ERROR"), True, Session.Item("TEST") & "" = "TEST")
-
-
-                        End With
-                        Dim errorMessages As New List(Of [String])
-                        errorMessages.Add("Unable to access IsCreditCardAllowed")
-                        Session.Add("ErrorMessages", errorMessages)
-                        Response.Redirect("SubmissionIssue.aspx")
-                    Else
-                        Dim doc As XDocument = XDocument.Parse(result.Result)
-                        Dim answer As Boolean = Convert.ToBoolean(doc.Root.Value)
-                        If (answer = False) Then
-                            Dim errorMessages As New List(Of [String])
-                            errorMessages.Add("Credit Card not allowed for this account")
-                            Session.Add("ErrorMessages", errorMessages)
-                            Response.Redirect("SubmissionIssue.aspx")
-                        End If
-
-                    End If
 
                         End Using
                     Else
@@ -438,15 +439,15 @@ WebRequest:
             Try
                 ' Set object instance on each try in the event there is a 'Late Binding' object error.
                 If Session.Item("TEST") = "TRUE" Then
-                    Using NWWS_TestRelay As New NWWS_TestRelay.TestRelaySoapClient()
-                        AccountInfo = New NWWS_TestRelay.AccountInformation()
-                        AccountInfo = NWWS_TestRelay.GetAccountInformation(AccountNumber.Value, "W")
+                    Using NWWSTestRelay As New NWWSTestRelay.TestRelaySoapClient()
+                        AccountInfo = New NWWSTestRelay.AccountInformation()
+                        AccountInfo = NWWSTestRelay.GetAccountInformation(AccountNumber.Value, "W")
                         Session.Item("ACCOUNT_INFORMATION") = AccountInfo
                     End Using
                 Else
-                    Using NWWS_Relay As New NWWS_Relay.RelaySoapClient()
-                        AccountInfo = New NWWS_Relay.AccountInformation()
-                        AccountInfo = NWWS_Relay.GetAccountInformation(AccountNumber.Value, "W")
+                    Using NWWSRelay As New NWWSRelay.RelaySoapClient()
+                        AccountInfo = New NWWSRelay.AccountInformation()
+                        AccountInfo = NWWSRelay.GetAccountInformation(AccountNumber.Value, "W")
                         Session.Item("ACCOUNT_INFORMATION") = AccountInfo
                     End Using
                 End If
@@ -525,7 +526,7 @@ WebRequest:
     End Function
 
     Private Sub PopulateTotalBalanceDisplayValues()
-        If (TypeOf AccountInfo Is NWWS_Relay.AccountInformation) Then
+        If (TypeOf AccountInfo Is NWWSRelay.AccountInformation) Then
             prodAccount = AccountInfo
             If prodAccount.IsOnPaymentPlan.Equals("N") Then
                 TotalBalanceDueLabelValue = "Total Balance Due"
@@ -562,9 +563,9 @@ WebRequest:
         e.IsValid = False
 
 
-        Dim date1 As Date
-        Dim date2 As Date
-        Dim relationship As String
+        'Dim date1 As Date
+        'Dim date2 As Date
+        'Dim relationship As String
 
         If reg.IsMatch(e.Value) Then
 

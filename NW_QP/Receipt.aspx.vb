@@ -788,13 +788,13 @@ WebRequest:
 
         ' Set object instance on each try in the event there is a 'Late Binding' object error.
         If Session.Item("TEST") = "TRUE" Then
-            objSubmitPmt = New NWWS_TestRelay.TestRelaySoapClient
+            objSubmitPmt = New NWWSTestRelay.TestRelaySoapClient
 
-            objPaymentNotificationResponse = New NWWS_TestRelay.PaymentNotificationResponse
+            objPaymentNotificationResponse = New NWWSTestRelay.PaymentNotificationResponse
         Else
-            objSubmitPmt = New NWWS_Relay.RelaySoapClient
+            objSubmitPmt = New NWWSRelay.RelaySoapClient
 
-            objPaymentNotificationResponse = New NWWS_Relay.PaymentNotificationResponse
+            objPaymentNotificationResponse = New NWWSRelay.PaymentNotificationResponse
         End If
 
         If Session.Item("Cyber_CaptureApproved") = "TRUE" Then

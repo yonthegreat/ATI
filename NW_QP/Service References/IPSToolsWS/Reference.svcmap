@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fba56046-3784-4111-80e4-58f5fa7f826c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="78858e55-2cc6-4b89-8d16-36887e76dc9b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -18,11 +18,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://mtdog:84/Tools.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://mtdog:/IPSToolsWS4/Tools.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Tools1.disco" MetadataType="Disco" ID="af9fc6e9-2c65-4718-91b2-6d3d3efcf924" SourceId="1" SourceUrl="http://mtdog:84/Tools.asmx?disco" />
-    <MetadataFile FileName="Tools1.wsdl" MetadataType="Wsdl" ID="56bd83e6-ac98-447c-b395-fab2c8be4d60" SourceId="1" SourceUrl="http://mtdog:84/Tools.asmx?wsdl" />
+    <MetadataFile FileName="Tools.disco" MetadataType="Disco" ID="641f61ea-0058-4fd9-8a28-eab35b72f1dc" SourceId="1" SourceUrl="http://mtdog/IPSToolsWS4/Tools.asmx?disco" />
+    <MetadataFile FileName="Tools.wsdl" MetadataType="Wsdl" ID="1bca8f88-02a2-429a-8865-9a697e550daa" SourceId="1" SourceUrl="http://mtdog/IPSToolsWS4/Tools.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

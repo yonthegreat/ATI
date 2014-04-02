@@ -57,9 +57,9 @@
 
     Protected Sub Page_PreRender(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreRenderComplete
         creditCardRequestInfo = Session("CreditCardRequestInfo")
-        Dim testAccountInfo As NWWS_TestRelay.AccountInformation
-        Dim prodAccountInfo As NWWS_Relay.AccountInformation
-        If (TypeOf Session.Item("ACCOUNT_INFORMATION") Is NWWS_TestRelay.AccountInformation) Then
+        Dim testAccountInfo As NWWSTestRelay.AccountInformation
+        Dim prodAccountInfo As NWWSRelay.AccountInformation
+        If (TypeOf Session.Item("ACCOUNT_INFORMATION") Is NWWSTestRelay.AccountInformation) Then
             testAccountInfo = Session.Item("ACCOUNT_INFORMATION")
             AccountInfo = testAccountInfo
         Else

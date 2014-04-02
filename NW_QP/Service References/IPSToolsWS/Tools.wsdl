@@ -844,10 +844,10 @@
   </wsdl:binding>
   <wsdl:service name="Tools">
     <wsdl:port name="ToolsSoap" binding="tns:ToolsSoap">
-      <soap:address location="http://mtdog:84/Tools.asmx" />
+      <soap:address location="http://mtdog/IPSToolsWS4/Tools.asmx" />
     </wsdl:port>
     <wsdl:port name="ToolsSoap12" binding="tns:ToolsSoap12">
-      <soap12:address location="http://mtdog:84/Tools.asmx" />
+      <soap12:address location="http://mtdog/IPSToolsWS4/Tools.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

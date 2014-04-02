@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a8b2aae3-397a-4ca1-8cca-fc184f8a3bb2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4e0ebc4f-a9cc-482d-81c0-c452c5367cc8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -18,11 +18,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://mtdog:85/TestRelay.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://mtdog/NWWS/TestRelay.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="TestRelay1.wsdl" MetadataType="Wsdl" ID="058ebdef-49a8-4c1e-ad28-adc822a784e7" SourceId="1" SourceUrl="http://mtdog:85/TestRelay.asmx?wsdl" />
-    <MetadataFile FileName="TestRelay1.disco" MetadataType="Disco" ID="899d2232-7c07-4006-bb8e-078c32a99bee" SourceId="1" SourceUrl="http://mtdog:85/TestRelay.asmx?disco" />
+    <MetadataFile FileName="TestRelay.disco" MetadataType="Disco" ID="fd3e7de3-1411-4ac4-9690-7cbc4d263092" SourceId="1" SourceUrl="http://mtdog/NWWS/TestRelay.asmx?disco" />
+    <MetadataFile FileName="TestRelay.wsdl" MetadataType="Wsdl" ID="a3e910bb-7887-4f48-b12e-f2a42f322a6a" SourceId="1" SourceUrl="http://mtdog/NWWS/TestRelay.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
